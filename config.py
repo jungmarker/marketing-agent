@@ -37,28 +37,29 @@ BRAND = {
     "phone":      "(301) 875-7182",
     "email":      "nickjungmarker@lnf.com",
     "website":    "jungmarker.com",
-    "instagram":  "@nickjungmarker.realtor",
+    "instagram":  "@NickSellsDMV",
     "tiktok":     "@dorlpob",
     "languages":  ["English", "Spanish"],
-    "license":    "MD License #5017475",
+    "license":    "MD License #5017475 · DC License #SP40004737",
     "reviews":    "47+ five-star Google reviews",
     "office": {
         "name":    "Long & Foster Real Estate",
         "address": "12520 Prosperity Dr #105, Silver Spring, MD 20904",
         "phone":   "(301) 388-2600",
     },
-    # Matches jungmarker.com (tailwind.config.js): Outfit headings, Inter body
+    # Matches jungmarker.com (jungmarker-website-private tailwind.config.js):
+    # Space Indigo, Burnt Peach, Pearl Beige, Pale Sky, Alabaster Grey. Outfit headings, Inter body.
     "fonts": {"heading": "Outfit", "body": "Inter"},
     "colors": {
-        "warm_white": "#faf7f2",
-        "stone":      "#f0ece4",
-        "concrete":   "#e4dfd6",
-        "ash":        "#716b62",
-        "charcoal":   "#1c1917",
-        "gold":       "#c9a84c",
-        "md_red":     "#b31942",   # Maryland flag red, primary CTA
-        "navy":       "#0f1b2d",
-        "brick":      "#7a2e1a",
+        "white":     "#ffffff",
+        "stone":     "#EAEAEA",   # Alabaster Grey: light section background
+        "ash":       "#4A5468",   # body text
+        "charcoal":  "#1B2744",   # Space Indigo: dark sections + headings
+        "navy":      "#141E36",   # deeper indigo
+        "brand":     "#DD6E42",   # Burnt Peach: buttons/accents, pair with indigo text (#111A2F)
+        "brand_ink": "#A64A24",   # darker peach for small text on light backgrounds
+        "beige":     "#E8DAB2",   # Pearl Beige: highlight sections, chips
+        "sky":       "#C0D6DF",   # Pale Sky: accents on indigo
     },
 }
 
