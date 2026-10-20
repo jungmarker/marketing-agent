@@ -40,13 +40,25 @@ BRAND = {
     "instagram":  "@nickjungmarker.realtor",
     "tiktok":     "@dorlpob",
     "languages":  ["English", "Spanish"],
-    "license":    "Maryland Licensed",
+    "license":    "MD License #5017475",
     "reviews":    "47+ five-star Google reviews",
+    "office": {
+        "name":    "Long & Foster Real Estate",
+        "address": "12520 Prosperity Dr #105, Silver Spring, MD 20904",
+        "phone":   "(301) 388-2600",
+    },
+    # Matches jungmarker.com (tailwind.config.js): Outfit headings, Inter body
+    "fonts": {"heading": "Outfit", "body": "Inter"},
     "colors": {
-        "brand_black": "#0A0A0A",
-        "brand_red":   "#D4163C",
-        "gold":        "#E8B800",
-        "white":       "#FFFFFF",
+        "warm_white": "#faf7f2",
+        "stone":      "#f0ece4",
+        "concrete":   "#e4dfd6",
+        "ash":        "#716b62",
+        "charcoal":   "#1c1917",
+        "gold":       "#c9a84c",
+        "md_red":     "#b31942",   # Maryland flag red, primary CTA
+        "navy":       "#0f1b2d",
+        "brick":      "#7a2e1a",
     },
 }
 
