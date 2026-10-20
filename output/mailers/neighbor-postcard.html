@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Neighbor Postcard</title>
+<!--
+  Neighbor farming postcard: 6" x 9" (USPS EDDM / standard postcard size).
+  Page size includes 0.125" bleed on every side (9.25" x 6.25").
+  Keep text inside the dashed safe area (0.25" in from trim).
+  Page 1 = front, page 2 = back (mailing side).
+-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Inter:wght@400;500;600;700&display=swap">
+<style>
+  :root {
+    --black: #0A0A0A;
+    --red:   #D4163C;
+    --gold:  #E8B800;
+    --white: #FFFFFF;
+    --cream: #F7F3EC;
+    --ink-2: #4A4A4A;
+    --bleed: 0.125in;
+  }
+  @page { size: 9.25in 6.25in; margin: 0; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { background: #888; }
+  body { font-family: Inter, "Helvetica Neue", Arial, sans-serif; color: var(--black);
+         -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .page { width: 9.25in; height: 6.25in; position: relative; overflow: hidden;
+          margin: 0.4in auto; page-break-after: always; break-after: page; }
+  .page:last-child { page-break-after: auto; break-after: auto; }
+  @media print { html, body { background: none; } .page { margin: 0; } .guides { display: none; } }
+
+  /* Trim + safe-area guides (screen only) */
+  .guides { position: absolute; inset: 0; pointer-events: none; z-index: 50; }
+  .guides::before { content: ""; position: absolute; inset: var(--bleed); outline: 1px solid rgba(0,200,255,.7); }
+  .guides::after  { content: ""; position: absolute; inset: calc(var(--bleed) + 0.25in); outline: 1px dashed rgba(0,200,255,.7); }
+
+  /* ── FRONT ─────────────────────────────────────────────── */
+  .front { background: var(--black); color: var(--white); }
+  .front .inner { position: absolute; inset: calc(var(--bleed) + 0.4in); }
+  .eyebrow { font-weight: 700; font-size: 11pt; letter-spacing: .18em; text-transform: uppercase; color: var(--gold); }
+  .front h1 { font-family: Fraunces, Georgia, serif; font-weight: 800; font-size: 44pt; line-height: 1.0;
+              letter-spacing: -.01em; margin-top: .14in; max-width: 6.4in; }
+  .front h1 em { font-style: normal; color: var(--red); }
+  .front .sub { font-size: 13.5pt; line-height: 1.4; margin-top: .2in; max-width: 5.3in; color: #E6E6E6; }
+  .front .cta { position: absolute; right: 0; top: 0; width: 1.9in; text-align: center;
+                background: var(--red); border-radius: 50%; aspect-ratio: 1; display: flex; flex-direction: column;
+                justify-content: center; align-items: center; transform: rotate(8deg); }
+  .front .cta b { font-family: Fraunces, Georgia, serif; font-size: 26pt; line-height: 1; }
+  .front .cta span { font-size: 9.5pt; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; margin-top: 4pt; }
+  .front .meta { position: absolute; left: 0; bottom: 1.5in; display: flex; gap: .3in; align-items: center; font-size: 11pt; font-weight: 600; }
+  .stars { color: var(--gold); letter-spacing: 2px; margin-right: 6px; }
+  .pill { border: 1.5px solid var(--white); border-radius: 99px; padding: 3pt 10pt; }
+  .skyline { position: absolute; left: 0; right: 0; bottom: 0; width: 100%; height: 1.75in; display: block; }
+
+  /* ── BACK ──────────────────────────────────────────────── */
+  .back { background: var(--white); }
+  .back .left { position: absolute; left: calc(var(--bleed) + 0.35in); top: calc(var(--bleed) + 0.35in);
+                width: 4.35in; bottom: calc(var(--bleed) + 0.3in); display: flex; flex-direction: column; }
+  .back .band { position: absolute; left: 0; top: 0; bottom: 0; width: calc(var(--bleed) + 0.14in); background: var(--red); }
+  .hello { display: flex; gap: .16in; align-items: center; }
+  .headshot { width: .95in; height: .95in; border-radius: 50%; background: var(--black); color: var(--gold); flex: none;
+              display: flex; align-items: center; justify-content: center; font-family: Fraunces, Georgia, serif;
+              font-size: 26pt; font-weight: 800; border: 3px solid var(--gold); overflow: hidden; }
+  .headshot img { width: 100%; height: 100%; object-fit: cover; }
+  .hello h2 { font-family: Fraunces, Georgia, serif; font-weight: 800; font-size: 21pt; line-height: 1.05; }
+  .hello p { font-size: 9.5pt; color: var(--ink-2); margin-top: 3pt; }
+  .letter { font-size: 10pt; line-height: 1.45; margin-top: .14in; }
+  .services { list-style: none; margin-top: .14in; display: grid; grid-template-columns: 1fr 1fr; gap: 8pt 14pt; }
+  .services li { font-size: 9pt; line-height: 1.3; color: var(--ink-2); padding-left: 12pt; position: relative; }
+  .services li::before { content: ""; position: absolute; left: 0; top: 4pt; width: 6pt; height: 6pt; background: var(--red); }
+  .services b { display: block; color: var(--black); font-size: 10pt; }
+  .reach { margin-top: auto; display: flex; gap: .18in; align-items: center; background: var(--cream);
+           border-radius: 8pt; padding: .12in .16in; }
+  .qr { width: .95in; height: .95in; flex: none; background: var(--white); padding: 5pt; border-radius: 4pt; }
+  .reach .label { font-size: 8.5pt; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--red); }
+  .reach .phone { font-family: Fraunces, Georgia, serif; font-weight: 800; font-size: 22pt; line-height: 1.1; }
+  .reach .web { font-size: 9.5pt; color: var(--ink-2); }
+  .fine { font-size: 6.5pt; line-height: 1.35; color: #6A6A6A; margin-top: 7pt; display: flex; gap: 8pt; align-items: flex-start; }
+  .eho { width: .32in; flex: none; }
+
+  /* Mailing panel — keep clear for USPS (address block, indicia, barcode zone) */
+  .mail { position: absolute; right: calc(var(--bleed) + 0.25in); top: calc(var(--bleed) + 0.25in);
+          width: 3.9in; bottom: calc(var(--bleed) + 0.625in); border-left: 1px solid #DDD; padding-left: .25in; }
+  .return { font-size: 7.5pt; line-height: 1.35; color: var(--ink-2); }
+  .return b { color: var(--black); }
+  .indicia { position: absolute; right: 0; top: 0; width: 1.05in; border: 1px solid var(--black);
+             font-size: 6.5pt; line-height: 1.3; text-align: center; padding: 5pt 3pt; text-transform: uppercase; }
+  .addr { position: absolute; left: .25in; right: 0; top: 1.95in; font-size: 10pt; line-height: 1.4; letter-spacing: .03em; }
+</style>
+</head>
+<body>
+
+<!-- ═══════════════ FRONT ═══════════════ -->
+<section class="page front">
+  <div class="inner">
+    <div class="eyebrow">Hello, neighbor</div>
+    <h1>What's your home <em>really</em> worth right now?</h1>
+    <p class="sub">Get a free, no-pressure home value estimate from a Baltimore Realtor who knows these blocks, these rowhouses, and what buyers are paying for them.</p>
+    <div class="cta"><b>FREE</b><span>Home Value<br>Estimate</span></div>
+    <div class="meta">
+      <span><span class="stars">★★★★★</span>47+ five-star Google reviews</span>
+      <span class="pill">Se habla español</span>
+    </div>
+  </div>
+
+  <!-- Baltimore rowhouse row with white marble steps -->
+  <svg class="skyline" viewBox="0 0 925 175" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+    <g id="rows"></g>
+    <rect x="0" y="165" width="925" height="10" fill="#D4163C"/>
+  </svg>
+  <div class="guides"></div>
+</section>
+
+<!-- ═══════════════ BACK ═══════════════ -->
+<section class="page back">
+  <div class="band"></div>
+  <div class="left">
+    <div class="hello">
+      <!-- Swap initials for a headshot: <img src="headshot.jpg" alt=""> -->
+      <div class="headshot">NJ</div>
+      <div>
+        <h2>Hi, I'm Nick Jungmarker</h2>
+        <p>REALTOR® · Long &amp; Foster Real Estate</p>
+      </div>
+    </div>
+    <p class="letter">I help my neighbors buy and sell homes here in Baltimore. Whether you're thinking of selling next month, next year, or just want to know where you stand, I'm happy to put together a free home value estimate for you. No pressure, no obligation.</p>
+    <ul class="services">
+      <li><b>Selling your home</b>Pricing, prep, and marketing that gets rowhouses seen.</li>
+      <li><b>Free home value</b>A real estimate based on recent nearby sales.</li>
+      <li><b>First-time buyers</b>Guidance on Maryland down payment assistance programs.</li>
+      <li><b>English &amp; Español</b>Full service in the language you're most comfortable in.</li>
+    </ul>
+    <div class="reach">
+      <svg class="qr" viewBox="0 0 41 41" xmlns="http://www.w3.org/2000/svg" shape-rendering="crispEdges"><path fill="#0A0A0A" d="M0,0h1v1h-1zM1,0h1v1h-1zM2,0h1v1h-1zM3,0h1v1h-1zM4,0h1v1h-1zM5,0h1v1h-1zM6,0h1v1h-1zM8,0h1v1h-1zM9,0h1v1h-1zM10,0h1v1h-1zM11,0h1v1h-1zM12,0h1v1h-1zM13,0h1v1h-1zM14,0h1v1h-1zM15,0h1v1h-1zM16,0h1v1h-1zM17,0h1v1h-1zM18,0h1v1h-1zM19,0h1v1h-1zM20,0h1v1h-1zM21,0h1v1h-1zM23,0h1v1h-1zM25,0h1v1h-1zM26,0h1v1h-1zM28,0h1v1h-1zM29,0h1v1h-1zM30,0h1v1h-1zM31,0h1v1h-1zM32,0h1v1h-1zM34,0h1v1h-1zM35,0h1v1h-1zM36,0h1v1h-1zM37,0h1v1h-1zM38,0h1v1h-1zM39,0h1v1h-1zM40,0h1v1h-1zM0,1h1v1h-1zM6,1h1v1h-1zM8,1h1v1h-1zM9,1h1v1h-1zM10,1h1v1h-1zM11,1h1v1h-1zM14,1h1v1h-1zM16,1h1v1h-1zM18,1h1v1h-1zM23,1h1v1h-1zM24,1h1v1h-1zM25,1h1v1h-1zM30,1h1v1h-1zM34,1h1v1h-1zM40,1h1v1h-1zM0,2h1v1h-1zM2,2h1v1h-1zM3,2h1v1h-1zM4,2h1v1h-1zM6,2h1v1h-1zM9,2h1v1h-1zM10,2h1v1h-1zM13,2h1v1h-1zM14,2h1v1h-1zM15,2h1v1h-1zM16,2h1v1h-1zM17,2h1v1h-1zM19,2h1v1h-1zM23,2h1v1h-1zM27,2h1v1h-1zM30,2h1v1h-1zM32,2h1v1h-1zM34,2h1v1h-1zM36,2h1v1h-1zM37,2h1v1h-1zM38,2h1v1h-1zM40,2h1v1h-1zM0,3h1v1h-1zM2,3h1v1h-1zM3,3h1v1h-1zM4,3h1v1h-1zM6,3h1v1h-1zM8,3h1v1h-1zM9,3h1v1h-1zM13,3h1v1h-1zM14,3h1v1h-1zM15,3h1v1h-1zM19,3h1v1h-1zM21,3h1v1h-1zM26,3h1v1h-1zM27,3h1v1h-1zM29,3h1v1h-1zM31,3h1v1h-1zM32,3h1v1h-1zM34,3h1v1h-1zM36,3h1v1h-1zM37,3h1v1h-1zM38,3h1v1h-1zM40,3h1v1h-1zM0,4h1v1h-1zM2,4h1v1h-1zM3,4h1v1h-1zM4,4h1v1h-1zM6,4h1v1h-1zM10,4h1v1h-1zM11,4h1v1h-1zM13,4h1v1h-1zM15,4h1v1h-1zM16,4h1v1h-1zM19,4h1v1h-1zM21,4h1v1h-1zM22,4h1v1h-1zM24,4h1v1h-1zM26,4h1v1h-1zM27,4h1v1h-1zM28,4h1v1h-1zM31,4h1v1h-1zM34,4h1v1h-1zM36,4h1v1h-1zM37,4h1v1h-1zM38,4h1v1h-1zM40,4h1v1h-1zM0,5h1v1h-1zM6,5h1v1h-1zM10,5h1v1h-1zM11,5h1v1h-1zM12,5h1v1h-1zM13,5h1v1h-1zM14,5h1v1h-1zM15,5h1v1h-1zM17,5h1v1h-1zM18,5h1v1h-1zM19,5h1v1h-1zM20,5h1v1h-1zM21,5h1v1h-1zM24,5h1v1h-1zM25,5h1v1h-1zM29,5h1v1h-1zM31,5h1v1h-1zM32,5h1v1h-1zM34,5h1v1h-1zM40,5h1v1h-1zM0,6h1v1h-1zM1,6h1v1h-1zM2,6h1v1h-1zM3,6h1v1h-1zM4,6h1v1h-1zM5,6h1v1h-1zM6,6h1v1h-1zM8,6h1v1h-1zM10,6h1v1h-1zM12,6h1v1h-1zM14,6h1v1h-1zM16,6h1v1h-1zM18,6h1v1h-1zM20,6h1v1h-1zM22,6h1v1h-1zM24,6h1v1h-1zM26,6h1v1h-1zM28,6h1v1h-1zM30,6h1v1h-1zM32,6h1v1h-1zM34,6h1v1h-1zM35,6h1v1h-1zM36,6h1v1h-1zM37,6h1v1h-1zM38,6h1v1h-1zM39,6h1v1h-1zM40,6h1v1h-1zM8,7h1v1h-1zM11,7h1v1h-1zM12,7h1v1h-1zM14,7h1v1h-1zM16,7h1v1h-1zM17,7h1v1h-1zM18,7h1v1h-1zM23,7h1v1h-1zM24,7h1v1h-1zM27,7h1v1h-1zM29,7h1v1h-1zM0,8h1v1h-1zM2,8h1v1h-1zM3,8h1v1h-1zM5,8h1v1h-1zM6,8h1v1h-1zM7,8h1v1h-1zM9,8h1v1h-1zM10,8h1v1h-1zM11,8h1v1h-1zM14,8h1v1h-1zM17,8h1v1h-1zM18,8h1v1h-1zM19,8h1v1h-1zM20,8h1v1h-1zM21,8h1v1h-1zM26,8h1v1h-1zM28,8h1v1h-1zM29,8h1v1h-1zM30,8h1v1h-1zM34,8h1v1h-1zM37,8h1v1h-1zM39,8h1v1h-1zM40,8h1v1h-1zM3,9h1v1h-1zM5,9h1v1h-1zM8,9h1v1h-1zM9,9h1v1h-1zM11,9h1v1h-1zM12,9h1v1h-1zM13,9h1v1h-1zM16,9h1v1h-1zM19,9h1v1h-1zM21,9h1v1h-1zM23,9h1v1h-1zM24,9h1v1h-1zM26,9h1v1h-1zM28,9h1v1h-1zM31,9h1v1h-1zM32,9h1v1h-1zM33,9h1v1h-1zM34,9h1v1h-1zM35,9h1v1h-1zM36,9h1v1h-1zM38,9h1v1h-1zM39,9h1v1h-1zM40,9h1v1h-1zM0,10h1v1h-1zM1,10h1v1h-1zM2,10h1v1h-1zM4,10h1v1h-1zM5,10h1v1h-1zM6,10h1v1h-1zM8,10h1v1h-1zM9,10h1v1h-1zM10,10h1v1h-1zM11,10h1v1h-1zM12,10h1v1h-1zM15,10h1v1h-1zM17,10h1v1h-1zM18,10h1v1h-1zM22,10h1v1h-1zM23,10h1v1h-1zM26,10h1v1h-1zM28,10h1v1h-1zM29,10h1v1h-1zM34,10h1v1h-1zM35,10h1v1h-1zM36,10h1v1h-1zM38,10h1v1h-1zM39,10h1v1h-1zM0,11h1v1h-1zM5,11h1v1h-1zM8,11h1v1h-1zM10,11h1v1h-1zM11,11h1v1h-1zM12,11h1v1h-1zM13,11h1v1h-1zM16,11h1v1h-1zM20,11h1v1h-1zM22,11h1v1h-1zM23,11h1v1h-1zM25,11h1v1h-1zM26,11h1v1h-1zM32,11h1v1h-1zM34,11h1v1h-1zM3,12h1v1h-1zM4,12h1v1h-1zM5,12h1v1h-1zM6,12h1v1h-1zM7,12h1v1h-1zM8,12h1v1h-1zM10,12h1v1h-1zM12,12h1v1h-1zM13,12h1v1h-1zM15,12h1v1h-1zM16,12h1v1h-1zM17,12h1v1h-1zM19,12h1v1h-1zM20,12h1v1h-1zM22,12h1v1h-1zM24,12h1v1h-1zM25,12h1v1h-1zM26,12h1v1h-1zM29,12h1v1h-1zM31,12h1v1h-1zM32,12h1v1h-1zM35,12h1v1h-1zM37,12h1v1h-1zM38,12h1v1h-1zM40,12h1v1h-1zM2,13h1v1h-1zM7,13h1v1h-1zM8,13h1v1h-1zM9,13h1v1h-1zM10,13h1v1h-1zM12,13h1v1h-1zM13,13h1v1h-1zM16,13h1v1h-1zM17,13h1v1h-1zM20,13h1v1h-1zM23,13h1v1h-1zM24,13h1v1h-1zM34,13h1v1h-1zM37,13h1v1h-1zM39,13h1v1h-1zM40,13h1v1h-1zM1,14h1v1h-1zM3,14h1v1h-1zM6,14h1v1h-1zM7,14h1v1h-1zM8,14h1v1h-1zM9,14h1v1h-1zM13,14h1v1h-1zM15,14h1v1h-1zM17,14h1v1h-1zM18,14h1v1h-1zM19,14h1v1h-1zM20,14h1v1h-1zM22,14h1v1h-1zM23,14h1v1h-1zM25,14h1v1h-1zM26,14h1v1h-1zM30,14h1v1h-1zM31,14h1v1h-1zM34,14h1v1h-1zM35,14h1v1h-1zM38,14h1v1h-1zM40,14h1v1h-1zM2,15h1v1h-1zM3,15h1v1h-1zM4,15h1v1h-1zM5,15h1v1h-1zM7,15h1v1h-1zM8,15h1v1h-1zM9,15h1v1h-1zM10,15h1v1h-1zM12,15h1v1h-1zM13,15h1v1h-1zM16,15h1v1h-1zM21,15h1v1h-1zM22,15h1v1h-1zM23,15h1v1h-1zM26,15h1v1h-1zM27,15h1v1h-1zM28,15h1v1h-1zM31,15h1v1h-1zM34,15h1v1h-1zM35,15h1v1h-1zM36,15h1v1h-1zM37,15h1v1h-1zM2,16h1v1h-1zM3,16h1v1h-1zM6,16h1v1h-1zM7,16h1v1h-1zM8,16h1v1h-1zM9,16h1v1h-1zM10,16h1v1h-1zM15,16h1v1h-1zM18,16h1v1h-1zM20,16h1v1h-1zM21,16h1v1h-1zM22,16h1v1h-1zM25,16h1v1h-1zM27,16h1v1h-1zM30,16h1v1h-1zM36,16h1v1h-1zM37,16h1v1h-1zM39,16h1v1h-1zM40,16h1v1h-1zM1,17h1v1h-1zM3,17h1v1h-1zM8,17h1v1h-1zM9,17h1v1h-1zM10,17h1v1h-1zM13,17h1v1h-1zM16,17h1v1h-1zM20,17h1v1h-1zM21,17h1v1h-1zM22,17h1v1h-1zM23,17h1v1h-1zM24,17h1v1h-1zM25,17h1v1h-1zM26,17h1v1h-1zM27,17h1v1h-1zM28,17h1v1h-1zM31,17h1v1h-1zM32,17h1v1h-1zM33,17h1v1h-1zM35,17h1v1h-1zM38,17h1v1h-1zM39,17h1v1h-1zM40,17h1v1h-1zM0,18h1v1h-1zM1,18h1v1h-1zM2,18h1v1h-1zM5,18h1v1h-1zM6,18h1v1h-1zM7,18h1v1h-1zM10,18h1v1h-1zM11,18h1v1h-1zM12,18h1v1h-1zM18,18h1v1h-1zM20,18h1v1h-1zM22,18h1v1h-1zM27,18h1v1h-1zM29,18h1v1h-1zM33,18h1v1h-1zM36,18h1v1h-1zM37,18h1v1h-1zM3,19h1v1h-1zM4,19h1v1h-1zM7,19h1v1h-1zM8,19h1v1h-1zM9,19h1v1h-1zM10,19h1v1h-1zM13,19h1v1h-1zM14,19h1v1h-1zM15,19h1v1h-1zM16,19h1v1h-1zM17,19h1v1h-1zM18,19h1v1h-1zM20,19h1v1h-1zM21,19h1v1h-1zM24,19h1v1h-1zM28,19h1v1h-1zM29,19h1v1h-1zM34,19h1v1h-1zM35,19h1v1h-1zM37,19h1v1h-1zM38,19h1v1h-1zM39,19h1v1h-1zM5,20h1v1h-1zM6,20h1v1h-1zM7,20h1v1h-1zM9,20h1v1h-1zM11,20h1v1h-1zM13,20h1v1h-1zM16,20h1v1h-1zM19,20h1v1h-1zM23,20h1v1h-1zM24,20h1v1h-1zM25,20h1v1h-1zM27,20h1v1h-1zM28,20h1v1h-1zM29,20h1v1h-1zM30,20h1v1h-1zM31,20h1v1h-1zM32,20h1v1h-1zM33,20h1v1h-1zM34,20h1v1h-1zM36,20h1v1h-1zM37,20h1v1h-1zM38,20h1v1h-1zM39,20h1v1h-1zM2,21h1v1h-1zM4,21h1v1h-1zM5,21h1v1h-1zM7,21h1v1h-1zM12,21h1v1h-1zM15,21h1v1h-1zM19,21h1v1h-1zM20,21h1v1h-1zM21,21h1v1h-1zM23,21h1v1h-1zM26,21h1v1h-1zM28,21h1v1h-1zM30,21h1v1h-1zM31,21h1v1h-1zM33,21h1v1h-1zM34,21h1v1h-1zM35,21h1v1h-1zM36,21h1v1h-1zM37,21h1v1h-1zM39,21h1v1h-1zM40,21h1v1h-1zM1,22h1v1h-1zM5,22h1v1h-1zM6,22h1v1h-1zM7,22h1v1h-1zM8,22h1v1h-1zM10,22h1v1h-1zM12,22h1v1h-1zM13,22h1v1h-1zM14,22h1v1h-1zM15,22h1v1h-1zM17,22h1v1h-1zM18,22h1v1h-1zM21,22h1v1h-1zM23,22h1v1h-1zM25,22h1v1h-1zM26,22h1v1h-1zM29,22h1v1h-1zM30,22h1v1h-1zM33,22h1v1h-1zM36,22h1v1h-1zM37,22h1v1h-1zM38,22h1v1h-1zM39,22h1v1h-1zM1,23h1v1h-1zM2,23h1v1h-1zM5,23h1v1h-1zM7,23h1v1h-1zM10,23h1v1h-1zM11,23h1v1h-1zM12,23h1v1h-1zM13,23h1v1h-1zM14,23h1v1h-1zM15,23h1v1h-1zM18,23h1v1h-1zM19,23h1v1h-1zM20,23h1v1h-1zM23,23h1v1h-1zM24,23h1v1h-1zM25,23h1v1h-1zM30,23h1v1h-1zM31,23h1v1h-1zM32,23h1v1h-1zM33,23h1v1h-1zM34,23h1v1h-1zM35,23h1v1h-1zM39,23h1v1h-1zM40,23h1v1h-1zM1,24h1v1h-1zM2,24h1v1h-1zM6,24h1v1h-1zM7,24h1v1h-1zM12,24h1v1h-1zM15,24h1v1h-1zM17,24h1v1h-1zM19,24h1v1h-1zM22,24h1v1h-1zM25,24h1v1h-1zM26,24h1v1h-1zM27,24h1v1h-1zM29,24h1v1h-1zM35,24h1v1h-1zM38,24h1v1h-1zM40,24h1v1h-1zM2,25h1v1h-1zM3,25h1v1h-1zM4,25h1v1h-1zM5,25h1v1h-1zM7,25h1v1h-1zM9,25h1v1h-1zM13,25h1v1h-1zM18,25h1v1h-1zM19,25h1v1h-1zM20,25h1v1h-1zM21,25h1v1h-1zM24,25h1v1h-1zM26,25h1v1h-1zM27,25h1v1h-1zM28,25h1v1h-1zM31,25h1v1h-1zM32,25h1v1h-1zM34,25h1v1h-1zM37,25h1v1h-1zM38,25h1v1h-1zM40,25h1v1h-1zM0,26h1v1h-1zM1,26h1v1h-1zM3,26h1v1h-1zM4,26h1v1h-1zM6,26h1v1h-1zM8,26h1v1h-1zM9,26h1v1h-1zM10,26h1v1h-1zM13,26h1v1h-1zM16,26h1v1h-1zM19,26h1v1h-1zM20,26h1v1h-1zM24,26h1v1h-1zM29,26h1v1h-1zM30,26h1v1h-1zM31,26h1v1h-1zM32,26h1v1h-1zM34,26h1v1h-1zM35,26h1v1h-1zM37,26h1v1h-1zM39,26h1v1h-1zM40,26h1v1h-1zM1,27h1v1h-1zM2,27h1v1h-1zM7,27h1v1h-1zM8,27h1v1h-1zM9,27h1v1h-1zM10,27h1v1h-1zM11,27h1v1h-1zM12,27h1v1h-1zM15,27h1v1h-1zM20,27h1v1h-1zM21,27h1v1h-1zM22,27h1v1h-1zM28,27h1v1h-1zM31,27h1v1h-1zM32,27h1v1h-1zM33,27h1v1h-1zM34,27h1v1h-1zM37,27h1v1h-1zM0,28h1v1h-1zM1,28h1v1h-1zM3,28h1v1h-1zM5,28h1v1h-1zM6,28h1v1h-1zM7,28h1v1h-1zM9,28h1v1h-1zM10,28h1v1h-1zM12,28h1v1h-1zM13,28h1v1h-1zM14,28h1v1h-1zM16,28h1v1h-1zM18,28h1v1h-1zM19,28h1v1h-1zM20,28h1v1h-1zM22,28h1v1h-1zM23,28h1v1h-1zM24,28h1v1h-1zM25,28h1v1h-1zM30,28h1v1h-1zM31,28h1v1h-1zM33,28h1v1h-1zM36,28h1v1h-1zM37,28h1v1h-1zM39,28h1v1h-1zM40,28h1v1h-1zM2,29h1v1h-1zM3,29h1v1h-1zM8,29h1v1h-1zM12,29h1v1h-1zM16,29h1v1h-1zM17,29h1v1h-1zM18,29h1v1h-1zM19,29h1v1h-1zM20,29h1v1h-1zM21,29h1v1h-1zM25,29h1v1h-1zM27,29h1v1h-1zM30,29h1v1h-1zM32,29h1v1h-1zM35,29h1v1h-1zM37,29h1v1h-1zM0,30h1v1h-1zM4,30h1v1h-1zM5,30h1v1h-1zM6,30h1v1h-1zM7,30h1v1h-1zM11,30h1v1h-1zM12,30h1v1h-1zM17,30h1v1h-1zM19,30h1v1h-1zM21,30h1v1h-1zM22,30h1v1h-1zM26,30h1v1h-1zM27,30h1v1h-1zM30,30h1v1h-1zM32,30h1v1h-1zM33,30h1v1h-1zM34,30h1v1h-1zM35,30h1v1h-1zM37,30h1v1h-1zM38,30h1v1h-1zM4,31h1v1h-1zM5,31h1v1h-1zM8,31h1v1h-1zM11,31h1v1h-1zM12,31h1v1h-1zM14,31h1v1h-1zM15,31h1v1h-1zM17,31h1v1h-1zM19,31h1v1h-1zM22,31h1v1h-1zM23,31h1v1h-1zM26,31h1v1h-1zM27,31h1v1h-1zM29,31h1v1h-1zM30,31h1v1h-1zM31,31h1v1h-1zM34,31h1v1h-1zM36,31h1v1h-1zM37,31h1v1h-1zM38,31h1v1h-1zM39,31h1v1h-1zM1,32h1v1h-1zM2,32h1v1h-1zM3,32h1v1h-1zM6,32h1v1h-1zM8,32h1v1h-1zM9,32h1v1h-1zM10,32h1v1h-1zM13,32h1v1h-1zM14,32h1v1h-1zM15,32h1v1h-1zM16,32h1v1h-1zM17,32h1v1h-1zM21,32h1v1h-1zM24,32h1v1h-1zM26,32h1v1h-1zM28,32h1v1h-1zM29,32h1v1h-1zM30,32h1v1h-1zM32,32h1v1h-1zM33,32h1v1h-1zM34,32h1v1h-1zM35,32h1v1h-1zM36,32h1v1h-1zM37,32h1v1h-1zM38,32h1v1h-1zM39,32h1v1h-1zM40,32h1v1h-1zM8,33h1v1h-1zM10,33h1v1h-1zM15,33h1v1h-1zM16,33h1v1h-1zM17,33h1v1h-1zM19,33h1v1h-1zM20,33h1v1h-1zM21,33h1v1h-1zM22,33h1v1h-1zM25,33h1v1h-1zM28,33h1v1h-1zM30,33h1v1h-1zM31,33h1v1h-1zM32,33h1v1h-1zM36,33h1v1h-1zM37,33h1v1h-1zM39,33h1v1h-1zM40,33h1v1h-1zM0,34h1v1h-1zM1,34h1v1h-1zM2,34h1v1h-1zM3,34h1v1h-1zM4,34h1v1h-1zM5,34h1v1h-1zM6,34h1v1h-1zM8,34h1v1h-1zM11,34h1v1h-1zM13,34h1v1h-1zM14,34h1v1h-1zM15,34h1v1h-1zM18,34h1v1h-1zM20,34h1v1h-1zM23,34h1v1h-1zM24,34h1v1h-1zM25,34h1v1h-1zM28,34h1v1h-1zM29,34h1v1h-1zM31,34h1v1h-1zM32,34h1v1h-1zM34,34h1v1h-1zM36,34h1v1h-1zM38,34h1v1h-1zM39,34h1v1h-1zM0,35h1v1h-1zM6,35h1v1h-1zM8,35h1v1h-1zM9,35h1v1h-1zM14,35h1v1h-1zM17,35h1v1h-1zM19,35h1v1h-1zM24,35h1v1h-1zM28,35h1v1h-1zM30,35h1v1h-1zM32,35h1v1h-1zM36,35h1v1h-1zM40,35h1v1h-1zM0,36h1v1h-1zM2,36h1v1h-1zM3,36h1v1h-1zM4,36h1v1h-1zM6,36h1v1h-1zM9,36h1v1h-1zM11,36h1v1h-1zM15,36h1v1h-1zM21,36h1v1h-1zM23,36h1v1h-1zM24,36h1v1h-1zM26,36h1v1h-1zM28,36h1v1h-1zM29,36h1v1h-1zM32,36h1v1h-1zM33,36h1v1h-1zM34,36h1v1h-1zM35,36h1v1h-1zM36,36h1v1h-1zM38,36h1v1h-1zM0,37h1v1h-1zM2,37h1v1h-1zM3,37h1v1h-1zM4,37h1v1h-1zM6,37h1v1h-1zM8,37h1v1h-1zM10,37h1v1h-1zM11,37h1v1h-1zM13,37h1v1h-1zM19,37h1v1h-1zM21,37h1v1h-1zM22,37h1v1h-1zM25,37h1v1h-1zM26,37h1v1h-1zM27,37h1v1h-1zM28,37h1v1h-1zM30,37h1v1h-1zM31,37h1v1h-1zM36,37h1v1h-1zM39,37h1v1h-1zM0,38h1v1h-1zM2,38h1v1h-1zM3,38h1v1h-1zM4,38h1v1h-1zM6,38h1v1h-1zM8,38h1v1h-1zM9,38h1v1h-1zM11,38h1v1h-1zM12,38h1v1h-1zM14,38h1v1h-1zM15,38h1v1h-1zM19,38h1v1h-1zM20,38h1v1h-1zM21,38h1v1h-1zM29,38h1v1h-1zM30,38h1v1h-1zM31,38h1v1h-1zM35,38h1v1h-1zM39,38h1v1h-1zM40,38h1v1h-1zM0,39h1v1h-1zM6,39h1v1h-1zM9,39h1v1h-1zM13,39h1v1h-1zM14,39h1v1h-1zM15,39h1v1h-1zM17,39h1v1h-1zM19,39h1v1h-1zM20,39h1v1h-1zM21,39h1v1h-1zM22,39h1v1h-1zM26,39h1v1h-1zM30,39h1v1h-1zM32,39h1v1h-1zM33,39h1v1h-1zM36,39h1v1h-1zM37,39h1v1h-1zM39,39h1v1h-1zM0,40h1v1h-1zM1,40h1v1h-1zM2,40h1v1h-1zM3,40h1v1h-1zM4,40h1v1h-1zM5,40h1v1h-1zM6,40h1v1h-1zM8,40h1v1h-1zM10,40h1v1h-1zM11,40h1v1h-1zM12,40h1v1h-1zM13,40h1v1h-1zM14,40h1v1h-1zM15,40h1v1h-1zM18,40h1v1h-1zM19,40h1v1h-1zM20,40h1v1h-1zM21,40h1v1h-1zM22,40h1v1h-1zM23,40h1v1h-1zM25,40h1v1h-1zM30,40h1v1h-1zM31,40h1v1h-1zM32,40h1v1h-1zM33,40h1v1h-1zM34,40h1v1h-1zM39,40h1v1h-1z"/></svg>
+      <div>
+        <div class="label">Call, text, or scan</div>
+        <div class="phone">(301) 875-7182</div>
+        <div class="web">jungmarker.com · nickjungmarker@lnf.com</div>
+      </div>
+    </div>
+    <div class="fine">
+      <svg class="eho" viewBox="0 0 40 40" aria-label="Equal Housing Opportunity"><path d="M20 3 2 15v4h4v18h28V19h4v-4z" fill="none" stroke="#0A0A0A" stroke-width="3" stroke-linejoin="round"/><rect x="12" y="20" width="16" height="3.5" fill="#0A0A0A"/><rect x="12" y="27" width="16" height="3.5" fill="#0A0A0A"/></svg>
+      <span>Nick Jungmarker, REALTOR®, Maryland licensed. Long &amp; Foster Real Estate, [OFFICE ADDRESS] · Office: [OFFICE PHONE]. Equal Housing Opportunity. If your property is currently listed with a real estate broker, this is not intended as a solicitation. Home value estimates are not appraisals.</span>
+    </div>
+  </div>
+
+  <div class="mail">
+    <div class="return"><b>Nick Jungmarker, REALTOR®</b><br>Long &amp; Foster Real Estate<br>[OFFICE ADDRESS]<br>[CITY], MD [ZIP]</div>
+    <div class="indicia">PRSRT STD<br>ECRWSS<br>U.S. Postage<br>PAID<br>EDDM Retail</div>
+    <div class="addr">****ECRWSS****<br>LOCAL<br>POSTAL CUSTOMER</div>
+  </div>
+  <div class="guides"></div>
+</section>
+
+<script>
+  // Draw the rowhouse row: varied widths/heights, brick tones, cornices, windows, marble steps.
+  (function () {
+    const g = document.getElementById("rows");
+    const ns = "http://www.w3.org/2000/svg";
+    const fills = ["#2A1A1A", "#3A1F1F", "#241818", "#331C1C", "#2E2222"];
+    const el = (t, a) => { const e = document.createElementNS(ns, t); for (const k in a) e.setAttribute(k, a[k]); g.appendChild(e); };
+    let x = -10, i = 0;
+    while (x < 935) {
+      const w = 62 + (i * 37 % 22), h = 120 + (i * 53 % 34), top = 165 - h;
+      el("rect", { x, y: top, width: w, height: h, fill: fills[i % fills.length], stroke: "#0A0A0A", "stroke-width": 1.5 });
+      el("rect", { x: x - 2, y: top - 6, width: w + 4, height: 8, fill: i % 3 ? "#5A3A3A" : "#E8B800", opacity: i % 3 ? 1 : .85 });
+      const cols = 2, ww = 12, wh = 20, gap = (w - cols * ww) / (cols + 1);
+      for (let r = 0; r < 2; r++) for (let c = 0; c < cols; c++)
+        el("rect", { x: x + gap + c * (ww + gap), y: top + 16 + r * 34, width: ww, height: wh,
+                     fill: (i + r + c) % 4 === 0 ? "#E8B800" : "#151515", opacity: (i + r + c) % 4 === 0 ? .9 : 1 });
+      el("rect", { x: x + w / 2 - 8, y: 165 - 38, width: 16, height: 30, fill: "#D4163C" });
+      for (let s = 0; s < 3; s++) el("rect", { x: x + w / 2 - 12 - s * 3, y: 157 + s * 0 - (2 - s) * 4 + 4, width: 24 + s * 6, height: 4, fill: "#F2F0EB" });
+      x += w; i++;
+    }
+  })();
+</script>
+</body>
+</html>
