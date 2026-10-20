@@ -4,8 +4,10 @@
 <meta charset="utf-8">
 <title>Neighbor Postcard</title>
 <!--
-  Neighbor farming postcard: 6" x 9" (USPS EDDM / standard postcard size).
-  Page size includes 0.125" bleed on every side (9.25" x 6.25").
+  Neighbor farming postcard: 6.25" x 9" trim (smallest EDDM-eligible size: USPS
+  EDDM flats must be taller than 6.125"). Page size includes 0.125" bleed
+  on every side (9.25" x 6.5").
+  Front artwork is an original vector illustration (no third-party photo rights).
   Keep text inside the dashed safe area (0.25" in from trim).
   Page 1 = front, page 2 = back (mailing side).
   Colors, type, copy and assets match jungmarker.com
@@ -28,12 +30,12 @@
     --sky:       #C0D6DF;
     --bleed: 0.125in;
   }
-  @page { size: 9.25in 6.25in; margin: 0; }
+  @page { size: 9.25in 6.5in; margin: 0; }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   html, body { background: #888; }
   body { font-family: Outfit, system-ui, sans-serif; color: var(--charcoal);
          -webkit-print-color-adjust: exact; print-color-adjust: exact; -webkit-font-smoothing: antialiased; }
-  .page { width: 9.25in; height: 6.25in; position: relative; overflow: hidden;
+  .page { width: 9.25in; height: 6.5in; position: relative; overflow: hidden;
           margin: 0.4in auto; page-break-after: always; break-after: page; }
   .page:last-child { page-break-after: auto; break-after: auto; }
   @media print { html, body { background: none; } .page { margin: 0; } .guides { display: none; } }
@@ -49,9 +51,9 @@
 
   /* ── FRONT (mirrors the site hero) ─────────────────────── */
   .front { background: var(--navy); color: var(--white); }
-  .front .photo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 55%;
-                  filter: brightness(.45) contrast(1.05) saturate(.8); }
-  .front .shade { position: absolute; inset: 0; background: linear-gradient(to top, rgba(20,30,54,.92) 0%, rgba(20,30,54,.45) 50%, rgba(20,30,54,.15) 100%); }
+  .front .art { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+  .front .shade { position: absolute; inset: 0; background: linear-gradient(to right, rgba(20,30,54,.9) 0%, rgba(20,30,54,.72) 42%, rgba(20,30,54,0) 72%),
+                                                      linear-gradient(to top, rgba(20,30,54,.55) 0%, rgba(20,30,54,0) 30%); }
   .front .topline { position: absolute; left: 0; right: 0; top: 0; height: calc(var(--bleed) + 3px); background: var(--brand); }
   .front .inner { position: absolute; left: calc(var(--bleed) + 0.45in); right: calc(var(--bleed) + 0.45in);
                   top: calc(var(--bleed) + 0.4in); bottom: calc(var(--bleed) + 0.38in); display: flex; flex-direction: column; }
@@ -115,7 +117,22 @@
 
 <!-- ═══════════════ FRONT ═══════════════ -->
 <section class="page front">
-  <img class="photo" src="assets/skyline.jpg" alt="">
+  <!-- Original illustration: Baltimore skyline at dusk over a block of rowhouses -->
+  <svg class="art" viewBox="0 0 925 650" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+    <defs>
+      <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#141E36"/><stop offset=".38" stop-color="#1B2744"/>
+        <stop offset=".62" stop-color="#5B4560"/><stop offset=".78" stop-color="#DD6E42"/><stop offset="1" stop-color="#E8DAB2"/>
+      </linearGradient>
+      <radialGradient id="sun" cx=".5" cy=".5" r=".5">
+        <stop offset="0" stop-color="#E8DAB2" stop-opacity=".9"/><stop offset=".35" stop-color="#DD6E42" stop-opacity=".55"/><stop offset="1" stop-color="#DD6E42" stop-opacity="0"/>
+      </radialGradient>
+    </defs>
+    <rect width="925" height="650" fill="url(#sky)"/>
+    <circle cx="700" cy="455" r="260" fill="url(#sun)"/>
+    <g id="far" fill="#33406A"></g>
+    <g id="near"></g>
+  </svg>
   <div class="shade"></div>
   <div class="topline"></div>
   <div class="inner">
@@ -176,5 +193,54 @@
   </div>
   <div class="guides"></div>
 </section>
+<script>
+  // Draw the skyline (far layer) and a block of rowhouses (near layer).
+  (function () {
+    const ns = "http://www.w3.org/2000/svg";
+    const add = (g, t, a) => { const e = document.createElementNS(ns, t); for (const k in a) e.setAttribute(k, a[k]); g.appendChild(e); return e; };
+    const far = document.getElementById("far"), near = document.getElementById("near");
+    const base = 560;
+    // Downtown towers: [x, width, height, top style]
+    const towers = [[250,34,150],[288,22,110],[312,40,205,"slant"],[356,28,140],[388,46,175],[438,30,120],
+                    [470,20,250,"clock"],[494,52,190],[550,36,160,"pyramid"],[590,26,130],[620,44,215],[668,30,150],
+                    [702,40,120],[748,24,95],[776,50,140],[830,30,105],[180,40,95],[140,30,70],[870,40,80]];
+    for (const [x,w,h,top] of towers) {
+      add(far, "rect", { x, y: base - h, width: w, height: h });
+      if (top === "pyramid") add(far, "polygon", { points: `${x},${base-h} ${x+w/2},${base-h-38} ${x+w},${base-h}` });
+      if (top === "slant") add(far, "polygon", { points: `${x},${base-h} ${x+w},${base-h-22} ${x+w},${base-h}` });
+      if (top === "clock") { // Bromo-Seltzer-style clock tower
+        add(far, "rect", { x: x-3, y: base-h-14, width: w+6, height: 14 });
+        add(far, "circle", { cx: x+w/2, cy: base-h-28, r: 7, fill: "#33406A" });
+        add(far, "rect", { x: x+2, y: base-h-36, width: w-4, height: 14 });
+        add(far, "polygon", { points: `${x+1},${base-h-36} ${x+w/2},${base-h-58} ${x+w-1},${base-h-36}` });
+        add(far, "circle", { cx: x+w/2, cy: base-h-27, r: 5, fill: "#E8DAB2", opacity: .85 });
+      }
+      for (let wy = base - h + 12; wy < base - 8; wy += 16)
+        for (let wx = x + 5; wx < x + w - 5; wx += 9)
+          if ((wx * 7 + wy * 3) % 11 === 0) add(far, "rect", { x: wx, y: wy, width: 3, height: 5, fill: "#E8DAB2", opacity: .6 });
+    }
+    add(far, "rect", { x: 0, y: base - 4, width: 925, height: 100 });
+    // Rowhouses
+    const fronts = ["#1F2B4A", "#25335A", "#1B2744", "#2A3A63"];
+    let x = -12, i = 0;
+    const ground = 650;
+    while (x < 940) {
+      const w = 58 + (i * 37 % 20), h = 150 + (i * 29 % 26), top = ground - h;
+      add(near, "rect", { x, y: top, width: w, height: h, fill: fronts[i % 4] });
+      add(near, "rect", { x: x - 2, y: top - 7, width: w + 4, height: 9, fill: "#141E36" });
+      for (let b = 0; b < 4; b++) add(near, "rect", { x: x + 4 + b * (w - 12) / 3, y: top + 2, width: 4, height: 5, fill: "#0E1528" });
+      const ww = 12, wh = 22, gap = (w - 2 * ww) / 3;
+      for (let r = 0; r < 2; r++) for (let c = 0; c < 2; c++) {
+        const lit = (i * 3 + r * 5 + c) % 4 === 0;
+        add(near, "rect", { x: x + gap + c * (ww + gap), y: top + 18 + r * 40, width: ww, height: wh, fill: lit ? "#E8DAB2" : "#0A1022", opacity: lit ? .85 : 1 });
+      }
+      const dx = (i % 2 ? x + w - gap - 14 : x + gap);
+      add(near, "rect", { x: dx, y: ground - 46, width: 14, height: 32, fill: "#0A1022" });
+      add(near, "rect", { x: dx + 2, y: ground - 44, width: 10, height: 5, fill: "#DD6E42", opacity: .7 });
+      for (let s = 0; s < 3; s++) add(near, "rect", { x: dx - 4 - s * 2, y: ground - 14 + s * 4, width: 22 + s * 4, height: 4, fill: "#EAEAEA", opacity: .9 });
+      x += w; i++;
+    }
+  })();
+</script>
 </body>
 </html>
