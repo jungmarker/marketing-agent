@@ -1,0 +1,35 @@
+# YouTube handles whose Shorts tab was readable on 2026-11-12. One per line.
+# direct: local / rowhouse-city agents
+LivingInBmore
+MovingToMaryland
+LivingInDC
+LivingInPhiladelphia
+ChrisColgan
+ChastinJMiles
+# direct: consumer-facing agents elsewhere
+KenPozek
+AndrewFinney
+NicoleNark
+KatiSpaniak
+KarinCarr
+JebSmith
+JasonCassity
+CodyTuma
+ChristopheChoo
+WinTheHouseYouLove
+BenLalez
+MichaelBordenaro
+fmsmith319
+# spanish-language
+PreguntaleAlLender
+ViviendoEnFlorida
+ViviendoEnOrlando
+# adjacent: lenders, inspectors
+ShaheedahHill
+JenniferBeeston
+cyfyhomeinspections
+InspectorAJ
+# outsized: format only
+RyanSerhant
+EnesYilmazer
+LoidaVelasquez
