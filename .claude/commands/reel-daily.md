@@ -16,6 +16,17 @@ $ARGUMENTS
   (the ig-* skills read from there; the repo copy is the one that persists).
 - If `output/reels/daily/<date>/brief.md` already exists, report that and stop.
 
+## 0.5 Check the Reel Room first
+
+Read `.claude/commands/reel-room.md` and do its "Each time this runs" steps:
+answer Nick's notes, pull and review new clips, cut if he marked it ready.
+
+Then decide whether today gets a new brief:
+- The app's current reel has clips and is not `approved`: he is mid-shoot. Do
+  not replace it. Skip steps 4 to 6, still do steps 1 to 3, and report.
+- Otherwise write today's brief as below. If an idea in the app has
+  `status: "next"`, that is today's topic.
+
 ## 1. Scout (reel-scout agent, Haiku)
 
 Read `.claude/instagram/accounts.txt`. Take today's slice: sort the handles,
@@ -76,12 +87,19 @@ Fallback: general-purpose agent with `model: opus` and the text of
 - `git add -A && git commit` with a one-line message, then
   `git push -u origin claude/dreamy-allen-ihb240`. Never commit video files.
 
+## 6.5 Post it to the Reel Room
+
+`python3 tools/reel_room_seed.py <date> --out <scratch dir>` and send its
+`batch.json` as one `ArtifactData` batch to
+https://claude.ai/artifact/3D41X8Zzymk61zSMCMAc1K, then add a note from
+`claude` saying the shot list is up. Nick works from the app, not from files.
+
 ## 7. Report to Nick
 
 Short, in this order: today's reel in one line with the spoken hook; how long
 the shoot takes and where; the clip list (ids and lines) and b-roll list; what
 he must verify before recording; anything new in the data (new outliers,
-accounts added); anything that failed. Then the path to `brief.md`.
+accounts added); anything that failed. Then the Reel Room link.
 
 ## Never
 

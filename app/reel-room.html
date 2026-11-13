@@ -1,0 +1,436 @@
+<title>Reel Room</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&family=JetBrains+Mono:wght@500&display=swap">
+<style>
+/* Layout: one phone-width column. A slate-style header with three tabs, then a stack of shot cards, each a clip slot. */
+:root {
+  --bg: #0e0c0c; --surface: #191616; --raised: #221e1e; --line: #322c2c;
+  --fg: #f4efec; --muted: #a59c98; --accent: #d4163c; --accent-fg: #ffffff;
+  --gold: #e8b800; --ok: #4fc08a; --warn: #f0a23b;
+  --card-bg: #0a0a0a; --card-fg: #ffffff;
+  --display: "Space Grotesk", "Inter", system-ui, sans-serif;
+  --body: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  color-scheme: dark;
+}
+@media (prefers-color-scheme: light) { :root:not([data-theme="dark"]) {
+  --bg: #f5f2f0; --surface: #ffffff; --raised: #f0ebe8; --line: #e0d9d5;
+  --fg: #181313; --muted: #6c6360; --accent: #c3112f; --accent-fg: #ffffff;
+  --gold: #8a6c00; --ok: #1d7a4f; --warn: #a35c00;
+  --card-bg: #0a0a0a; --card-fg: #ffffff; color-scheme: light } }
+:root[data-theme="light"] {
+  --bg: #f5f2f0; --surface: #ffffff; --raised: #f0ebe8; --line: #e0d9d5;
+  --fg: #181313; --muted: #6c6360; --accent: #c3112f; --accent-fg: #ffffff;
+  --gold: #8a6c00; --ok: #1d7a4f; --warn: #a35c00;
+  --card-bg: #0a0a0a; --card-fg: #ffffff; color-scheme: light }
+
+* { box-sizing: border-box }
+[hidden] { display: none !important }
+body { background: var(--bg); color: var(--fg); font: 15px/1.5 var(--body); }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--bg) }
+.wrap { max-width: 640px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); padding-block: 0 48px }
+button, input, textarea, select { font: inherit; color: inherit }
+button { cursor: pointer }
+:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px }
+
+header.top { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: var(--bg); border-bottom: 1px solid var(--line); margin-inline: calc(-1 * max(16px, env(safe-area-inset-left, 0px))); padding: 12px max(16px, env(safe-area-inset-left, 0px)) 0 }
+.slate { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap }
+.slate h1 { font: 700 20px/1.2 var(--display); margin: 0; text-wrap: balance; min-width: 0; flex: 1 1 200px }
+.slate .date { font: 500 12px var(--mono); color: var(--muted); letter-spacing: .04em }
+.meter { display: flex; align-items: center; gap: 10px; margin-top: 8px; font: 500 12px var(--mono); color: var(--muted) }
+.bar { flex: 1; height: 6px; background: var(--raised); border-radius: 3px; overflow: hidden }
+.bar i { display: block; height: 100%; width: 0; background: var(--accent); transition: width .3s }
+nav.tabs { display: flex; gap: 4px; margin-top: 10px }
+nav.tabs a { flex: 1; text-align: center; padding: 10px 4px; text-decoration: none; color: var(--muted); font: 600 13px var(--body); letter-spacing: .06em; text-transform: uppercase; border-bottom: 2px solid transparent }
+nav.tabs a[aria-current="page"] { color: var(--fg); border-bottom-color: var(--accent) }
+
+section.view { display: flex; flex-direction: column; gap: 14px; padding-top: 16px }
+.lead { color: var(--muted); margin: 0; max-width: 60ch }
+.notice { background: var(--surface); border: 1px solid var(--line); border-left: 3px solid var(--gold); padding: 12px 14px; border-radius: 6px }
+.notice b { font-weight: 600 }
+.empty { text-align: center; color: var(--muted); padding: 40px 12px; border: 1px dashed var(--line); border-radius: 8px }
+
+.beat { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 14px; display: flex; flex-direction: column; gap: 10px; min-width: 0 }
+.beat-head { display: flex; align-items: center; gap: 8px }
+.id { font: 500 12px var(--mono); background: var(--raised); padding: 3px 7px; border-radius: 4px; letter-spacing: .04em }
+.state { margin-left: auto; font: 600 11px var(--body); letter-spacing: .08em; text-transform: uppercase; color: var(--muted) }
+.state[data-s="up"] { color: var(--gold) } .state[data-s="keep"] { color: var(--ok) } .state[data-s="retake"] { color: var(--warn) }
+.say { font: 500 19px/1.3 var(--display); margin: 0; text-wrap: balance }
+.screen { align-self: flex-start; background: var(--card-bg); color: var(--card-fg); font: 700 13px/1.25 var(--body); padding: 6px 10px; letter-spacing: .02em; max-width: 100% }
+.screen.hook { background: var(--accent); color: var(--accent-fg) }
+dl.dir { display: grid; grid-template-columns: 76px 1fr; gap: 4px 10px; margin: 0; font-size: 14px }
+dl.dir dt { color: var(--muted); font-size: 11px; letter-spacing: .08em; text-transform: uppercase; padding-top: 3px }
+dl.dir dd { margin: 0; min-width: 0 }
+.cut { border-top: 1px dashed var(--line); padding-top: 10px; font-size: 14px }
+.cut .lbl { color: var(--gold); font: 600 11px var(--body); letter-spacing: .08em; text-transform: uppercase; display: block }
+.actions { display: flex; flex-wrap: wrap; gap: 8px }
+.btn { border: 1px solid var(--line); background: var(--raised); border-radius: 6px; padding: 10px 14px; font-weight: 600; font-size: 14px; display: inline-flex; align-items: center; justify-content: center; min-height: 44px }
+.btn.primary { background: var(--accent); border-color: var(--accent); color: var(--accent-fg) }
+.btn.quiet { background: transparent; color: var(--muted); font-weight: 500 }
+.btn[disabled] { opacity: .5; cursor: default }
+label.btn { cursor: pointer } label.btn input { position: absolute; width: 1px; height: 1px; opacity: 0 }
+.clip { background: var(--raised); border-radius: 6px; padding: 10px; display: flex; flex-direction: column; gap: 8px }
+.clip video { width: 100%; max-height: 320px; background: #000; border-radius: 4px }
+.clip .meta { display: flex; gap: 8px; align-items: center; font: 500 12px var(--mono); color: var(--muted); flex-wrap: wrap }
+.clip .meta .tag { color: var(--fg) }
+.review { font-size: 14px; border-left: 2px solid var(--ok); padding-left: 10px }
+.review[data-s="retake"] { border-left-color: var(--warn) }
+.msg { font-size: 14px; padding: 8px 10px; border-radius: 6px; background: var(--raised); overflow-wrap: anywhere }
+.msg .who { font: 600 11px var(--body); letter-spacing: .08em; text-transform: uppercase; color: var(--muted); display: block }
+.msg[data-from="claude"] .who { color: var(--gold) }
+.row { display: flex; gap: 8px } .row > input, .row > textarea { flex: 1; min-width: 0 }
+input[type="text"], textarea { background: var(--bg); border: 1px solid var(--line); border-radius: 6px; padding: 10px 12px; width: 100% }
+textarea { resize: vertical; min-height: 72px }
+.err { color: var(--warn); font-size: 14px }
+h2 { font: 700 13px var(--body); letter-spacing: .1em; text-transform: uppercase; color: var(--muted); margin: 10px 0 0 }
+.panel { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 14px; display: flex; flex-direction: column; gap: 10px; min-width: 0 }
+.panel video { width: 100%; max-height: 70vh; background: #000; border-radius: 4px }
+pre.caption { white-space: pre-wrap; overflow-wrap: anywhere; font: 14px/1.5 var(--body); margin: 0; user-select: all }
+.check { display: flex; gap: 10px; align-items: flex-start } .check input { width: 20px; height: 20px; margin-top: 2px; accent-color: var(--accent) }
+.check small { display: block; color: var(--muted) }
+.idea .topic { font: 500 16px/1.35 var(--display); margin: 0 }
+.idea .ev { color: var(--muted); font-size: 13px; margin: 0 }
+.pill { font: 600 11px var(--body); letter-spacing: .08em; text-transform: uppercase; color: var(--gold) }
+ol.plain { margin: 0; padding-left: 20px } ol.plain li { margin-bottom: 4px }
+@media (prefers-reduced-motion: reduce) { .bar i { transition: none } }
+</style>
+
+<div class="wrap">
+  <header class="top">
+    <div class="slate">
+      <h1 id="reel-title">Reel Room</h1>
+      <span class="date" id="reel-date"></span>
+    </div>
+    <div class="meter"><span id="meter-text">Loading</span><div class="bar"><i id="meter-bar"></i></div></div>
+    <nav class="tabs" aria-label="Sections">
+      <a href="#shoot" id="tab-shoot">Shoot</a>
+      <a href="#edit" id="tab-edit">Edit</a>
+      <a href="#ideas" id="tab-ideas">Ideas</a>
+    </nav>
+  </header>
+
+  <section class="view" id="view-shoot">
+    <div class="empty" id="shoot-empty">Today's shot list appears here once Claude has posted it.</div>
+  </section>
+  <section class="view" id="view-edit" hidden></section>
+  <section class="view" id="view-ideas" hidden></section>
+</div>
+
+<script>
+(function () {
+  "use strict";
+  var LIMIT = 20 * 1024 * 1024;
+  var S = { db: null, assets: null, reelId: null, reel: null, beats: [], clips: [], notes: [], ideas: [],
+            busy: {}, err: {}, editing: null, loaded: false, failed: null, unsub: [] };
+
+  function el(tag, attrs, kids) {
+    var n = document.createElement(tag);
+    if (attrs) Object.keys(attrs).forEach(function (k) {
+      var v = attrs[k];
+      if (v == null || v === false) return;
+      if (k === "text") n.textContent = v;
+      else if (k === "on") Object.keys(v).forEach(function (e) { n.addEventListener(e, v[e]); });
+      else if (k === "data") Object.keys(v).forEach(function (d) { n.dataset[d] = v[d]; });
+      else if (k in n && k !== "list") { try { n[k] = v; } catch (_) { n.setAttribute(k, v); } }
+      else n.setAttribute(k, v);
+    });
+    (kids || []).forEach(function (c) { if (c) n.appendChild(typeof c === "string" ? document.createTextNode(c) : c); });
+    return n;
+  }
+  function mb(n) { return (n / 1048576).toFixed(1) + " MB"; }
+  function when(ms) { try { return new Date(ms).toLocaleString([], { month: "short", day: "numeric", hour: "numeric", minute: "2-digit" }); } catch (_) { return ""; } }
+  function rows(snap) { return snap.docs.map(function (d) { var o = d.data() || {}; o._id = d.id; return o; }); }
+  function base() { return "reels/" + S.reelId; }
+
+  /* ---------- data ---------- */
+  function subscribe() {
+    S.unsub.forEach(function (u) { try { u(); } catch (_) {} });
+    S.unsub = [];
+    var db = S.db, fail = function (e) { S.failed = (e && e.code) || "unavailable"; render(); };
+    S.unsub.push(db.doc(base()).onSnapshot(function (d) { S.reel = d.exists ? d.data() : null; S.loaded = true; render(); }, fail));
+    S.unsub.push(db.collection(base() + "/beats").onSnapshot(function (q) { S.beats = rows(q).sort(function (a, b) { return a._id < b._id ? -1 : 1; }); render(); }, fail));
+    S.unsub.push(db.collection(base() + "/clips").onSnapshot(function (q) { S.clips = rows(q).sort(function (a, b) { return (a.at || 0) - (b.at || 0); }); render(); }, fail));
+    S.unsub.push(db.collection(base() + "/notes").onSnapshot(function (q) { S.notes = rows(q).sort(function (a, b) { return (a.at || 0) - (b.at || 0); }); render(); }, fail));
+  }
+  function start(db, assets) {
+    S.db = db; S.assets = assets;
+    if (!db) { S.failed = "signed_out"; S.loaded = true; render(); return; }
+    var timer = setTimeout(function () { if (!S.loaded) { S.failed = "timeout"; render(); } }, 10000);
+    db.doc("meta/current").onSnapshot(function (d) {
+      clearTimeout(timer);
+      var id = d.exists ? (d.data() || {}).reel : null;
+      if (!id) { S.loaded = true; render(); return; }
+      if (id !== S.reelId) { S.reelId = id; S.reel = null; S.beats = []; S.clips = []; S.notes = []; subscribe(); }
+    }, function (e) { clearTimeout(timer); S.failed = (e && e.code) || "unavailable"; S.loaded = true; render(); });
+    db.collection("ideas").onSnapshot(function (q) { S.ideas = rows(q).sort(function (a, b) { return (a.n || 99) - (b.n || 99); }); render(); }, function () {});
+  }
+
+  /* ---------- actions ---------- */
+  function toMp4(file) {
+    // Phones record QuickTime .mov. Same container family as MP4: relabel the brand so it stores as video/mp4.
+    return file.slice(0, 12).arrayBuffer().then(function (buf) {
+      var b = new Uint8Array(buf);
+      var isFtyp = b.length === 12 && b[4] === 0x66 && b[5] === 0x74 && b[6] === 0x79 && b[7] === 0x70;
+      if (isFtyp && b[8] === 0x71 && b[9] === 0x74) { b[8] = 0x6d; b[9] = 0x70; b[10] = 0x34; b[11] = 0x32; }
+      return new Blob([b, file.slice(12)], { type: "video/mp4" });
+    });
+  }
+  function upload(beatId, kind, file) {
+    var key = beatId + kind;
+    if (!file) return;
+    S.err[key] = null;
+    if (file.size > LIMIT) {
+      S.err[key] = "That clip is " + mb(file.size) + " and the limit is 20 MB. Set the camera to 1080p at 30 and keep each clip under about 10 seconds, then record it again.";
+      return render();
+    }
+    S.busy[key] = "Uploading " + mb(file.size); render();
+    var isWebm = /webm/.test(file.type);
+    (isWebm ? Promise.resolve(file) : toMp4(file)).then(function (blob) {
+      return S.assets.upload(blob, { type: isWebm ? "video/webm" : "video/mp4" });
+    }).then(function (r) {
+      return S.db.collection(base() + "/clips").add({ beat: beatId, kind: kind, asset: r.id, size: r.sizeBytes, name: file.name || "", at: Date.now(), status: "new" });
+    }).then(function () { S.busy[key] = null; render(); }, function (e) {
+      S.busy[key] = null;
+      var c = e && e.code;
+      S.err[key] = c === "too_large" ? "That clip is over the 20 MB limit. Record it shorter or at 1080p."
+        : c === "unsupported_type" ? "That file type was refused. Record with the phone's normal camera (MP4 or MOV)."
+        : c === "quota_or_state" ? "Storage for this page is full. Tell Claude in chat and it will clear the clips it already has."
+        : c === "not_granted" ? "This view is not allowed to upload."
+        : "Upload failed (" + (c || "unknown") + "). Check the connection and try again.";
+      render();
+    });
+  }
+  function removeClip(c) {
+    S.db.doc(base() + "/clips/" + c._id).delete().then(function () {
+      if (S.assets && c.asset) S.assets.delete(c.asset).catch(function () {});
+    }, function () {});
+  }
+  function addNote(text, beat) {
+    text = (text || "").trim();
+    if (!text) return Promise.resolve();
+    var doc = { from: "nick", text: text.slice(0, 4000), at: Date.now() };
+    if (beat) doc.beat = beat;
+    return S.db.collection(base() + "/notes").add(doc);
+  }
+  function saveLine(beat, text) {
+    text = (text || "").trim();
+    S.editing = null;
+    if (!text || text === beat.say) return render();
+    S.db.doc(base() + "/beats/" + beat._id).update({ say: text, say_before: beat.say || "", edited_by: "nick", edited_at: Date.now() })
+      .then(function () { return addNote("I changed the line to: " + text, beat._id); }, function () {});
+    render();
+  }
+  function setStatus(s) { S.db.doc(base()).update({ status: s, status_at: Date.now() }).catch(function () {}); }
+  function toggleVerify(i) {
+    var v = (S.reel.verify || []).map(function (x) { return Object.assign({}, x); });
+    v[i].done = !v[i].done;
+    S.db.doc(base()).update({ verify: v }).catch(function () {});
+  }
+  function pickIdea(idea) {
+    var prev = S.ideas.filter(function (i) { return i.status === "next" && i._id !== idea._id; });
+    prev.forEach(function (i) { S.db.doc("ideas/" + i._id).update({ status: "queued" }).catch(function () {}); });
+    S.db.doc("ideas/" + idea._id).update({ status: idea.status === "next" ? "queued" : "next", picked_at: Date.now() }).catch(function () {});
+  }
+  function addIdea(text) {
+    text = (text || "").trim();
+    if (!text) return;
+    S.db.collection("ideas").add({ topic: text.slice(0, 300), from: "nick", status: "queued", n: 0, at: Date.now() }).catch(function () {});
+  }
+  function copy(text, btn) {
+    var done = function () { btn.textContent = "Copied"; setTimeout(function () { btn.textContent = "Copy caption"; }, 1500); };
+    try { navigator.clipboard.writeText(text).then(done, function () { btn.textContent = "Select the text and copy"; }); }
+    catch (_) { btn.textContent = "Select the text and copy"; }
+  }
+
+  /* ---------- render ---------- */
+  function clipsFor(id, kind) { return S.clips.filter(function (c) { return c.beat === id && c.kind === kind; }); }
+  function beatState(b) {
+    var a = clipsFor(b._id, "aroll"), all = a.concat(clipsFor(b._id, "broll"));
+    if (!a.length) return ["", "To record"];
+    if (all.some(function (c) { return c.status === "retake"; }) && !a.some(function (c) { return c.status === "keep"; })) return ["retake", "Retake"];
+    if (a.some(function (c) { return c.status === "keep"; })) return ["keep", "Good"];
+    return ["up", "Sent"];
+  }
+  function picker(label, beatId, kind, primary, capture) {
+    var key = beatId + kind;
+    var input = el("input", { type: "file", accept: "video/*", id: "f-" + key + (capture ? "-cam" : "-lib"),
+      on: { change: function (e) { var f = e.target.files && e.target.files[0]; e.target.value = ""; upload(beatId, kind, f); } } });
+    if (capture) input.setAttribute("capture", "environment");
+    return el("label", { className: "btn" + (primary ? " primary" : "") }, [label, input]);
+  }
+  function clipNode(c) {
+    var kids = [
+      el("video", { controls: true, preload: "metadata", playsInline: true, src: "/_blob/" + c.asset }),
+      el("div", { className: "meta" }, [
+        el("span", { className: "tag", text: c.kind === "broll" ? "cutaway" : "take" }),
+        el("span", { text: mb(c.size || 0) }), el("span", { text: when(c.at) }),
+        S.assets ? el("button", { className: "btn quiet", text: "Remove", style: "min-height:32px;padding:4px 10px;margin-left:auto", on: { click: function () { removeClip(c); } } }) : null
+      ])
+    ];
+    if (c.note) kids.push(el("div", { className: "review", data: { s: c.status || "" } }, [
+      el("span", { className: "pill", text: c.status === "retake" ? "Claude: retake" : "Claude: keep" }), el("div", { text: c.note }) ]));
+    return el("div", { className: "clip" }, kids);
+  }
+  function beatNode(b, i) {
+    var st = beatState(b), key = b._id;
+    var kids = [ el("div", { className: "beat-head" }, [ el("span", { className: "id", text: b._id }),
+      el("span", { className: "state", data: { s: st[0] }, text: st[1] }) ]) ];
+    if (S.editing === key) {
+      var ta = el("textarea", { id: "edit-" + key, value: b.say || "" });
+      kids.push(ta, el("div", { className: "actions" }, [
+        el("button", { className: "btn primary", text: "Save line", on: { click: function () { saveLine(b, ta.value); } } }),
+        el("button", { className: "btn quiet", text: "Cancel", on: { click: function () { S.editing = null; render(); } } }) ]));
+    } else {
+      kids.push(el("p", { className: "say", text: b.say ? "“" + b.say + "”" : "No line. Cutaway only." }));
+    }
+    if (b.screen) kids.push(el("div", { className: "screen" + (i === 0 ? " hook" : ""), text: b.screen }));
+    var dl = el("dl", { className: "dir" });
+    [["Do", b.shot], ["Framing", b.framing], ["Angle", b.angle], ["Camera", b.move], ["Where", b.location]].forEach(function (p) {
+      if (p[1] && p[1] !== "n/a") { dl.appendChild(el("dt", { text: p[0] })); dl.appendChild(el("dd", { text: p[1] })); }
+    });
+    kids.push(dl);
+    clipsFor(key, "aroll").forEach(function (c) { kids.push(clipNode(c)); });
+    if (S.assets) {
+      kids.push(el("div", { className: "actions" }, [
+        S.busy[key + "aroll"] ? el("span", { className: "btn", text: S.busy[key + "aroll"] + "…" }) : picker(clipsFor(key, "aroll").length ? "Record another take" : "Record this line", key, "aroll", !clipsFor(key, "aroll").length, true),
+        S.busy[key + "aroll"] ? null : picker("Choose from library", key, "aroll", false, false),
+        S.editing === key ? null : el("button", { className: "btn quiet", text: "Edit line", on: { click: function () { S.editing = key; render(); } } }) ]));
+      if (S.err[key + "aroll"]) kids.push(el("div", { className: "err", text: S.err[key + "aroll"] }));
+    }
+    if (b.broll) {
+      var cut = el("div", { className: "cut" }, [ el("span", { className: "lbl", text: "Cutaway to record" }), el("div", { text: b.broll }) ]);
+      kids.push(cut);
+      clipsFor(key, "broll").forEach(function (c) { kids.push(clipNode(c)); });
+      if (S.assets) {
+        kids.push(el("div", { className: "actions" }, [
+          S.busy[key + "broll"] ? el("span", { className: "btn", text: S.busy[key + "broll"] + "…" }) : picker("Record cutaway", key, "broll", false, true),
+          S.busy[key + "broll"] ? null : picker("Choose from library", key, "broll", false, false) ]));
+        if (S.err[key + "broll"]) kids.push(el("div", { className: "err", text: S.err[key + "broll"] }));
+      }
+    }
+    S.notes.filter(function (n) { return n.beat === key; }).forEach(function (n) { kids.push(msgNode(n)); });
+    var inp = el("input", { type: "text", id: "note-" + key, placeholder: "Note to Claude about this shot" });
+    kids.push(el("div", { className: "row" }, [ inp, el("button", { className: "btn", text: "Send", on: { click: function () { var v = inp.value; inp.value = ""; addNote(v, key); } } }) ]));
+    return el("article", { className: "beat", id: "beat-" + key }, kids);
+  }
+  function msgNode(n) {
+    return el("div", { className: "msg", data: { from: n.from === "claude" ? "claude" : "nick" } }, [
+      el("span", { className: "who", text: (n.from === "claude" ? "Claude" : "You") + (n.beat ? " · " + n.beat : "") + " · " + when(n.at) }),
+      el("div", { text: n.text || "" }) ]);
+  }
+
+  function renderShoot(v) {
+    if (S.failed && !S.reel) { v.appendChild(el("div", { className: "empty", text: S.failed === "signed_out" ? "Sign in to Claude to load the shot list." : "The shot list did not load. Reopen the page to try again." })); return; }
+    if (!S.loaded) { v.appendChild(el("div", { className: "empty", text: "Loading today's shot list…" })); return; }
+    if (!S.reel || !S.beats.length) { v.appendChild(el("div", { className: "empty", text: "Today's shot list appears here once Claude has posted it." })); return; }
+    var r = S.reel;
+    if (r.why) v.appendChild(el("p", { className: "lead", text: r.why }));
+    var open = (r.verify || []).filter(function (x) { return !x.done; }).length;
+    if (open) v.appendChild(el("div", { className: "notice" }, [ el("b", { text: open + " thing" + (open > 1 ? "s" : "") + " to confirm before you record. " }), "See the checklist under Edit." ]));
+    if (!S.assets) v.appendChild(el("div", { className: "notice", text: "Uploading is only available to the page's owner and editors, signed in." }));
+    if (r.setup && r.setup.length) {
+      var ol = el("ol", { className: "plain" }); r.setup.forEach(function (t) { ol.appendChild(el("li", { text: t })); });
+      v.appendChild(el("details", { className: "panel" }, [ el("summary", { text: "Phone settings and shoot order" }), ol ]));
+    }
+    S.beats.forEach(function (b, i) { v.appendChild(beatNode(b, i)); });
+    var have = S.beats.filter(function (b) { return clipsFor(b._id, "aroll").length; }).length;
+    var ready = r.status === "ready_to_edit";
+    v.appendChild(el("div", { className: "panel" }, [
+      el("div", { text: ready ? "Marked ready. Tell Claude in chat to edit it; it also checks every morning." : have + " of " + S.beats.length + " lines recorded. When you have what you can get, mark it ready." }),
+      el("button", { className: "btn primary", text: ready ? "Not ready yet, keep shooting" : "Ready for Claude to edit", disabled: !have,
+        on: { click: function () { setStatus(ready ? "shooting" : "ready_to_edit"); } } }) ]));
+  }
+  function renderEdit(v) {
+    var r = S.reel;
+    if (!r) { v.appendChild(el("div", { className: "empty", text: "Nothing to edit yet. The cut shows up here after you send clips." })); return; }
+    v.appendChild(el("h2", { text: "The cut" }));
+    if (r.final && r.final.asset) {
+      var p = el("div", { className: "panel" }, [ el("video", { controls: true, preload: "metadata", playsInline: true, src: "/_blob/" + r.final.asset }) ]);
+      if (r.final.note) p.appendChild(el("div", { text: r.final.note }));
+      if (r.qc && r.qc.verdict) p.appendChild(el("div", { className: "pill", text: "Check: " + r.qc.verdict }));
+      (r.qc && r.qc.flags || []).forEach(function (f) { p.appendChild(el("div", { className: "err", text: f })); });
+      p.appendChild(el("div", { className: "actions" }, [
+        el("button", { className: "btn primary", text: r.status === "approved" ? "Approved" : "Approve this cut", on: { click: function () { setStatus("approved"); } } }),
+        el("button", { className: "btn", text: "Ask for changes", on: { click: function () { setStatus("changes"); var t = document.getElementById("note-all"); if (t) t.focus(); } } }) ]));
+      v.appendChild(p);
+    } else {
+      v.appendChild(el("div", { className: "empty", text: "No cut yet. Claude builds one from your clips and posts it here." }));
+    }
+    if (r.verify && r.verify.length) {
+      v.appendChild(el("h2", { text: "Confirm before recording" }));
+      var box = el("div", { className: "panel" });
+      r.verify.forEach(function (x, i) {
+        box.appendChild(el("label", { className: "check" }, [
+          el("input", { type: "checkbox", id: "verify-" + i, checked: !!x.done, on: { change: function () { toggleVerify(i); } } }),
+          el("span", {}, [ x.item || "", el("small", { text: x.from || "" }) ]) ]));
+      });
+      v.appendChild(box);
+    }
+    if (r.caption) {
+      v.appendChild(el("h2", { text: "Caption" }));
+      var btn = el("button", { className: "btn", text: "Copy caption" });
+      btn.addEventListener("click", function () { copy(r.caption, btn); });
+      v.appendChild(el("div", { className: "panel" }, [ el("pre", { className: "caption", text: r.caption }), btn ]));
+    }
+    v.appendChild(el("h2", { text: "Notes between us" }));
+    var thread = el("div", { className: "panel" });
+    if (!S.notes.length) thread.appendChild(el("div", { className: "lead", text: "No notes yet." }));
+    S.notes.forEach(function (n) { thread.appendChild(msgNode(n)); });
+    var ta = el("textarea", { id: "note-all", placeholder: "Tell Claude what to change: a line, the order, the text on screen, the pace" });
+    thread.appendChild(ta);
+    thread.appendChild(el("button", { className: "btn primary", text: "Send note", on: { click: function () { var t = ta.value; ta.value = ""; addNote(t); } } }));
+    v.appendChild(thread);
+  }
+  function renderIdeas(v) {
+    v.appendChild(el("p", { className: "lead", text: "What gets written next. Pick one and tomorrow's shot list is built from it. Add your own and Claude works it into a script." }));
+    var inp = el("input", { type: "text", id: "idea-new", placeholder: "An idea, a question a client asked, a listing" });
+    v.appendChild(el("div", { className: "row" }, [ inp, el("button", { className: "btn primary", text: "Add", on: { click: function () { var t = inp.value; inp.value = ""; addIdea(t); } } }) ]));
+    var open = S.ideas.filter(function (i) { return i.status !== "done"; });
+    if (!open.length) { v.appendChild(el("div", { className: "empty", text: "No ideas queued yet." })); return; }
+    open.sort(function (a, b) { return (b.status === "next") - (a.status === "next") || (a.n || 0) - (b.n || 0) || (b.at || 0) - (a.at || 0); });
+    open.forEach(function (i) {
+      v.appendChild(el("article", { className: "panel idea" }, [
+        el("div", { className: "beat-head" }, [ i.formula ? el("span", { className: "id", text: i.formula }) : el("span", { className: "id", text: i.from === "nick" ? "yours" : "idea" }),
+          i.status === "next" ? el("span", { className: "state", data: { s: "keep" }, text: "Up next" }) : null ]),
+        el("p", { className: "topic", text: i.topic || "" }),
+        i.evidence ? el("p", { className: "ev", text: i.evidence }) : null,
+        el("button", { className: "btn" + (i.status === "next" ? "" : " primary"), text: i.status === "next" ? "Undo" : "Make this next", on: { click: function () { pickIdea(i); } } }) ]));
+    });
+  }
+
+  function view() { var h = (location.hash || "").replace("#", ""); return h === "edit" || h === "ideas" ? h : "shoot"; }
+  function keepFocus(fn) {
+    var a = document.activeElement, id = a && a.id, val = a && a.value, s = a && a.selectionStart;
+    var drafts = {};
+    document.querySelectorAll("input[type=text], textarea").forEach(function (n) { if (n.id && n.value) drafts[n.id] = n.value; });
+    fn();
+    Object.keys(drafts).forEach(function (k) { var n = document.getElementById(k); if (n && !n.value) n.value = drafts[k]; });
+    if (id) { var n = document.getElementById(id); if (n && n !== document.activeElement) { n.focus(); if (val != null && n.value !== val) n.value = val; try { n.setSelectionRange(s, s); } catch (_) {} } }
+  }
+  function render() {
+    keepFocus(function () {
+      var cur = view();
+      ["shoot", "edit", "ideas"].forEach(function (n) {
+        var sec = document.getElementById("view-" + n), tab = document.getElementById("tab-" + n);
+        sec.hidden = n !== cur;
+        if (n === cur) tab.setAttribute("aria-current", "page"); else tab.removeAttribute("aria-current");
+        if (n === cur) { sec.textContent = ""; (n === "shoot" ? renderShoot : n === "edit" ? renderEdit : renderIdeas)(sec); }
+      });
+      var r = S.reel;
+      document.getElementById("reel-title").textContent = r && r.title ? r.title : "Reel Room";
+      document.getElementById("reel-date").textContent = S.reelId || "";
+      var have = S.beats.filter(function (b) { return clipsFor(b._id, "aroll").length; }).length;
+      var cuts = S.beats.filter(function (b) { return b.broll; });
+      var haveCuts = cuts.filter(function (b) { return clipsFor(b._id, "broll").length; }).length;
+      document.getElementById("meter-text").textContent = S.beats.length ? have + "/" + S.beats.length + " lines · " + haveCuts + "/" + cuts.length + " cutaways" : (S.loaded ? "No reel yet" : "Loading");
+      document.getElementById("meter-bar").style.width = S.beats.length ? Math.round(100 * (have + haveCuts) / (S.beats.length + cuts.length)) + "%" : "0%";
+    });
+  }
+  window.addEventListener("hashchange", function () { render(); window.scrollTo(0, 0); });
+  render();
+
+  var use = window.claude && window.claude.use;
+  if (!use) { S.loaded = true; S.failed = "signed_out"; render(); return; }
+  Promise.all([window.claude.use("db"), window.claude.use("assets")]).then(function (r) { start(r[0], r[1]); }, function () { start(null, null); });
+})();
+</script>

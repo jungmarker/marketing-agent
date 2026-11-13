@@ -13,6 +13,25 @@ Reel a day for Nick to shoot, then edits what he records.
   refresh       breakdowns      today's reel    brief.json         edit.json     RESHOOT
 ```
 
+## The Reel Room app
+
+https://claude.ai/artifact/3D41X8Zzymk61zSMCMAc1K (source: `app/reel-room.html`)
+
+A private page that works on the phone. It is where Nick and Claude share the
+work, so he never needs to open a file:
+
+- **Shoot**: today's lines, each with its on-screen text, what to do, framing,
+  angle, camera and location, and a Record button. A clip uploads to that line.
+  He can rewrite any line. Claude's keep-or-retake note appears under each clip.
+- **Edit**: the cut Claude built, to approve or send back; the checklist of
+  facts to confirm; the caption with a copy button; the notes thread.
+- **Ideas**: the queue. "Make this next" picks tomorrow's reel. He can add his own.
+
+Clips are limited to 20 MB each (1080p, about 10 seconds), stored with the
+page, and pulled down by Claude for editing. Claude sees new clips when the
+daily run fires or when asked in chat; the page cannot wake it by itself.
+The procedure is `.claude/commands/reel-room.md`.
+
 ## Who does what, and on which model
 
 | Agent | Model | Job | Why that model |
@@ -115,5 +134,6 @@ post anything. It refuses a postable render while a `{{placeholder}}` remains.
 - View data is YouTube Shorts, used as a stand-in for Instagram.
 - Hooks in the data are titles, not spoken first lines.
 - The editor has been run on generated test clips only, not real phone footage.
+- The app's upload has been tested from Claude's side with a QuickTime-format clip, not yet from a phone.
 - Briefs are in a generic voice until `voice.md` has three samples of yours.
 - Nothing is checked against Long & Foster's advertising rules.
