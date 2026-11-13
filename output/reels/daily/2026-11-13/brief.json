@@ -162,5 +162,59 @@
       "punch": false,
       "note": null
     }
-  ]
+  ],
+  "stops": [
+    {
+      "name": "Front steps",
+      "tip": "Tripod at eye level at the top of the steps. It stays put for all four; drop it to chest height for b10.",
+      "beats": [
+        "b01",
+        "b10",
+        "b11",
+        "b12"
+      ]
+    },
+    {
+      "name": "Sidewalk, same house",
+      "tip": "Turn 45 degrees after b03 so the street runs away behind you and the background changes.",
+      "beats": [
+        "b02",
+        "b03",
+        "b04",
+        "b05",
+        "b06"
+      ]
+    },
+    {
+      "name": "Walk the block",
+      "tip": "Phone at arm's length or have someone walk backward. Stop at a different house for b08.",
+      "beats": [
+        "b07",
+        "b08"
+      ]
+    },
+    {
+      "name": "Car or office",
+      "tip": "Somewhere quiet. Record the voice first, then the screen recording.",
+      "beats": [
+        "b09"
+      ]
+    }
+  ],
+  "hooks": [
+    {
+      "say": "Nobody tells you about Baltimore ground rent.",
+      "screen": "GROUND RENT"
+    },
+    {
+      "say": "Ask this before any offer on a Baltimore rowhouse: is there a ground rent?",
+      "screen": "ASK THIS FIRST"
+    },
+    {
+      "say": "You can own a Baltimore rowhouse and not the land under it.",
+      "screen": "YOU DON'T OWN THE LAND"
+    }
+  ],
+  "spanish_hook": "Lo que nadie te dice antes de comprar casa en Baltimore.",
+  "why": "The two biggest outliers in the research were \"what nobody tells you about [place]\" videos, and ground rent is a Baltimore rowhouse topic no out-of-town account can copy."
 }

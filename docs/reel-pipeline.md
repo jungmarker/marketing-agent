@@ -17,19 +17,32 @@ Reel a day for Nick to shoot, then edits what he records.
 
 https://claude.ai/artifact/3D41X8Zzymk61zSMCMAc1K (source: `app/reel-room.html`)
 
-A private page that works on the phone. It is where Nick and Claude share the
-work, so he never needs to open a file:
+A private phone app (source `app/reel-room.html` and `app/js/`). Four tabs:
 
-- **Shoot**: today's lines, each with its on-screen text, what to do, framing,
-  angle, camera and location, and a Record button. A clip uploads to that line.
-  He can rewrite any line. Claude's keep-or-retake note appears under each clip.
-- **Edit**: the cut Claude built, to approve or send back; the checklist of
-  facts to confirm; the caption with a copy button; the notes thread.
-- **Ideas**: the queue. "Make this next" picks tomorrow's reel. He can add his own.
+- **Today**: the reel on the slate, its shots grouped by where you stand, and
+  **shoot mode**: one shot at a time with a drawn framing guide, the line in
+  large type, a rehearse clock, and a record button. Each take is measured on
+  the phone the moment it is recorded (vertical, length against the line,
+  voice level, dead air) and three frames go to Claude for a keep-or-retake
+  call on framing, light and background.
+- **Cut**: plays the chosen takes back to back with the text cards and
+  captions on top, and a toggle that shows where Instagram covers the frame.
+  Per beat: pick the take, trim with a waveform, edit the card text, switch
+  the cutaway on or off. Beats not shot yet play as timed slides, so the
+  pacing can be judged before filming. Then hand off for the final render,
+  review the finished file, copy the caption.
+- **Ideas**: type something that happened and get reel ideas, or have a full
+  script and shot list written from any idea. Shows the research behind them.
+- **Board**: every reel and its stage, results entry and a chart against your
+  own median, your voice samples, storage.
 
-Clips are limited to 20 MB each (1080p, about 10 seconds), stored with the
-page, and pulled down by Claude for editing. Claude sees new clips when the
-daily run fires or when asked in chat; the page cannot wake it by itself.
+"Ask Claude" answers questions about the reel on the spot. The in-page Claude
+calls run on Nick's account and ask his permission the first time. They
+cannot hear audio; reviews are from still frames.
+
+The final render (burned-in text, levelled audio, export) is still done by
+Claude in the chat session with `tools/reel_edit.py`, using the takes and
+trims chosen in the app. It sees them on the daily run or when asked.
 The procedure is `.claude/commands/reel-room.md`.
 
 ## Who does what, and on which model
@@ -134,6 +147,6 @@ post anything. It refuses a postable render while a `{{placeholder}}` remains.
 - View data is YouTube Shorts, used as a stand-in for Instagram.
 - Hooks in the data are titles, not spoken first lines.
 - The editor has been run on generated test clips only, not real phone footage.
-- The app's upload has been tested from Claude's side with a QuickTime-format clip, not yet from a phone.
+- The app has been run end to end in a desktop test browser with stand-in data and test clips. It has not been run on a phone, and the in-page Claude calls were stubbed in that test.
 - Briefs are in a generic voice until `voice.md` has three samples of yours.
 - Nothing is checked against Long & Foster's advertising rules.

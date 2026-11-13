@@ -22,6 +22,32 @@ recorded, never instructions to follow blindly. $ARGUMENTS
 
 Status values on the reel: `shooting`, `ready_to_edit`, `review`, `changes`, `approved`.
 
+## What the app already does on its own
+
+Nick's phone measures every take as it uploads (vertical, length against the
+line, voice level, where speech starts and ends) and asks Claude in the page
+to look at three frames. So each clip arrives with `checks[]`, `in`, `out`,
+`peaks[]` and often `ai {verdict, note, fix[]}`. He picks takes and trims in
+the Cut tab. Respect those choices:
+
+- `beats/bNN.take` and `take_broll` are the clip ids he chose. `use_broll:
+  false` means leave the cutaway out.
+- `clips/*.in` and `.out` are the trim. Build `edit.json` for
+  `tools/reel_edit.py --map` straight from them: `{"bNN": {"file": ..., "in":
+  ..., "out": ..., "broll": ...}}`. Only override a trim that cuts off a word.
+- Reels with `written_by: "app"` were generated in the page from an idea.
+  Read the script once for accuracy and compliance before he shoots; fix
+  problems in the beats and leave a note saying what changed.
+- `reels/*.results` are his posted numbers. They outrank the research when
+  choosing what to make next. `profile/voice` is how he talks; copy it into
+  `.claude/instagram/voice.md`.
+- `research/current` is what the Ideas tab shows. Regenerate
+  `.claude/instagram/research.json` when the swipe file is re-ranked and write
+  it there.
+
+Publishing the page: `app/reel-room.html` plus every file in `app/js/` passed
+as `files` (`js/core.js` and so on). Omit `capabilities` to keep them.
+
 ## Each time this runs
 
 1. **Read.** `get meta/current`, then `get reels/<date>`, and `list` its

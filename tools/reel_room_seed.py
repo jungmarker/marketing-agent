@@ -53,13 +53,17 @@ def main():
     ]
     m = re.search(r"## Order to shoot in.*?\n(.*?)(?=\n## )", md, re.S)
     for line in (m.group(1) if m else "").splitlines():
-        if re.match(r"\d+\.", line.strip()):
+        if re.match(r"\d+\.", line.strip()) and not brief.get("stops"):
             setup.append("Shoot order " + re.sub(r"[*`]", "", line.strip()))
     put("reels", a.date, {
         "date": a.date, "title": brief["title"], "formula": brief.get("formula", ""),
-        "why": brief.get("source", ""), "target_seconds": brief.get("target_seconds", 30),
-        "status": "shooting", "caption": caption_from(md), "verify": verify, "setup": setup,
+        "why": brief.get("why") or brief.get("source", ""), "target_seconds": brief.get("target_seconds", 30),
+        "status": "scripted", "caption": caption_from(md), "verify": verify, "setup": setup,
+        "stops": brief.get("stops", []), "hooks": brief.get("hooks", []),
+        "spanish_hook": brief.get("spanish_hook", ""), "written_by": "claude",
     })
+    if os.path.exists(".claude/instagram/research.json"):
+        put("research", "current", json.load(open(".claude/instagram/research.json", encoding="utf-8")))
     for b in brief["beats"]:
         put(f"reels/{a.date}/beats", b["id"], {k: b.get(k) for k in
             ("say", "screen", "shot", "framing", "angle", "move", "location", "broll", "punch")})

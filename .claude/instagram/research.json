@@ -1,0 +1,175 @@
+{
+ "updated": "2026-11-12",
+ "n": 1084,
+ "accounts": 29,
+ "base": 14,
+ "caveat": "The numbers are YouTube Shorts from creators who cross-post their Reels, and the hook is each video's title, not the spoken first line.",
+ "shapes": [
+  {
+   "name": "A or B? / versus",
+   "hit": 22,
+   "of": 67,
+   "rate": 33
+  },
+  {
+   "name": "Numbered list of named places",
+   "hit": 12,
+   "of": 49,
+   "rate": 24
+  },
+  {
+   "name": "Question as the title",
+   "hit": 36,
+   "of": 220,
+   "rate": 16
+  },
+  {
+   "name": "A price in the title",
+   "hit": 7,
+   "of": 71,
+   "rate": 10
+  },
+  {
+   "name": "Stop / Don't / Never",
+   "hit": 2,
+   "of": 39,
+   "rate": 5
+  }
+ ],
+ "patterns": [
+  {
+   "title": "What nobody tells you about [place]",
+   "detail": "The two biggest outliers in the whole sample, 702x and 221x, both in Spanish. Aim it at a place, not at a process."
+  },
+  {
+   "title": "Local \"why\" that is not about houses",
+   "detail": "A 1,350-subscriber DC agent got 14x to 19x on Maryland speed cameras and why DC has no high-rises."
+  },
+  {
+   "title": "Walk up to it and point",
+   "detail": "Inspectors showing the defect in the first frame: 32x and 25x, up to 2.3M views. The payoff is visual."
+  },
+  {
+   "title": "A favourites list that invites correction",
+   "detail": "\"My 3 favorite restaurants. What did I miss?\" did 42x on a 788-subscriber account."
+  },
+  {
+   "title": "Skip: generic advice, famous houses, national economy",
+   "detail": "\"Stop doing X\" openers under-perform, and the big trivia and economy numbers come from people who will never buy in Baltimore."
+  }
+ ],
+ "outliers": [
+  {
+   "x": 74.4,
+   "views": 93000,
+   "median": 1250,
+   "account": "@JenniferBeeston",
+   "title": "Why home prices aren't falling off a cliff"
+  },
+  {
+   "x": 48.3,
+   "views": 23000,
+   "median": 476,
+   "account": "@JasonCassity",
+   "title": "The Cullen House from Twilight"
+  },
+  {
+   "x": 42.0,
+   "views": 20000,
+   "median": 476,
+   "account": "@JasonCassity",
+   "title": "My 3 Favorite Restaurants in San Diego. What did I miss?"
+  },
+  {
+   "x": 32.0,
+   "views": 128000,
+   "median": 4000,
+   "account": "@InspectorAJ",
+   "title": "Brand new construction"
+  },
+  {
+   "x": 25.3,
+   "views": 2300000,
+   "median": 91000,
+   "account": "@cyfyhomeinspections",
+   "title": "Is the sticker wrong or is the builder wrong?"
+  },
+  {
+   "x": 24.0,
+   "views": 169000,
+   "median": 7050,
+   "account": "@KenPozek",
+   "title": "Windermere or Winter Park Florida? Which one do you prefer?"
+  },
+  {
+   "x": 18.7,
+   "views": 118000,
+   "median": 6300,
+   "account": "@ShaheedahHill",
+   "title": "What Happens at a Foreclosure Auction?"
+  },
+  {
+   "x": 18.6,
+   "views": 7900,
+   "median": 425,
+   "account": "@LivingInDC",
+   "title": "Exposing Maryland's Speed Cameras! - Bethesda MD - Greater DC Living"
+  },
+  {
+   "x": 14.3,
+   "views": 372000,
+   "median": 26000,
+   "account": "@EnesYilmazer",
+   "title": "You Found the Dream Home. Now What?"
+  },
+  {
+   "x": 14.1,
+   "views": 6000,
+   "median": 425,
+   "account": "@LivingInDC",
+   "title": "WHY are there NO highrise buildings in DC? - Living in DC Explained"
+  },
+  {
+   "x": 13.5,
+   "views": 54000,
+   "median": 4000,
+   "account": "@InspectorAJ",
+   "title": "Whoa. Nice caulk."
+  },
+  {
+   "x": 13.3,
+   "views": 14000,
+   "median": 1050,
+   "account": "@AndrewFinney",
+   "title": "Should You Sell Your House in 2023?"
+  },
+  {
+   "x": 12.6,
+   "views": 328000,
+   "median": 26000,
+   "account": "@EnesYilmazer",
+   "title": "You Can Own Your Dream Home"
+  },
+  {
+   "x": 11.8,
+   "views": 5200,
+   "median": 440,
+   "account": "@CodyTuma",
+   "title": "5 states with the highest taxes."
+  },
+  {
+   "x": 11.4,
+   "views": 796000,
+   "median": 70000,
+   "account": "@fmsmith319",
+   "title": "Is The Housing Market Going To Crash Or Stay Stuck?"
+  },
+  {
+   "x": 10.1,
+   "views": 922000,
+   "median": 91000,
+   "account": "@cyfyhomeinspections",
+   "title": "Arizona finally got rain and countless new build homes failed"
+  }
+ ]
+}
