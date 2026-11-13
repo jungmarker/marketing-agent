@@ -132,6 +132,19 @@ Set in `.env`:
 
 ---
 
+## Reel Pipeline
+
+Daily research, a shoot brief, and an editor for Instagram Reels.
+Full detail in `docs/reel-pipeline.md`.
+
+```bash
+/reel-daily              # in Claude Code: refresh data, write today's brief
+/reel-edit 2026-11-13    # cut the reel from footage/2026-11-13/
+python tools/reel_watch.py video.mp4 --out watch/   # make a video readable by a vision model
+```
+
+---
+
 ## Content Calendar
 
 | Day | Theme | Format |

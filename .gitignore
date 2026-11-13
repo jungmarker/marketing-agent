@@ -8,3 +8,12 @@ output/drafts/*.md
 *.db
 .venv/
 venv/
+
+# raw and rendered video
+footage/**/*.mp4
+footage/**/*.mov
+footage/**/*.m4v
+output/reels/**/*.mp4
+output/reels/**/qc/
+inbox/**/*.mp4
+inbox/**/*.mov

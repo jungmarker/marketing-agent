@@ -15,11 +15,10 @@ the words out loud. A line you would never say is not a draft, it is a retake.
 
 ## Who I am
 
-- **Name:**
-- **Handle:**
-- **What I do, in one sentence:**
-- **Who I am talking to:** (be specific: "photographers charging under $2,000",
-  not "creatives")
+- **Name:** Nick Jungmarker
+- **Handle:** @nickjungmarker.realtor
+- **What I do, in one sentence:** REALTOR with Long & Foster Real Estate in Baltimore, Maryland licensed. (from config.py)
+- **Who I am talking to:** First-time buyers and rowhouse buyers and sellers in Baltimore City, in English and Spanish. (from README, confirm)
 - **What I sell:**
 
 ## What I sound like
@@ -48,9 +47,11 @@ where the good reels come from.
 
 - **Topics I do not post about:**
 - **Clients, numbers or names I cannot say publicly:**
-- **Claims I am not allowed to make:** (regulated industry, employer policy, NDA)
+- **Claims I am not allowed to make:** Fair housing: nothing about who a neighborhood is for, schools, safety or demographics. Every caption ends with the compliance footer in config.py. Brokerage advertising rules: not yet confirmed.
 
 ## Proof I can use
+
+- 47+ five-star Google reviews (from config.py, confirm the current count)
 
 Real numbers, outcomes and stories I am happy to put my name on. The skills will
 never invent one, so if this section is empty, every draft comes back with
