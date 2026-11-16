@@ -131,13 +131,16 @@
           </dl>
         </div>
         ${cut ? html`<div class="prompter"><small>Cutaway, no talking</small><p class="cut-desc">${b.broll}</p><small>Plays over: “${b.say}”</small></div>`
+          : !b.say ? html`<div class="prompter"><small>No talking. Text goes on screen</small>
+              <span class=${RR.cls("card card-lg", firstBeat && "card-hook")}>${b.screen}</span>
+              <p class="cut-desc">${b.shot}</p><small>Hold it for ${RR.sec(b.seconds || 3)}. Leave room in the frame for the text.</small></div>`
           : html`<div class="prompter">
               <small>Say</small><p class="line">${b.say}</p>
               ${b.screen && html`<span class=${RR.cls("card", firstBeat && "card-hook")}>${b.screen}</span>`}
               <p class="do">${b.shot}</p>
               <div class="row"><${ui.Rehearse} id=${b._id} target=${RR.sayTime(b.say)} /><button class="btn ghost" onClick=${function () { RR.set({ sheet: { type: "rewrite", beat: b._id } }); }}>Change line</button></div>
             </div>`}
-        <${ui.Record} beat=${b} kind=${shot.kind} label=${takes.length ? "Record another take" : cut ? "Record cutaway" : "Record this line"} />
+        <${ui.Record} beat=${b} kind=${shot.kind} label=${takes.length ? "Record another take" : cut ? "Record cutaway" : b.say ? "Record this line" : "Record this shot"} />
         ${takes.map(function (c) { return html`<${ui.Take} key=${c._id} clip=${c} picked=${chosen && chosen._id === c._id} onPick=${function () { var pch = {}; pch[cut ? "take_broll" : "take"] = c._id; RR.act.beat(b._id, pch); }} />`; })}
       </div>
       <div class="shoot-nav">
@@ -169,7 +172,7 @@
       <section class="hero">
         <${ui.Stepper} status=${r.status} />
         <h1>${r.title}</h1>
-        <div class="hero-meta"><span class="slate-chip">${r.formula || "Reel"}</span><span class="mono dim">${S.beats.length} lines · about ${Math.round(RR.total())}s · ${stops.length} spots</span></div>
+        <div class="hero-meta"><span class="slate-chip">${r.formula || "Reel"}</span><span class="mono dim">${S.beats.length} ${r.kind && r.kind !== "talk" ? "shots" : "lines"} · about ${Math.round(RR.total())}s · ${stops.length} spots</span></div>
         ${r.why && html`<p class="why">${r.why}</p>`}
         <div class="meter"><div class="meter-bar"><i style=${"width:" + prog.pct + "%"}></i></div><span class="mono">${prog.done}/${prog.of} shot</span></div>
         ${!S.loadedView ? null : firstTodo >= 0
@@ -184,8 +187,8 @@
         ${st.shots.map(function (x) { var b = x.s.beat, cut = x.s.kind === "broll", state = RR.takes(b._id, x.s.kind).length ? (cut ? "good" : RR.beatState(b)) : "todo";
           return html`<button class="shot-row" onClick=${function () { start(x.k); }}>
             <span class="mono id">${b._id}</span>
-            <span class="shot-text">${cut ? html`<i>Cutaway:</i> ${b.broll}` : b.say}</span>
-            <span class="mono dim">${cut ? "4s+" : RR.sec(RR.sayTime(b.say))}</span><${ui.Dot} s=${state} /></button>`; })}
+            <span class="shot-text">${cut ? html`<i>Cutaway:</i> ${b.broll}` : b.say || html`<i>Text:</i> ${b.screen}`}</span>
+            <span class="mono dim">${cut ? "4s+" : RR.sec(b.say ? RR.sayTime(b.say) : b.seconds || 3)}</span><${ui.Dot} s=${state} /></button>`; })}
       </section>`; })}
 
       ${r.hooks && r.hooks.length > 1 && html`<details class="panel"><summary>Other ways to open it</summary>${r.hooks.map(function (h) { return html`<p class="alt-hook">“${h.say}” ${h.screen && html`<span class="card sm-card">${h.screen}</span>`}</p>`; })}${r.spanish_hook && html`<p class="alt-hook"><small>Spanish:</small> “${r.spanish_hook}”</p>`}</details>`}

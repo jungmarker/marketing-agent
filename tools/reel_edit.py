@@ -122,8 +122,12 @@ def render_beat(beat, clip, emap, dest):
     punch = bool(beat.get("punch"))
     if aroll:
         info = probe(aroll)
-        auto_in, auto_out = speech_bounds(aroll, info["duration"]) if info["audio"] \
-            else (0.0, info["duration"])
+        if not beat.get("say"):                                # silent shot: hold for its set time
+            auto_in, auto_out = 0.0, min(info["duration"], float(beat.get("seconds", 3)))
+        elif info["audio"]:
+            auto_in, auto_out = speech_bounds(aroll, info["duration"])
+        else:
+            auto_in, auto_out = 0.0, info["duration"]
         t_in, t_out = float(emap.get("in", auto_in)), float(emap.get("out", auto_out))
         dur = t_out - t_in
         cmd = ["ffmpeg", "-hide_banner", "-loglevel", "error", "-y",
@@ -162,6 +166,8 @@ def clean(text):
 
 
 def wrap(text, width):
+    if "\n" in text:                                         # stacked card: keep the author's lines
+        return r"\N".join(wrap(part, width + 12) for part in text.split("\n") if part.strip())
     lines, cur = [], ""
     for w in clean(text).split():
         if cur and len(cur) + 1 + len(w) > width:

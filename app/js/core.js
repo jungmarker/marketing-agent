@@ -14,7 +14,7 @@
   var S = (RR.S = {
     cap: { db: null, assets: null, sample: null }, booted: false, failed: null,
     currentId: null, viewId: null, reels: [], beats: [], clips: [], notes: [], ideas: [],
-    research: null, voice: null, jobs: {}, toasts: [], tab: "today", shoot: null, sheet: null,
+    research: null, voice: null, bank: [], jobs: {}, toasts: [], tab: "today", shoot: null, sheet: null,
     loadedView: false, usage: null,
   });
   var subs = [];
@@ -62,7 +62,11 @@
     return v === "keep" ? "good" : v === "retake" ? "retake" : "sent";
   };
   RR.clipLen = function (c) { return c ? Math.max(0.2, (c.out != null ? c.out : c.dur || 0) - (c.in || 0)) : 0; };
-  RR.beatLen = function (beat) { var c = RR.chosen(beat); return c ? RR.clipLen(c) : (beat.say ? RR.sayTime(beat.say) : Math.min(3, beat.seconds || 3)); };
+  RR.beatLen = function (beat) {
+    var c = RR.chosen(beat);
+    if (!beat.say) return c ? Math.min(RR.clipLen(c), beat.seconds || 3) : (beat.seconds || 3);   /* a silent shot holds for its set time */
+    return c ? RR.clipLen(c) : RR.sayTime(beat.say);
+  };
   RR.total = function () { return S.beats.reduce(function (n, b) { return n + RR.beatLen(b); }, 0); };
   /* shots in the order you would shoot them: by stop, cutaways after the lines at that stop */
   RR.shotList = function () {
@@ -108,6 +112,7 @@
     }, fail);
     db.collection("reels").onSnapshot(function (q) { RR.set({ reels: rows(q).sort(function (a, b) { return a._id < b._id ? 1 : -1; }) }); }, function () {});
     db.collection("ideas").onSnapshot(function (q) { RR.set({ ideas: rows(q) }); }, function () {});
+    db.collection("bank").onSnapshot(function (q) { var all = []; rows(q).forEach(function (d) { (d.videos || []).forEach(function (v) { all.push(v); }); }); RR.set({ bank: all }); }, function () {});
     db.doc("research/current").onSnapshot(function (d) { RR.set({ research: d.exists ? d.data() : null }); }, function () {});
     db.doc("profile/voice").onSnapshot(function (d) { RR.set({ voice: d.exists ? d.data() : null }); }, function () {});
     RR.refreshUsage();
@@ -150,6 +155,18 @@
     },
     voice: function (doc) { return quiet(S.cap.db.doc("profile/voice").set(Object.assign({ at: Date.now() }, doc))); },
     results: function (id, res) { return quiet(S.cap.db.doc("reels/" + id).update({ results: res, status: "posted", status_at: Date.now() })); },
+    /* put a ready-made script from the bank on the slate */
+    fromBank: function (v) {
+      var d = new Date(), day = d.getFullYear() + "-" + ("0" + (d.getMonth() + 1)).slice(-2) + "-" + ("0" + d.getDate()).slice(-2), id = day + "-" + v.id;
+      if (S.reels.some(function (r) { return r._id === id; })) return RR.act.makeCurrent(id);
+      var where = (v.beats[0] && v.beats[0].location) || "One spot";
+      var reel = { _id: id, date: day, title: v.title, formula: v.shape, why: "Answers a question people search: \u201C" + v.question + "\u201D", status: "scripted", status_at: Date.now(),
+        target_seconds: v.seconds, caption: v.caption, verify: v.verify || [], kind: v.kind, bank_id: v.id, written_by: "bank",
+        stops: [{ name: where, tip: v.kind === "talk" ? "One clip per line. Move a step or turn between lines so the background changes." : v.kind === "point" ? "No talking. Tripod locked, stand to one side, hold each pose for three seconds. Add the sound in Instagram." : "One clip, no talking. Hold it for the full count. Add the sound in Instagram.", beats: v.beats.map(function (b) { return b.id; }) }],
+        setup: ["Rear camera, 1x lens, vertical, 1080p at 30. Each clip under 20 MB, so not 4K.", "HDR video off. Lock focus and exposure.", v.kind === "talk" ? "A second of silence before and after you speak." : "No audio needed. Leave empty space in the frame where the text goes.", "Keep the top fifth of the frame clear for the text card."] };
+      var beats = v.beats.map(function (b) { var o = Object.assign({}, b); o._id = b.id; delete o.id; return o; });
+      return RR.act.createReel(reel, beats).then(function () { return RR.act.makeCurrent(id); });
+    },
     /* create a whole reel from a generated script */
     createReel: function (reel, beats) {
       var db = S.cap.db, id = reel._id;

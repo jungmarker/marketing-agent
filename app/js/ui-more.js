@@ -14,6 +14,25 @@
       });
     }, function (e) { RR.job("script", null); RR.toast(RR.aiError(e), "bad"); });
   }
+  var KIND = { talk: "Talk", point: "No talking · point", text: "No talking · one clip" };
+  ui.Bank = function () {
+    var st = RR.useState(RR.ls.get("bankFilter", "all")), f = st[0], setF = st[1], mr = RR.useState(8), more = mr[0], setMore = mr[1];
+    if (!S.bank.length) return null;
+    var done = {}; S.reels.forEach(function (r) { if (r.bank_id) done[r.bank_id] = r; });
+    var list = S.bank.filter(function (v) { return f === "all" || v.kind === f; });
+    var chip = function (k, label) { return html`<button class=${RR.cls("take-pill", f === k && "on")} onClick=${function () { setF(k); setMore(8); RR.ls.set("bankFilter", k); }}>${label} · ${k === "all" ? S.bank.length : S.bank.filter(function (v) { return v.kind === k; }).length}</button>`; };
+    return html`<section class="stack tight"><h2 class="sec">Ready to shoot · ${S.bank.length} scripts</h2>
+      <p class="dim">Built from the questions people search about buying and selling in Baltimore. Tap one and it goes on today's slate with its shots.</p>
+      <div class="take-strip">${chip("all", "All")}${chip("talk", "Talk")}${chip("point", "Point at text")}${chip("text", "One clip")}</div>
+      ${list.slice(0, more).map(function (v) { var r = done[v.id], hook = (v.beats[0] && (v.beats[0].say || v.beats[0].screen.split("\n")[0])) || "";
+        return html`<article class="idea">
+          <div class="idea-top"><span class="slate-chip">${KIND[v.kind]}</span><span class="mono dim">${v.beats.length} ${v.kind === "talk" ? "lines" : v.kind === "text" ? "clip" : "shots"} · ${v.seconds}s</span></div>
+          <h3>${v.title}</h3><p class="idea-hook">“${hook}”</p><p class="dim">${v.question}${v.verify && v.verify.length ? " · " + v.verify.length + " to confirm first" : ""}</p>
+          <div class="row wrap">${r ? html`<button class="btn sm" onClick=${function () { RR.view(r._id); RR.go("today"); }}>Open · ${RR.STAGE_LABEL[r.status] || r.status}</button>`
+            : html`<button class="btn primary sm" onClick=${function () { RR.act.fromBank(v).then(function () { RR.go("today"); }); }}>Shoot this</button>`}</div></article>`; })}
+      ${list.length > more && html`<button class="btn" onClick=${function () { setMore(more + 12); }}>Show more (${list.length - more} left)</button>`}
+    </section>`;
+  };
   ui.Research = function () {
     var r = S.research; if (!r) return null;
     var max = Math.max.apply(null, (r.shapes || []).map(function (s) { return s.rate; }).concat([r.base, 1]));
@@ -41,6 +60,7 @@
           : html`<button class="btn sm" onClick=${function () { RR.act.nextIdea(i); }}>${i.status === "next" ? "Not next" : "Make it tomorrow's"}</button><button class="btn sm ghost" onClick=${function () { RR.act.removeIdea(i._id); }}>Remove</button>`}
       </div></article>`; };
     return html`<div class="stack">
+      <${ui.Bank} />
       <section class="panel"><h2>Start from something real</h2>
         <textarea id="idea-seed" value=${seed} placeholder="A question a buyer asked this week. A listing you just took. Something on your block that annoyed you." onInput=${function (e) { setSeed(e.target.value); }}></textarea>
         <div class="row wrap">

@@ -71,7 +71,7 @@
         <video ref=${a} playsinline preload="auto" class="layer"></video>
         <video ref=${b} playsinline preload="auto" class="layer"></video>
         <video ref=${br} playsinline muted preload="auto" class="layer"></video>
-        ${!it.clip && html`<div class="slide"><span class="mono">${beat._id}</span><p>${beat.say || beat.broll}</p><small>Not shot yet. Timed from the script.</small></div>`}
+        ${!it.clip && html`<div class="slide"><span class="mono">${beat._id}</span><p>${beat.say || beat.shot || beat.broll}</p><small>Not shot yet. Timed from the script.</small></div>`}
         ${beat.screen && html`<div class=${RR.cls("ov-card", pos.i === 0 && "card-hook")}>${beat.screen}</div>`}
         ${beat.say && html`<div class="ov-cap">${captionAt(beat.say, frac)}</div>`}
         ${showUi && html`<div class="ov-ui" aria-hidden="true"><i></i><i></i><i></i><i></i><b></b><b></b></div>`}
@@ -105,7 +105,7 @@
     var first = S.beats[0] && S.beats[0]._id === b._id;
     if (b.gone) return null;
     return html`<section class="panel editor" id=${"edit-" + b._id}>
-      <div class="panel-head"><span class="mono id">${b._id}</span><div class="grow"><p class="ed-line">${b.say ? "“" + b.say + "”" : "Cutaway only"}</p></div>
+      <div class="panel-head"><span class="mono id">${b._id}</span><div class="grow"><p class="ed-line">${b.say ? "“" + b.say + "”" : "No talking: " + (b.shot || "")}</p></div>
         <button class="btn sm ghost" onClick=${function () { RR.set({ sheet: { type: "rewrite", beat: b._id } }); }}>Change line</button></div>
       ${!takes.length && html`<div class="empty sm"><p>No take for this line yet.</p><${ui.Record} beat=${b} kind="aroll" label="Record this line" /></div>`}
       ${c && trim && html`<div class="trim">
@@ -121,9 +121,9 @@
       ${takes.length > 1 && html`<div class="take-strip"><small>${takes.length} takes</small>${takes.map(function (t, n) { return html`<button class=${RR.cls("take-pill", c && c._id === t._id && "on", "v-" + RR.verdict(t))} onClick=${function () { RR.act.beat(b._id, { take: t._id }); }}>Take ${n + 1} · ${RR.sec(RR.clipLen(t))}</button>`; })}</div>`}
       ${takes.length ? html`<div class="row"><${ui.Record} beat=${b} kind="aroll" label="Record another take" />${c && S.cap.assets && html`<button class="btn sm ghost" onClick=${function () { RR.act.removeClip(c); }}>Delete this take</button>`}</div>` : null}
       <label class="field"><span>Text on screen ${first ? "(the hook card)" : ""}</span>
-        <div class="row"><input type="text" id=${"screen-" + b._id} value=${screen} maxlength="60" placeholder="No text on this beat" onInput=${function (e) { setScreen(e.target.value); }} />
+        <div class="row"><input type="text" id=${"screen-" + b._id} value=${screen} maxlength="160" placeholder="No text on this beat" onInput=${function (e) { setScreen(e.target.value); }} />
         <button class="btn sm" disabled=${screen.trim() === (b.screen || "")} onClick=${function () { RR.act.beat(b._id, { screen: screen.trim() ? screen.trim().toUpperCase() : null }); }}>Save</button></div>
-        ${RR.words(screen) > 6 && html`<small class="fix fix-warn">Over six words. It will not be read in time.</small>`}</label>
+        ${RR.words(screen) > 6 && screen.indexOf("\n") < 0 && html`<small class="fix fix-warn">Over six words. It will not be read in time.</small>`}</label>
       ${b.broll && html`<div class="cutaway"><small>Cutaway</small><p>${b.broll}</p>
         ${cb ? html`<video class="trim-video" controls playsinline muted preload="metadata" src=${"/_blob/" + cb.asset}></video>
           <label class="switch"><input type="checkbox" id=${"use-" + b._id} checked=${b.use_broll !== false} onChange=${function (e) { RR.act.beat(b._id, { use_broll: e.target.checked }); }} />Show the cutaway over this line</label>` : null}
@@ -172,7 +172,7 @@
       ${selId ? html`<${ui.BeatEditor} id=${selId} />` : null}
       <section class="panel"><h2>Every beat</h2>${seq.map(function (x) { var state = x.clip ? RR.beatState(x.beat) : "todo";
         return html`<button class=${RR.cls("shot-row", selId === x.beat._id && "row-on")} onClick=${function () { setSel(x.beat._id); setJump({ i: x.i, n: Date.now() }); setTimeout(function () { var el = document.getElementById("edit-" + x.beat._id); if (el) el.scrollIntoView({ behavior: "smooth", block: "start" }); }, 60); }}>
-          <span class="mono id">${x.beat._id}</span><span class="shot-text">${x.beat.say || x.beat.broll}</span>
+          <span class="mono id">${x.beat._id}</span><span class="shot-text">${x.beat.say || x.beat.screen || x.beat.broll}</span>
           <span class="mono dim">${RR.sec(x.len)}${RR.takes(x.beat._id).length > 1 ? " · " + RR.takes(x.beat._id).length + " takes" : ""}</span><${ui.Dot} s=${state} /></button>`; })}</section>
 
       ${r.verify && r.verify.length ? html`<section class="panel"><h2>Confirm before it goes out${open ? " · " + open + " open" : ""}</h2>${r.verify.map(function (v, i) { return html`<label class="check"><input type="checkbox" id=${"verify-" + i} checked=${!!v.done} onChange=${function () { RR.act.verify(i); }} /><span>${v.item}<small>${v.from}</small></span></label>`; })}</section>` : null}

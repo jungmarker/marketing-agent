@@ -1,0 +1,3840 @@
+[
+ {
+  "id": "t01",
+  "kind": "talk",
+  "shape": "Question",
+  "question": "How much house can I afford on a $180,000 salary?",
+  "title": "$180K income: what can you buy?",
+  "beats": [
+   {
+    "say": "You make $180,000. Here's what you can buy.",
+    "screen": "$180K INCOME",
+    "framing": "Medium (waist up)",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "shot": "Walk toward the phone and stop as you finish",
+    "location": "Front steps or sidewalk of a rowhouse",
+    "broll": null,
+    "punch": false,
+    "id": "b01"
+   },
+   {
+    "say": "That's $15,000 a month before taxes.",
+    "screen": "$15,000 / MONTH",
+    "framing": "Medium close (chest up)",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "shot": "To camera. Step or turn so the background changes from the last line",
+    "location": "Front steps or sidewalk of a rowhouse",
+    "broll": null,
+    "punch": true,
+    "id": "b02"
+   },
+   {
+    "say": "Lenders like housing at 28% of that.",
+    "screen": "THE 28% RULE",
+    "framing": "Medium (waist up)",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "shot": "To camera. Step or turn so the background changes from the last line",
+    "location": "Front steps or sidewalk of a rowhouse",
+    "broll": null,
+    "punch": false,
+    "id": "b03"
+   },
+   {
+    "say": "So your payment tops out near $4,200 a month.",
+    "screen": "$4,200 / MONTH",
+    "framing": "Close (shoulders up)",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "shot": "To camera. Step or turn so the background changes from the last line",
+    "location": "Front steps or sidewalk of a rowhouse",
+    "broll": null,
+    "punch": true,
+    "id": "b04"
+   },
+   {
+    "say": "At today's rates that's a house around {{price from your lender}}.",
+    "screen": "{{PRICE}}",
+    "framing": "Medium wide (knees up)",
+    "angle": "Eye level",
+    "move": "Handheld walking",
+    "shot": "Walking along the block, phone at arm's length",
+    "location": "Front steps or sidewalk of a rowhouse",
+    "broll": null,
+    "punch": false,
+    "id": "b05"
+   },
+   {
+    "say": "Car loans and student loans pull that number down.",
+    "screen": "DEBTS COUNT",
+    "framing": "Medium close (chest up)",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "shot": "To camera. Step or turn so the background changes from the last line",
+    "location": "Front steps or sidewalk of a rowhouse",
+    "broll": null,
+    "punch": true,
+    "id": "b06"
+   },
+   {
+    "say": "Comment NUMBERS and I'll run yours.",
+    "screen": "COMMENT \"NUMBERS\"",
+    "framing": "Medium (waist up)",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "shot": "To camera. Step or turn so the background changes from the last line",
+    "location": "Front steps or sidewalk of a rowhouse",
+    "broll": null,
+    "punch": false,
+    "id": "b07"
+   },
+   {
+    "say": "$180,000 goes further in Baltimore than you think.",
+    "screen": null,
+    "framing": "Medium close (chest up)",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "shot": "To camera. Step or turn so the background changes from the last line",
+    "location": "Front steps or sidewalk of a rowhouse",
+    "broll": null,
+    "punch": true,
+    "id": "b08"
+   }
+  ],
+  "verify": [
+   {
+    "item": "Price that a $4,200 payment buys today, with taxes and insurance",
+    "from": "Get it from: Your lender, for the day you post",
+    "done": false
+   },
+   {
+    "item": "28% front-end and 36% total-debt guideline still fits the loans you see",
+    "from": "Get it from: Your lender, for the day you post",
+    "done": false
+   }
+  ],
+  "ask": "Comment NUMBERS",
+  "source": "bankrate.com: 28/36 rule on $180K gives $4,200 housing, $5,400 total debt",
+  "caption": "How much house can I afford on a $180,000 salary?\n\nThe short answer is in the video.\n\nComment NUMBERS.\n\n—\nNick Jungmarker | REALTOR® | Long & Foster Real Estate\n(301) 875-7182 | jungmarker.com\nEqual Housing Opportunity 🏠",
+  "seconds": 23
+ },
+ {
+  "id": "t02",
+  "kind": "talk",
+  "shape": "Question",
+  "question": "How much money do you need to buy a $400,000 house?",
+  "title": "$400K house: cash you need",
+  "beats": [
+   {
+    "say": "How much cash for a $400,000 house?",
+    "screen": "$400K HOUSE",
+    "framing": "Medium (waist up)",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "shot": "Walk toward the phone and stop as you finish",
+    "location": "Front steps or sidewalk of a rowhouse",
+    "broll": null,
+    "punch": false,
+    "id": "b01"
+   },
+   {
+    "say": "Not $80,000. That's 20% down, and it's optional.",
+    "screen": "20% = $80,000",
+    "framing": "Medium close (chest up)",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "shot": "To camera. Step or turn so the background changes from the last line",
+    "location": "Front steps or sidewalk of a rowhouse",
+    "broll": null,
+    "punch": true,
+    "id": "b02"
+   },
+   {
+    "say": "Three percent down is $12,000.",
+    "screen": "3% = $12,000",
+    "framing": "Medium (waist up)",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "shot": "To camera. Step or turn so the background changes from the last line",
+    "location": "Front steps or sidewalk of a rowhouse",
+    "broll": null,
+    "punch": false,
+    "id": "b03"
+   },
+   {
+    "say": "FHA is three and a half. $14,000.",
+    "screen": "FHA 3.5% = $14,000",
+    "framing": "Close (shoulders up)",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "shot": "To camera. Step or turn so the background changes from the last line",
+    "location": "Front steps or sidewalk of a rowhouse",
+    "broll": null,
+    "punch": true,
+    "id": "b04"
+   },
+   {
+    "say": "Then closing costs. In Baltimore City, plan on {{closing cost estimate}}.",
+    "screen": "+ CLOSING COSTS",
+    "framing": "Medium wide (knees up)",
+    "angle": "Eye level",
+    "move": "Handheld walking",
+    "shot": "Walking along the block, phone at arm's length",
+    "location": "Front steps or sidewalk of a rowhouse",
+    "broll": null,
+    "punch": false,
+    "id": "b05"
+   },
+   {
+    "say": "And the city has money that can cover part of it.",
+    "screen": "CITY HELP EXISTS",
+    "framing": "Medium close (chest up)",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "shot": "To camera. Step or turn so the background changes from the last line",
+    "location": "Front steps or sidewalk of a rowhouse",
+    "broll": null,
+    "punch": true,
+    "id": "b06"
+   },
+   {
+    "say": "Comment 400 and I'll send the full breakdown.",
+    "screen": "COMMENT \"400\"",
+    "framing": "Medium (waist up)",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "shot": "To camera. Step or turn so the background changes from the last line",
+    "location": "Front steps or sidewalk of a rowhouse",
+    "broll": null,
+    "punch": false,
+    "id": "b07"
+   },
+   {
+    "say": "$400,000 house. A lot less than $80,000 to get in.",
+    "screen": null,
+    "framing": "Medium close (chest up)",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "shot": "To camera. Step or turn so the background changes from the last line",
+    "location": "Front steps or sidewalk of a rowhouse",
+    "broll": null,
+    "punch": true,
+    "id": "b08"
+   }
+  ],
+  "verify": [
+   {
+    "item": "Closing cost estimate on a $400,000 Baltimore City purchase",
+    "from": "Get it from: Your title company",
+    "done": false
+   },
+   {
+    "item": "Current first-time buyer incentive amounts",
+    "from": "Get it from: Live Baltimore and Baltimore City DHCD",
+    "done": false
+   }
+  ],
+  "ask": "Comment 400",
+  "source": "sofi.com, redfin.com: down payment options on a $400K home",
+  "caption": "How much money do you need to buy a $400,000 house?\n\nThe short answer is in the video.\n\nComment 400.\n\n—\nNick Jungmarker | REALTOR® | Long & Foster Real Estate\n(301) 875-7182 | jungmarker.com\nEqual Housing Opportunity 🏠",
+  "seconds": 24
+ },
+ {
+  "id": "t03",
+  "kind": "talk",
+  "shape": "Question",
+  "question": "What income do you need for a $400,000 house?",
+  "title": "Income for a $400K house",
+  "beats": [
+   {
+    "say": "What do you have to make to buy at $400,000?",
+    "screen": "INCOME FOR $400K",
+    "framing": "Medium (waist up)",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "shot": "Walk toward the phone and stop as you finish",
+    "location": "Front steps or sidewalk of a rowhouse",
+    "broll": null,
+    "punch": false,
+    "id": "b01"
+   },
+   {
+    "say": "Most estimates land between $100,000 and $135,000.",
+    "screen": "$100K to $135K",
+    "framing": "Medium close (chest up)",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "shot": "To camera. Step or turn so the background changes from the last line",
+    "location": "Front steps or sidewalk of a rowhouse",
+    "broll": null,
+    "punch": true,
+    "id": "b02"
+   },
+   {
+    "say": "The spread is your down payment, your rate and your debts.",
+    "screen": "3 THINGS MOVE IT",
+    "framing": "Medium (waist up)",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "shot": "To camera. Step or turn so the background changes from the last line",
+    "location": "Front steps or sidewalk of a rowhouse",
+    "broll": null,
+    "punch": false,
+    "id": "b03"
+   },
+   {
+    "say": "A $500 car payment can cost you {{buying power lost}} in house.",
+    "screen": "DEBT SHRINKS IT",
+    "framing": "Close (shoulders up)",
+    "angle": "Eye level",
+    "move": "Handheld walking",
+    "shot": "Walking along the block, phone at arm's length",
+    "location": "Front steps or sidewalk of a rowhouse",
+    "broll": null,
+    "punch": true,
+    "id": "b04"
+   },
+   {
+    "say": "So pay down the card before you shop, not after.",
+    "screen": null,
+    "framing": "Medium wide (knees up)",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "shot": "To camera. Step or turn so the background changes from the last line",
+    "location": "Front steps or sidewalk of a rowhouse",
+    "broll": null,
+    "punch": false,
+    "id": "b05"
+   },
+   {
+    "say": "Tell me your income and I'll tell you your range.",
+    "screen": "DM YOUR NUMBER",
+    "framing": "Medium close (chest up)",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "shot": "To camera. Step or turn so the background changes from the last line",
+    "location": "Front steps or sidewalk of a rowhouse",
+    "broll": null,
+    "punch": true,
+    "id": "b06"
+   },
+   {
+    "say": "$400,000 is closer than it sounds.",
+    "screen": null,
+    "framing": "Medium (waist up)",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "shot": "To camera. Step or turn so the background changes from the last line",
+    "location": "Front steps or sidewalk of a rowhouse",
+    "broll": null,
+    "punch": false,
+    "id": "b07"
+   }
+  ],
+  "verify": [
+   {
+    "item": "Buying power lost per $500 of monthly debt at today's rate",
+    "from": "Get it from: Your lender, for the day you post",
+    "done": false
+   },
+   {
+    "item": "Income range for $400K today",
+    "from": "Get it from: Your lender, for the day you post",
+    "done": false
+   }
+  ],
+  "ask": "DM your income",
+  "source": "redfin.com, pennymac.com: $100K to $135K range",
+  "caption": "What income do you need for a $400,000 house?\n\nThe short answer is in the video.\n\nDM your income.\n\n—\nNick Jungmarker | REALTOR® | Long & Foster Real Estate\n(301) 875-7182 | jungmarker.com\nEqual Housing Opportunity 🏠",
+  "seconds": 24
+ },
+ {
+  "id": "t04",
+  "kind": "talk",
+  "shape": "Question",
+  "question": "What credit score do you need to buy a house?",
+  "title": "The credit score you need",
+  "beats": [
+   {
+    "say": "You don't need a 750 credit score to buy a house.",
+    "screen": "YOU DON'T NEED 750",
+    "framing": "Medium (waist up)",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "shot": "Walk toward the phone and stop as you finish",
+    "location": "Front steps or sidewalk of a rowhouse",
+    "broll": null,
+    "punch": false,
+    "id": "b01"
+   },
+   {
+    "say": "The real minimums are lower than you think.",
+    "screen": null,
+    "framing": "Medium close (chest up)",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "shot": "To camera. Step or turn so the background changes from the last line",
+    "location": "Front steps or sidewalk of a rowhouse",
+    "broll": null,
+    "punch": true,
+    "id": "b02"
+   },
+   {
+    "say": "FHA starts at 580 with three and a half down.",
+    "screen": "FHA: 580",
+    "framing": "Medium (waist up)",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "shot": "To camera. Step or turn so the background changes from the last line",
+    "location": "Front steps or sidewalk of a rowhouse",
+    "broll": null,
+    "punch": false,
+    "id": "b03"
+   },
+   {
+    "say": "Conventional usually starts at 620.",
+    "screen": "CONVENTIONAL: 620",
+    "framing": "Close (shoulders up)",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "shot": "To camera. Step or turn so the background changes from the last line",
+    "location": "Front steps or sidewalk of a rowhouse",
+    "broll": null,
+    "punch": true,
+    "id": "b04"
+   },
+   {
+    "say": "Higher score, lower rate. That's the whole game.",
+    "screen": "SCORE = RATE",
+    "framing": "Medium wide (knees up)",
+    "angle": "Eye level",
+    "move": "Handheld walking",
+    "shot": "Walking along the block, phone at arm's length",
+    "location": "Front steps or sidewalk of a rowhouse",
+    "broll": null,
+    "punch": false,
+    "id": "b05"
+   },
+   {
+    "say": "Don't open a new card while you're shopping.",
+    "screen": "NO NEW CREDIT",
+    "framing": "Medium close (chest up)",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "shot": "To camera. Step or turn so the background changes from the last line",
+    "location": "Front steps or sidewalk of a rowhouse",
+    "broll": null,
+    "punch": true,
+    "id": "b06"
+   },
+   {
+    "say": "Comment SCORE and I'll connect you with a lender.",
+    "screen": "COMMENT \"SCORE\"",
+    "framing": "Medium (waist up)",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "shot": "To camera. Step or turn so the background changes from the last line",
+    "location": "Front steps or sidewalk of a rowhouse",
+    "broll": null,
+    "punch": false,
+    "id": "b07"
+   },
+   {
+    "say": "580. Not 750.",
+    "screen": null,
+    "framing": "Medium close (chest up)",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "shot": "To camera. Step or turn so the background changes from the last line",
+    "location": "Front steps or sidewalk of a rowhouse",
+    "broll": null,
+    "punch": true,
+    "id": "b08"
+   }
+  ],
+  "verify": [
+   {
+    "item": "580 FHA and 620 conventional minimums at the lenders you send people to",
+    "from": "Get it from: Your lender",
+    "done": false
+   }
+  ],
+  "ask": "Comment SCORE",
+  "source": "credible.com, amerisave.com first-time buyer FAQs",
+  "caption": "What credit score do you need to buy a house?\n\nThe short answer is in the video.\n\nComment SCORE.\n\n—\nNick Jungmarker | REALTOR® | Long & Foster Real Estate\n(301) 875-7182 | jungmarker.com\nEqual Housing Opportunity 🏠",
+  "seconds": 23
+ },
+ {
+  "id": "t05",
+  "kind": "talk",
+  "shape": "Nobody tells you",
+  "question": "How much are closing costs in Baltimore City?",
+  "title": "Nobody tells you about Baltimore closing costs",
+  "beats": [
+   {
+    "say": "Nobody tells you about closing costs in Baltimore City.",
+    "screen": "BALTIMORE CLOSING COSTS",
+    "framing": "Medium (waist up)",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "shot": "Walk toward the phone and stop as you finish",
+    "location": "Front steps or sidewalk of a rowhouse",
+    "broll": null,
+    "punch": false,
+    "id": "b01"
+   },
+   {
+    "say": "The city transfer tax is 1.5%.",
+    "screen": "CITY: 1.5%",
+    "framing": "Medium close (chest up)",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "shot": "To camera. Step or turn so the background changes from the last line",
+    "location": "Front steps or sidewalk of a rowhouse",
+    "broll": null,
+    "punch": true,
+    "id": "b02"
+   },
+   {
+    "say": "The state adds half a percent.",
+    "screen": "STATE: 0.5%",
+    "framing": "Medium (waist up)",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "shot": "To camera. Step or turn so the background changes from the last line",
+    "location": "Front steps or sidewalk of a rowhouse",
+    "broll": null,
+    "punch": false,
+    "id": "b03"
+   },
+   {
+    "say": "Then recordation tax, {{recordation rate}}.",
+    "screen": "+ RECORDATION",
+    "framing": "Close (shoulders up)",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "shot": "To camera. Step or turn so the background changes from the last line",
+    "location": "Front steps or sidewalk of a rowhouse",
+    "broll": null,
+    "punch": true,
+    "id": "b04"
+   },
+   {
+    "say": "Who pays what is negotiable. It's in the contract.",
+    "screen": "IT'S NEGOTIABLE",
+    "framing": "Medium wide (knees up)",
+    "angle": "Eye level",
+    "move": "Handheld walking",
+    "shot": "Walking along the block, phone at arm's length",
+    "location": "Front steps or sidewalk of a rowhouse",
+    "broll": null,
+    "punch": false,
+    "id": "b05"
+   },
+   {
+    "say": "First-time buyers get a break on part of it.",
+    "screen": "FIRST-TIME BREAK",
+    "framing": "Medium close (chest up)",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "shot": "To camera. Step or turn so the background changes from the last line",
+    "location": "Front steps or sidewalk of a rowhouse",
+    "broll": null,
+    "punch": true,
+    "id": "b06"
+   },
+   {
+    "say": "Comment CLOSING for my cost sheet.",
+    "screen": "COMMENT \"CLOSING\"",
+    "framing": "Medium (waist up)",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "shot": "To camera. Step or turn so the background changes from the last line",
+    "location": "Front steps or sidewalk of a rowhouse",
+    "broll": null,
+    "punch": false,
+    "id": "b07"
+   },
+   {
+    "say": "Closing costs. Now somebody told you.",
+    "screen": null,
+    "framing": "Medium close (chest up)",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "shot": "To camera. Step or turn so the background changes from the last line",
+    "location": "Front steps or sidewalk of a rowhouse",
+    "broll": null,
+    "punch": true,
+    "id": "b08"
+   }
+  ],
+  "verify": [
+   {
+    "item": "Current Baltimore City transfer (1.5%) and state transfer (0.5%) rates",
+    "from": "Get it from: Baltimore City Finance, or your title company",
+    "done": false
+   },
+   {
+    "item": "Recordation rate and the first-time buyer exemption",
+    "from": "Get it from: Your title company",
+    "done": false
+   },
+   {
+    "item": "You have a cost sheet to send",
+    "from": "Get it from: You",
+    "done": false
+   }
+  ],
+  "ask": "Comment CLOSING",
+  "source": "baltimorecity.gov finance: transfer tax 1.5%; state 0.5%",
+  "caption": "How much are closing costs in Baltimore City?\n\nThe short answer is in the video.\n\nComment CLOSING.\n\n—\nNick Jungmarker | REALTOR® | Long & Foster Real Estate\n(301) 875-7182 | jungmarker.com\nEqual Housing Opportunity 🏠",
+  "seconds": 20
+ },
+ {
+  "id": "t06",
+  "kind": "talk",
+  "shape": "Question",
+  "question": "How much is property tax on a Baltimore City house?",
+  "title": "The tax bill on a $250K rowhouse",
+  "beats": [
+   {
+    "say": "What's the tax bill on a $250,000 Baltimore rowhouse?",
+    "screen": "TAX ON $250K",
+    "framing": "Medium (waist up)",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "shot": "Walk toward the phone and stop as you finish",
+    "location": "Front steps or sidewalk of a rowhouse",
+    "broll": null,
+    "punch": false,
+    "id": "b01"
+   },
+   {
+    "say": "The city rate is $2.248 per $100.",
+    "screen": "$2.248 PER $100",
+    "framing": "Medium close (chest up)",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "shot": "To camera. Step or turn so the background changes from the last line",
+    "location": "Front steps or sidewalk of a rowhouse",
+    "broll": null,
+    "punch": true,
+    "id": "b02"
+   },
+   {
+    "say": "On $250,000 assessed, that's $5,620 a year.",
+    "screen": "$5,620 / YEAR",
+    "framing": "Medium (waist up)",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "shot": "To camera. Step or turn so the background changes from the last line",
+    "location": "Front steps or sidewalk of a rowhouse",
+    "broll": null,
+    "punch": false,
+    "id": "b03"
+   },
+   {
+    "say": "About $468 a month, inside your mortgage payment.",
+    "screen": "$468 / MONTH",
+    "framing": "Close (shoulders up)",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "shot": "To camera. Step or turn so the background changes from the last line",
+    "location": "Front steps or sidewalk of a rowhouse",
+    "broll": null,
+    "punch": true,
+    "id": "b04"
+   },
+   {
+    "say": "It's the highest rate in Maryland. Prices are lower to match.",
+    "screen": null,
+    "framing": "Medium wide (knees up)",
+    "angle": "Eye level",
+    "move": "Handheld walking",
+    "shot": "Walking along the block, phone at arm's length",
+    "location": "Front steps or sidewalk of a rowhouse",
+    "broll": null,
+    "punch": false,
+    "id": "b05"
+   },
+   {
+    "say": "And one free form can cap how fast it climbs.",
+    "screen": "ONE FORM",
+    "framing": "Medium close (chest up)",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "shot": "To camera. Step or turn so the background changes from the last line",
+    "location": "Front steps or sidewalk of a rowhouse",
+    "broll": null,
+    "punch": true,
+    "id": "b06"
+   },
+   {
+    "say": "Follow. That form is the next video.",
+    "screen": "FOLLOW FOR PART 2",
+    "framing": "Medium (waist up)",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "shot": "To camera. Step or turn so the background changes from the last line",
+    "location": "Front steps or sidewalk of a rowhouse",
+    "broll": null,
+    "punch": false,
+    "id": "b07"
+   },
+   {
+    "say": "$468 a month. Budget for it.",
+    "screen": null,
+    "framing": "Medium close (chest up)",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "shot": "To camera. Step or turn so the background changes from the last line",
+    "location": "Front steps or sidewalk of a rowhouse",
+    "broll": null,
+    "punch": true,
+    "id": "b08"
+   }
+  ],
+  "verify": [
+   {
+    "item": "City rate still $2.248 per $100 this fiscal year",
+    "from": "Get it from: baltimorecity.gov/finance/real-property-taxes",
+    "done": false
+   },
+   {
+    "item": "State property tax is extra; say so in the caption with the current rate",
+    "from": "Get it from: SDAT",
+    "done": false
+   }
+  ],
+  "ask": "Follow for part 2",
+  "source": "baltimorecity.gov: $2.248 per $100 (FY2025)",
+  "caption": "How much is property tax on a Baltimore City house?\n\nThe short answer is in the video.\n\nFollow for part 2.\n\n—\nNick Jungmarker | REALTOR® | Long & Foster Real Estate\n(301) 875-7182 | jungmarker.com\nEqual Housing Opportunity 🏠",
+  "seconds": 24
+ },
+ {
+  "id": "t07",
+  "kind": "talk",
+  "shape": "Negative command, softened",
+  "question": "What is the homestead tax credit in Baltimore?",
+  "title": "The one form every Baltimore owner needs",
+  "beats": [
+   {
+    "say": "One free form can cap your Baltimore property tax.",
+    "screen": "ONE FREE FORM",
+    "framing": "Medium (waist up)",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "shot": "Walk toward the phone and stop as you finish",
+    "location": "Front steps or sidewalk of a rowhouse",
+    "broll": null,
+    "punch": false,
+    "id": "b01"
+   },
+   {
+    "say": "It's the homestead tax credit.",
+    "screen": "HOMESTEAD CREDIT",
+    "framing": "Medium close (chest up)",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "shot": "To camera. Step or turn so the background changes from the last line",
+    "location": "Front steps or sidewalk of a rowhouse",
+    "broll": null,
+    "punch": true,
+    "id": "b02"
+   },
+   {
+    "say": "It caps how fast your city assessment can rise. 4% a year.",
+    "screen": "4% CAP",
+    "framing": "Medium (waist up)",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "shot": "To camera. Step or turn so the background changes from the last line",
+    "location": "Front steps or sidewalk of a rowhouse",
+    "broll": null,
+    "punch": false,
+    "id": "b03"
+   },
+   {
+    "say": "You apply once, with the state. It's free.",
+    "screen": "APPLY ONCE. FREE.",
+    "framing": "Close (shoulders up)",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "shot": "To camera. Step or turn so the background changes from the last line",
+    "location": "Front steps or sidewalk of a rowhouse",
+    "broll": null,
+    "punch": true,
+    "id": "b04"
+   },
+   {
+    "say": "Skip it and your tax bill can jump when values do.",
+    "screen": null,
+    "framing": "Medium wide (knees up)",
+    "angle": "Eye level",
+    "move": "Handheld walking",
+    "shot": "Walking along the block, phone at arm's length",
+    "location": "Front steps or sidewalk of a rowhouse",
+    "broll": null,
+    "punch": false,
+    "id": "b05"
+   },
+   {
+    "say": "You have to live in the house. That's the rule.",
+    "screen": "OWNER-OCCUPIED",
+    "framing": "Medium close (chest up)",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "shot": "To camera. Step or turn so the background changes from the last line",
+    "location": "Front steps or sidewalk of a rowhouse",
+    "broll": null,
+    "punch": true,
+    "id": "b06"
+   },
+   {
+    "say": "Comment HOMESTEAD and I'll send the link.",
+    "screen": "COMMENT \"HOMESTEAD\"",
+    "framing": "Medium (waist up)",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "shot": "To camera. Step or turn so the background changes from the last line",
+    "location": "Front steps or sidewalk of a rowhouse",
+    "broll": null,
+    "punch": false,
+    "id": "b07"
+   },
+   {
+    "say": "One form. Do it this week.",
+    "screen": null,
+    "framing": "Medium close (chest up)",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "shot": "To camera. Step or turn so the background changes from the last line",
+    "location": "Front steps or sidewalk of a rowhouse",
+    "broll": null,
+    "punch": true,
+    "id": "b08"
+   }
+  ],
+  "verify": [
+   {
+    "item": "4% Baltimore City homestead cap is current (the mayor has proposed changes for 2027)",
+    "from": "Get it from: SDAT and Baltimore City Finance",
+    "done": false
+   }
+  ],
+  "ask": "Comment HOMESTEAD",
+  "source": "baltimorecity.gov, thebanner.com: 4% cap, one-time application",
+  "caption": "What is the homestead tax credit in Baltimore?\n\nThe short answer is in the video.\n\nComment HOMESTEAD.\n\n—\nNick Jungmarker | REALTOR® | Long & Foster Real Estate\n(301) 875-7182 | jungmarker.com\nEqual Housing Opportunity 🏠",
+  "seconds": 25
+ },
+ {
+  "id": "t08",
+  "kind": "talk",
+  "shape": "Numbered list",
+  "question": "What first-time homebuyer programs does Baltimore have?",
+  "title": "3 pots of money for Baltimore buyers",
+  "beats": [
+   {
+    "say": "3 pots of money for first-time buyers in Baltimore.",
+    "screen": "3 POTS OF MONEY",
+    "framing": "Medium (waist up)",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "shot": "Walk toward the phone and stop as you finish",
+    "location": "Front steps or sidewalk of a rowhouse",
+    "broll": null,
+    "punch": false,
+    "id": "b01"
+   },
+   {
+    "say": "One. The city's first-time buyer incentive. {{current amount}}.",
+    "screen": "1. CITY INCENTIVE",
+    "framing": "Medium close (chest up)",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "shot": "To camera. Step or turn so the background changes from the last line",
+    "location": "Front steps or sidewalk of a rowhouse",
+    "broll": null,
+    "punch": true,
+    "id": "b02"
+   },
+   {
+    "say": "It's forgiven if you stay five years.",
+    "screen": "FORGIVEN IN 5 YEARS",
+    "framing": "Medium (waist up)",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "shot": "To camera. Step or turn so the background changes from the last line",
+    "location": "Front steps or sidewalk of a rowhouse",
+    "broll": null,
+    "punch": false,
+    "id": "b03"
+   },
+   {
+    "say": "Two. The Maryland Mortgage Program. Help with the down payment.",
+    "screen": "2. MARYLAND MORTGAGE PROGRAM",
+    "framing": "Close (shoulders up)",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "shot": "To camera. Step or turn so the background changes from the last line",
+    "location": "Front steps or sidewalk of a rowhouse",
+    "broll": null,
+    "punch": true,
+    "id": "b04"
+   },
+   {
+    "say": "Three. Reinvest Baltimore. Up to {{current amount}} on certain homes.",
+    "screen": "3. REINVEST BALTIMORE",
+    "framing": "Medium wide (knees up)",
+    "angle": "Eye level",
+    "move": "Handheld walking",
+    "shot": "Walking along the block, phone at arm's length",
+    "location": "Front steps or sidewalk of a rowhouse",
+    "broll": null,
+    "punch": false,
+    "id": "b05"
+   },
+   {
+    "say": "Some of these stack.",
+    "screen": "THEY STACK",
+    "framing": "Medium close (chest up)",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "shot": "To camera. Step or turn so the background changes from the last line",
+    "location": "Front steps or sidewalk of a rowhouse",
+    "broll": null,
+    "punch": true,
+    "id": "b06"
+   },
+   {
+    "say": "Comment MONEY and I'll send what you qualify for.",
+    "screen": "COMMENT \"MONEY\"",
+    "framing": "Medium (waist up)",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "shot": "To camera. Step or turn so the background changes from the last line",
+    "location": "Front steps or sidewalk of a rowhouse",
+    "broll": null,
+    "punch": false,
+    "id": "b07"
+   },
+   {
+    "say": "3 pots. Most buyers never ask.",
+    "screen": null,
+    "framing": "Medium close (chest up)",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "shot": "To camera. Step or turn so the background changes from the last line",
+    "location": "Front steps or sidewalk of a rowhouse",
+    "broll": null,
+    "punch": true,
+    "id": "b08"
+   }
+  ],
+  "verify": [
+   {
+    "item": "First-Time Homebuyers Incentive current amount and funding left",
+    "from": "Get it from: Live Baltimore / Baltimore City DHCD",
+    "done": false
+   },
+   {
+    "item": "Reinvest Baltimore down payment amount and eligible homes",
+    "from": "Get it from: Maryland DHCD",
+    "done": false
+   },
+   {
+    "item": "Which programs can be combined",
+    "from": "Get it from: An MMP-approved lender",
+    "done": false
+   }
+  ],
+  "ask": "Comment MONEY",
+  "source": "livebaltimore.com, dhcd.maryland.gov (Reinvest Baltimore, July 2026)",
+  "caption": "What first-time homebuyer programs does Baltimore have?\n\nThe short answer is in the video.\n\nComment MONEY.\n\n—\nNick Jungmarker | REALTOR® | Long & Foster Real Estate\n(301) 875-7182 | jungmarker.com\nEqual Housing Opportunity 🏠",
+  "seconds": 23
+ },
+ {
+  "id": "t09",
+  "kind": "talk",
+  "shape": "Permission",
+  "question": "Do you need 20% down to buy a house?",
+  "title": "You don't need 20% down",
+  "beats": [
+   {
+    "say": "You don't need 20% down to buy a house.",
+    "screen": "YOU DON'T NEED 20%",
+    "framing": "Medium (waist up)",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "shot": "Walk toward the phone and stop as you finish",
+    "location": "Front steps or sidewalk of a rowhouse",
+    "broll": null,
+    "punch": false,
+    "id": "b01"
+   },
+   {
+    "say": "Conventional loans go as low as 3%.",
+    "screen": "3% CONVENTIONAL",
+    "framing": "Medium close (chest up)",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "shot": "To camera. Step or turn so the background changes from the last line",
+    "location": "Front steps or sidewalk of a rowhouse",
+    "broll": null,
+    "punch": true,
+    "id": "b02"
+   },
+   {
+    "say": "FHA is three and a half.",
+    "screen": "3.5% FHA",
+    "framing": "Medium (waist up)",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "shot": "To camera. Step or turn so the background changes from the last line",
+    "location": "Front steps or sidewalk of a rowhouse",
+    "broll": null,
+    "punch": false,
+    "id": "b03"
+   },
+   {
+    "say": "VA is zero, if you served.",
+    "screen": "0% VA",
+    "framing": "Close (shoulders up)",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "shot": "To camera. Step or turn so the background changes from the last line",
+    "location": "Front steps or sidewalk of a rowhouse",
+    "broll": null,
+    "punch": true,
+    "id": "b04"
+   },
+   {
+    "say": "Under 20, you pay mortgage insurance. It comes off later.",
+    "screen": "PMI COMES OFF",
+    "framing": "Medium wide (knees up)",
+    "angle": "Eye level",
+    "move": "Handheld walking",
+    "shot": "Walking along the block, phone at arm's length",
+    "location": "Front steps or sidewalk of a rowhouse",
+    "broll": null,
+    "punch": false,
+    "id": "b05"
+   },
+   {
+    "say": "Waiting years to save 20 can cost more than the insurance.",
+    "screen": null,
+    "framing": "Medium close (chest up)",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "shot": "To camera. Step or turn so the background changes from the last line",
+    "location": "Front steps or sidewalk of a rowhouse",
+    "broll": null,
+    "punch": true,
+    "id": "b06"
+   },
+   {
+    "say": "Comment DOWN and I'll show you your options.",
+    "screen": "COMMENT \"DOWN\"",
+    "framing": "Medium (waist up)",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "shot": "To camera. Step or turn so the background changes from the last line",
+    "location": "Front steps or sidewalk of a rowhouse",
+    "broll": null,
+    "punch": false,
+    "id": "b07"
+   },
+   {
+    "say": "20% is a choice. Not a rule.",
+    "screen": null,
+    "framing": "Medium close (chest up)",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "shot": "To camera. Step or turn so the background changes from the last line",
+    "location": "Front steps or sidewalk of a rowhouse",
+    "broll": null,
+    "punch": true,
+    "id": "b08"
+   }
+  ],
+  "verify": [
+   {
+    "item": "Loan minimums at your lenders",
+    "from": "Get it from: Your lender",
+    "done": false
+   }
+  ],
+  "ask": "Comment DOWN",
+  "source": "bankrate.com, sofi.com",
+  "caption": "Do you need 20% down to buy a house?\n\nThe short answer is in the video.\n\nComment DOWN.\n\n—\nNick Jungmarker | REALTOR® | Long & Foster Real Estate\n(301) 875-7182 | jungmarker.com\nEqual Housing Opportunity 🏠",
+  "seconds": 23
+ },
+ {
+  "id": "t10",
+  "kind": "talk",
+  "shape": "Question",
+  "question": "What is PMI and when does it go away?",
+  "title": "PMI, in 20 seconds",
+  "beats": [
+   {
+    "say": "PMI isn't forever. Here's when it comes off.",
+    "screen": "PMI ISN'T FOREVER",
+    "framing": "Medium (waist up)",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "shot": "Walk toward the phone and stop as you finish",
+    "location": "Front steps or sidewalk of a rowhouse",
+    "broll": null,
+    "punch": false,
+    "id": "b01"
+   },
+   {
+    "say": "It's insurance for the lender when you put down under 20%.",
+    "screen": "UNDER 20% DOWN",
+    "framing": "Medium close (chest up)",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "shot": "To camera. Step or turn so the background changes from the last line",
+    "location": "Front steps or sidewalk of a rowhouse",
+    "broll": null,
+    "punch": true,
+    "id": "b02"
+   },
+   {
+    "say": "You pay it monthly, on top of the mortgage.",
+    "screen": "MONTHLY",
+    "framing": "Medium (waist up)",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "shot": "To camera. Step or turn so the background changes from the last line",
+    "location": "Front steps or sidewalk of a rowhouse",
+    "broll": null,
+    "punch": false,
+    "id": "b03"
+   },
+   {
+    "say": "On a conventional loan it drops off once you own enough.",
+    "screen": "IT DROPS OFF",
+    "framing": "Close (shoulders up)",
+    "angle": "Eye level",
+    "move": "Handheld walking",
+    "shot": "Walking along the block, phone at arm's length",
+    "location": "Front steps or sidewalk of a rowhouse",
+    "broll": null,
+    "punch": true,
+    "id": "b04"
+   },
+   {
+    "say": "On FHA it works differently. Ask before you pick.",
+    "screen": "FHA IS DIFFERENT",
+    "framing": "Medium wide (knees up)",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "shot": "To camera. Step or turn so the background changes from the last line",
+    "location": "Front steps or sidewalk of a rowhouse",
+    "broll": null,
+    "punch": false,
+    "id": "b05"
+   },
+   {
+    "say": "It's the price of buying years sooner.",
+    "screen": null,
+    "framing": "Medium close (chest up)",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "shot": "To camera. Step or turn so the background changes from the last line",
+    "location": "Front steps or sidewalk of a rowhouse",
+    "broll": null,
+    "punch": true,
+    "id": "b06"
+   },
+   {
+    "say": "Questions? Comment PMI.",
+    "screen": "COMMENT \"PMI\"",
+    "framing": "Medium (waist up)",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "shot": "To camera. Step or turn so the background changes from the last line",
+    "location": "Front steps or sidewalk of a rowhouse",
+    "broll": null,
+    "punch": false,
+    "id": "b07"
+   }
+  ],
+  "verify": [
+   {
+    "item": "How and when PMI is removed on the loans you see, in one sentence you are comfortable saying",
+    "from": "Get it from: Your lender",
+    "done": false
+   }
+  ],
+  "ask": "Comment PMI",
+  "source": "amerisave.com FAQ",
+  "caption": "What is PMI and when does it go away?\n\nThe short answer is in the video.\n\nComment PMI.\n\n—\nNick Jungmarker | REALTOR® | Long & Foster Real Estate\n(301) 875-7182 | jungmarker.com\nEqual Housing Opportunity 🏠",
+  "seconds": 21
+ },
+ {
+  "id": "t11",
+  "kind": "talk",
+  "shape": "Question",
+  "question": "How much earnest money do I need?",
+  "title": "Earnest money, explained on a stoop",
+  "beats": [
+   {
+    "say": "You can lose your earnest money. Here's how not to.",
+    "screen": "EARNEST MONEY",
+    "framing": "Medium (waist up)",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "shot": "Walk toward the phone and stop as you finish",
+    "location": "Front steps or sidewalk of a rowhouse",
+    "broll": null,
+    "punch": false,
+    "id": "b01"
+   },
+   {
+    "say": "It's a deposit you put down when your offer is accepted.",
+    "screen": "A DEPOSIT",
+    "framing": "Medium close (chest up)",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "shot": "To camera. Step or turn so the background changes from the last line",
+    "location": "Front steps or sidewalk of a rowhouse",
+    "broll": null,
+    "punch": true,
+    "id": "b02"
+   },
+   {
+    "say": "In Baltimore it's usually {{typical amount here}}.",
+    "screen": "{{TYPICAL AMOUNT}}",
+    "framing": "Medium (waist up)",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "shot": "To camera. Step or turn so the background changes from the last line",
+    "location": "Front steps or sidewalk of a rowhouse",
+    "broll": null,
+    "punch": false,
+    "id": "b03"
+   },
+   {
+    "say": "At closing it counts toward your down payment.",
+    "screen": "IT COUNTS AT CLOSING",
+    "framing": "Close (shoulders up)",
+    "angle": "Eye level",
+    "move": "Handheld walking",
+    "shot": "Walking along the block, phone at arm's length",
+    "location": "Front steps or sidewalk of a rowhouse",
+    "broll": null,
+    "punch": true,
+    "id": "b04"
+   },
+   {
+    "say": "Back out for a reason in the contract, you get it back.",
+    "screen": null,
+    "framing": "Medium wide (knees up)",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "shot": "To camera. Step or turn so the background changes from the last line",
+    "location": "Front steps or sidewalk of a rowhouse",
+    "broll": null,
+    "punch": false,
+    "id": "b05"
+   },
+   {
+    "say": "Back out for no reason, you can lose it.",
+    "screen": "YOU CAN LOSE IT",
+    "framing": "Medium close (chest up)",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "shot": "To camera. Step or turn so the background changes from the last line",
+    "location": "Front steps or sidewalk of a rowhouse",
+    "broll": null,
+    "punch": true,
+    "id": "b06"
+   },
+   {
+    "say": "Read the contingencies. That's where your money lives.",
+    "screen": null,
+    "framing": "Medium (waist up)",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "shot": "To camera. Step or turn so the background changes from the last line",
+    "location": "Front steps or sidewalk of a rowhouse",
+    "broll": null,
+    "punch": false,
+    "id": "b07"
+   }
+  ],
+  "verify": [
+   {
+    "item": "Typical earnest money deposit in your deals",
+    "from": "Get it from: Your own recent contracts",
+    "done": false
+   }
+  ],
+  "ask": "Save this",
+  "source": "credible.com: 1% to 3% nationally",
+  "caption": "How much earnest money do I need?\n\nThe short answer is in the video.\n\nSave this.\n\n—\nNick Jungmarker | REALTOR® | Long & Foster Real Estate\n(301) 875-7182 | jungmarker.com\nEqual Housing Opportunity 🏠",
+  "seconds": 24
+ },
+ {
+  "id": "t12",
+  "kind": "talk",
+  "shape": "Question",
+  "question": "How long does it take to buy a house in Maryland?",
+  "title": "How long buying really takes",
+  "beats": [
+   {
+    "say": "Nobody tells you how long buying a house takes.",
+    "screen": "HOW LONG IT TAKES",
+    "framing": "Medium (waist up)",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "shot": "Walk toward the phone and stop as you finish",
+    "location": "Front steps or sidewalk of a rowhouse",
+    "broll": null,
+    "punch": false,
+    "id": "b01"
+   },
+   {
+    "say": "Pre-approval. {{days}}.",
+    "screen": "PRE-APPROVAL",
+    "framing": "Medium close (chest up)",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "shot": "To camera. Step or turn so the background changes from the last line",
+    "location": "Front steps or sidewalk of a rowhouse",
+    "broll": null,
+    "punch": true,
+    "id": "b02"
+   },
+   {
+    "say": "Finding the house. That part's on you.",
+    "screen": "THE SEARCH",
+    "framing": "Medium (waist up)",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "shot": "To camera. Step or turn so the background changes from the last line",
+    "location": "Front steps or sidewalk of a rowhouse",
+    "broll": null,
+    "punch": false,
+    "id": "b03"
+   },
+   {
+    "say": "Offer to keys is usually {{days to close}}.",
+    "screen": "OFFER TO KEYS",
+    "framing": "Close (shoulders up)",
+    "angle": "Eye level",
+    "move": "Handheld walking",
+    "shot": "Walking along the block, phone at arm's length",
+    "location": "Front steps or sidewalk of a rowhouse",
+    "broll": null,
+    "punch": true,
+    "id": "b04"
+   },
+   {
+    "say": "So start {{months}} before your lease ends.",
+    "screen": "START EARLY",
+    "framing": "Medium wide (knees up)",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "shot": "To camera. Step or turn so the background changes from the last line",
+    "location": "Front steps or sidewalk of a rowhouse",
+    "broll": null,
+    "punch": false,
+    "id": "b05"
+   },
+   {
+    "say": "Comment TIMELINE for my week-by-week.",
+    "screen": "COMMENT \"TIMELINE\"",
+    "framing": "Medium close (chest up)",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "shot": "To camera. Step or turn so the background changes from the last line",
+    "location": "Front steps or sidewalk of a rowhouse",
+    "broll": null,
+    "punch": true,
+    "id": "b06"
+   }
+  ],
+  "verify": [
+   {
+    "item": "Your own typical pre-approval and contract-to-close times",
+    "from": "Get it from: Your last ten deals",
+    "done": false
+   }
+  ],
+  "ask": "Comment TIMELINE",
+  "source": "karashaffer.evrealestate.com: 2 to 4 months for first-time buyers",
+  "caption": "How long does it take to buy a house in Maryland?\n\nThe short answer is in the video.\n\nComment TIMELINE.\n\n—\nNick Jungmarker | REALTOR® | Long & Foster Real Estate\n(301) 875-7182 | jungmarker.com\nEqual Housing Opportunity 🏠",
+  "seconds": 14
+ },
+ {
+  "id": "t13",
+  "kind": "talk",
+  "shape": "A or B",
+  "question": "Is it better to rent or buy in Baltimore?",
+  "title": "Rent or buy in Baltimore?",
+  "beats": [
+   {
+    "say": "Rent or buy in Baltimore? Same monthly money.",
+    "screen": "RENT or BUY?",
+    "framing": "Medium (waist up)",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "shot": "Walk toward the phone and stop as you finish",
+    "location": "Front steps or sidewalk of a rowhouse",
+    "broll": null,
+    "punch": false,
+    "id": "b01"
+   },
+   {
+    "say": "Rent here runs around {{current median rent}}.",
+    "screen": "RENT: {{AMOUNT}}",
+    "framing": "Medium close (chest up)",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "shot": "To camera. Step or turn so the background changes from the last line",
+    "location": "Front steps or sidewalk of a rowhouse",
+    "broll": null,
+    "punch": true,
+    "id": "b02"
+   },
+   {
+    "say": "That payment buys a rowhouse around {{price}}.",
+    "screen": "BUY: {{PRICE}}",
+    "framing": "Medium (waist up)",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "shot": "To camera. Step or turn so the background changes from the last line",
+    "location": "Front steps or sidewalk of a rowhouse",
+    "broll": null,
+    "punch": false,
+    "id": "b03"
+   },
+   {
+    "say": "Renting wins if you're leaving inside three years.",
+    "screen": "UNDER 3 YEARS: RENT",
+    "framing": "Close (shoulders up)",
+    "angle": "Eye level",
+    "move": "Handheld walking",
+    "shot": "Walking along the block, phone at arm's length",
+    "location": "Front steps or sidewalk of a rowhouse",
+    "broll": null,
+    "punch": true,
+    "id": "b04"
+   },
+   {
+    "say": "Buying wins if you're staying five.",
+    "screen": "5+ YEARS: BUY",
+    "framing": "Medium wide (knees up)",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "shot": "To camera. Step or turn so the background changes from the last line",
+    "location": "Front steps or sidewalk of a rowhouse",
+    "broll": null,
+    "punch": false,
+    "id": "b05"
+   },
+   {
+    "say": "In between, it's the house, not the math.",
+    "screen": null,
+    "framing": "Medium close (chest up)",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "shot": "To camera. Step or turn so the background changes from the last line",
+    "location": "Front steps or sidewalk of a rowhouse",
+    "broll": null,
+    "punch": true,
+    "id": "b06"
+   },
+   {
+    "say": "Which one are you? Rent or buy?",
+    "screen": null,
+    "framing": "Medium (waist up)",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "shot": "To camera. Step or turn so the background changes from the last line",
+    "location": "Front steps or sidewalk of a rowhouse",
+    "broll": null,
+    "punch": false,
+    "id": "b07"
+   }
+  ],
+  "verify": [
+   {
+    "item": "Current median rent for the area you name",
+    "from": "Get it from: Bright MLS rentals or a named source in the caption",
+    "done": false
+   },
+   {
+    "item": "Price that payment buys today",
+    "from": "Get it from: Your lender, for the day you post",
+    "done": false
+   }
+  ],
+  "ask": "Rent or buy?",
+  "source": "stacker.com, zillow.com rent-vs-buy pieces",
+  "caption": "Is it better to rent or buy in Baltimore?\n\nThe short answer is in the video.\n\nRent or buy?.\n\n—\nNick Jungmarker | REALTOR® | Long & Foster Real Estate\n(301) 875-7182 | jungmarker.com\nEqual Housing Opportunity 🏠",
+  "seconds": 19
+ },
+ {
+  "id": "t14",
+  "kind": "talk",
+  "shape": "A or B",
+  "question": "FHA or conventional loan?",
+  "title": "FHA or conventional?",
+  "beats": [
+   {
+    "say": "FHA or conventional? Here's how I'd pick.",
+    "screen": "FHA or CONVENTIONAL?",
+    "framing": "Medium (waist up)",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "shot": "Walk toward the phone and stop as you finish",
+    "location": "Front steps or sidewalk of a rowhouse",
+    "broll": null,
+    "punch": false,
+    "id": "b01"
+   },
+   {
+    "say": "FHA. Lower credit score, three and a half down.",
+    "screen": "FHA: 580 / 3.5%",
+    "framing": "Medium close (chest up)",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "shot": "To camera. Step or turn so the background changes from the last line",
+    "location": "Front steps or sidewalk of a rowhouse",
+    "broll": null,
+    "punch": true,
+    "id": "b02"
+   },
+   {
+    "say": "Conventional. Better score, as low as three down.",
+    "screen": "CONV: 620 / 3%",
+    "framing": "Medium (waist up)",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "shot": "To camera. Step or turn so the background changes from the last line",
+    "location": "Front steps or sidewalk of a rowhouse",
+    "broll": null,
+    "punch": false,
+    "id": "b03"
+   },
+   {
+    "say": "FHA's insurance tends to stick around longer.",
+    "screen": "FHA INSURANCE STAYS",
+    "framing": "Close (shoulders up)",
+    "angle": "Eye level",
+    "move": "Handheld walking",
+    "shot": "Walking along the block, phone at arm's length",
+    "location": "Front steps or sidewalk of a rowhouse",
+    "broll": null,
+    "punch": true,
+    "id": "b04"
+   },
+   {
+    "say": "Some rowhouses won't pass an FHA appraisal as they sit.",
+    "screen": "CONDITION MATTERS",
+    "framing": "Medium wide (knees up)",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "shot": "To camera. Step or turn so the background changes from the last line",
+    "location": "Front steps or sidewalk of a rowhouse",
+    "broll": null,
+    "punch": false,
+    "id": "b05"
+   },
+   {
+    "say": "So the house can pick the loan for you.",
+    "screen": null,
+    "framing": "Medium close (chest up)",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "shot": "To camera. Step or turn so the background changes from the last line",
+    "location": "Front steps or sidewalk of a rowhouse",
+    "broll": null,
+    "punch": true,
+    "id": "b06"
+   },
+   {
+    "say": "Which one are you leaning? FHA or conventional?",
+    "screen": null,
+    "framing": "Medium (waist up)",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "shot": "To camera. Step or turn so the background changes from the last line",
+    "location": "Front steps or sidewalk of a rowhouse",
+    "broll": null,
+    "punch": false,
+    "id": "b07"
+   }
+  ],
+  "verify": [
+   {
+    "item": "How you describe FHA mortgage insurance and appraisal standards",
+    "from": "Get it from: Your lender",
+    "done": false
+   }
+  ],
+  "ask": "FHA or conventional?",
+  "source": "credible.com, bankrate.com",
+  "caption": "FHA or conventional loan?\n\nThe short answer is in the video.\n\nFHA or conventional?.\n\n—\nNick Jungmarker | REALTOR® | Long & Foster Real Estate\n(301) 875-7182 | jungmarker.com\nEqual Housing Opportunity 🏠",
+  "seconds": 21
+ },
+ {
+  "id": "t15",
+  "kind": "talk",
+  "shape": "A or B",
+  "question": "Pre-qualified or pre-approved?",
+  "title": "Pre-qualified or pre-approved?",
+  "beats": [
+   {
+    "say": "Pre-qualified or pre-approved? One of them means nothing.",
+    "screen": "PRE-QUALIFIED or PRE-APPROVED?",
+    "framing": "Medium (waist up)",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "shot": "Walk toward the phone and stop as you finish",
+    "location": "Front steps or sidewalk of a rowhouse",
+    "broll": null,
+    "punch": false,
+    "id": "b01"
+   },
+   {
+    "say": "Pre-qualified is a guess from what you told them.",
+    "screen": "PRE-QUALIFIED = A GUESS",
+    "framing": "Medium close (chest up)",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "shot": "To camera. Step or turn so the background changes from the last line",
+    "location": "Front steps or sidewalk of a rowhouse",
+    "broll": null,
+    "punch": true,
+    "id": "b02"
+   },
+   {
+    "say": "Pre-approved means they checked your pay and your credit.",
+    "screen": "PRE-APPROVED = CHECKED",
+    "framing": "Medium (waist up)",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "shot": "To camera. Step or turn so the background changes from the last line",
+    "location": "Front steps or sidewalk of a rowhouse",
+    "broll": null,
+    "punch": false,
+    "id": "b03"
+   },
+   {
+    "say": "Sellers here want the second one with your offer.",
+    "screen": "SELLERS WANT THIS",
+    "framing": "Close (shoulders up)",
+    "angle": "Eye level",
+    "move": "Handheld walking",
+    "shot": "Walking along the block, phone at arm's length",
+    "location": "Front steps or sidewalk of a rowhouse",
+    "broll": null,
+    "punch": true,
+    "id": "b04"
+   },
+   {
+    "say": "It takes {{time}} and it's free.",
+    "screen": "FREE",
+    "framing": "Medium wide (knees up)",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "shot": "To camera. Step or turn so the background changes from the last line",
+    "location": "Front steps or sidewalk of a rowhouse",
+    "broll": null,
+    "punch": false,
+    "id": "b05"
+   },
+   {
+    "say": "Get it before the first showing, not after you fall in love.",
+    "screen": null,
+    "framing": "Medium close (chest up)",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "shot": "To camera. Step or turn so the background changes from the last line",
+    "location": "Front steps or sidewalk of a rowhouse",
+    "broll": null,
+    "punch": true,
+    "id": "b06"
+   },
+   {
+    "say": "Pre-approved. That's the one.",
+    "screen": null,
+    "framing": "Medium (waist up)",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "shot": "To camera. Step or turn so the background changes from the last line",
+    "location": "Front steps or sidewalk of a rowhouse",
+    "broll": null,
+    "punch": false,
+    "id": "b07"
+   }
+  ],
+  "verify": [
+   {
+    "item": "How long pre-approval takes with your lender",
+    "from": "Get it from: Your lender",
+    "done": false
+   }
+  ],
+  "ask": "Comment LENDER",
+  "source": "rocketmortgage.com Maryland guide",
+  "caption": "Pre-qualified or pre-approved?\n\nThe short answer is in the video.\n\nComment LENDER.\n\n—\nNick Jungmarker | REALTOR® | Long & Foster Real Estate\n(301) 875-7182 | jungmarker.com\nEqual Housing Opportunity 🏠",
+  "seconds": 21
+ },
+ {
+  "id": "t16",
+  "kind": "talk",
+  "shape": "Cold open demo",
+  "question": "What should I look for in a Baltimore rowhouse?",
+  "title": "The first thing I check in a rowhouse",
+  "beats": [
+   {
+    "say": "First thing I check in a Baltimore rowhouse.",
+    "screen": "FIRST THING I CHECK",
+    "framing": "Medium (waist up)",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "shot": "Walk toward the phone and stop as you finish",
+    "location": "Inside a rowhouse you have permission to film: top floor, then basement stairs",
+    "broll": null,
+    "punch": false,
+    "id": "b01"
+   },
+   {
+    "say": "The ceiling on the top floor.",
+    "screen": "LOOK UP",
+    "framing": "Medium close (chest up)",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "shot": "To camera. Step or turn so the background changes from the last line",
+    "location": "Inside a rowhouse you have permission to film: top floor, then basement stairs",
+    "broll": null,
+    "punch": true,
+    "id": "b02"
+   },
+   {
+    "say": "Stains up here mean the flat roof has leaked.",
+    "screen": "STAINS = ROOF",
+    "framing": "Medium (waist up)",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "shot": "To camera. Step or turn so the background changes from the last line",
+    "location": "Inside a rowhouse you have permission to film: top floor, then basement stairs",
+    "broll": "Slow pan across a top-floor ceiling. 4 seconds",
+    "punch": false,
+    "id": "b03"
+   },
+   {
+    "say": "Then I ask how old the roof is.",
+    "screen": "HOW OLD IS IT?",
+    "framing": "Close (shoulders up)",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "shot": "To camera. Step or turn so the background changes from the last line",
+    "location": "Inside a rowhouse you have permission to film: top floor, then basement stairs",
+    "broll": null,
+    "punch": true,
+    "id": "b04"
+   },
+   {
+    "say": "A roof is the most expensive thing on this house.",
+    "screen": null,
+    "framing": "Medium wide (knees up)",
+    "angle": "Eye level",
+    "move": "Handheld walking",
+    "shot": "Walking along the block, phone at arm's length",
+    "location": "Inside a rowhouse you have permission to film: top floor, then basement stairs",
+    "broll": null,
+    "punch": false,
+    "id": "b05"
+   },
+   {
+    "say": "Then the basement. Same question, other direction.",
+    "screen": "THEN THE BASEMENT",
+    "framing": "Medium close (chest up)",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "shot": "To camera. Step or turn so the background changes from the last line",
+    "location": "Inside a rowhouse you have permission to film: top floor, then basement stairs",
+    "broll": "Walking down the basement stairs, phone forward. 4 seconds",
+    "punch": true,
+    "id": "b06"
+   },
+   {
+    "say": "Follow. I'll show you the basement next.",
+    "screen": "FOLLOW FOR PART 2",
+    "framing": "Medium (waist up)",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "shot": "To camera. Step or turn so the background changes from the last line",
+    "location": "Inside a rowhouse you have permission to film: top floor, then basement stairs",
+    "broll": null,
+    "punch": false,
+    "id": "b07"
+   },
+   {
+    "say": "Look up first. Every time.",
+    "screen": null,
+    "framing": "Medium close (chest up)",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "shot": "To camera. Step or turn so the background changes from the last line",
+    "location": "Inside a rowhouse you have permission to film: top floor, then basement stairs",
+    "broll": null,
+    "punch": true,
+    "id": "b08"
+   }
+  ],
+  "verify": [
+   {
+    "item": "You have the owner's permission to film inside",
+    "from": "Get it from: The seller or your listing agreement",
+    "done": false
+   }
+  ],
+  "ask": "Follow for part 2",
+  "source": "activerain.com: what to check before you buy a Baltimore rowhome",
+  "caption": "What should I look for in a Baltimore rowhouse?\n\nThe short answer is in the video.\n\nFollow for part 2.\n\n—\nNick Jungmarker | REALTOR® | Long & Foster Real Estate\n(301) 875-7182 | jungmarker.com\nEqual Housing Opportunity 🏠",
+  "seconds": 22
+ },
+ {
+  "id": "t17",
+  "kind": "talk",
+  "shape": "Numbered list",
+  "question": "What questions should I ask at a showing?",
+  "title": "3 questions at every Baltimore showing",
+  "beats": [
+   {
+    "say": "3 questions I ask at every Baltimore showing.",
+    "screen": "3 QUESTIONS",
+    "framing": "Medium (waist up)",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "shot": "Walk toward the phone and stop as you finish",
+    "location": "Front steps or sidewalk of a rowhouse",
+    "broll": null,
+    "punch": false,
+    "id": "b01"
+   },
+   {
+    "say": "One. Is there a ground rent?",
+    "screen": "1. GROUND RENT?",
+    "framing": "Medium close (chest up)",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "shot": "To camera. Step or turn so the background changes from the last line",
+    "location": "Front steps or sidewalk of a rowhouse",
+    "broll": null,
+    "punch": true,
+    "id": "b02"
+   },
+   {
+    "say": "Two. How old is the roof?",
+    "screen": "2. ROOF AGE?",
+    "framing": "Medium (waist up)",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "shot": "To camera. Step or turn so the background changes from the last line",
+    "location": "Front steps or sidewalk of a rowhouse",
+    "broll": null,
+    "punch": false,
+    "id": "b03"
+   },
+   {
+    "say": "Three. Was that deck built with a permit?",
+    "screen": "3. PERMITS?",
+    "framing": "Close (shoulders up)",
+    "angle": "Eye level",
+    "move": "Handheld walking",
+    "shot": "Walking along the block, phone at arm's length",
+    "location": "Front steps or sidewalk of a rowhouse",
+    "broll": null,
+    "punch": true,
+    "id": "b04"
+   },
+   {
+    "say": "Unpermitted work becomes your problem at closing.",
+    "screen": null,
+    "framing": "Medium wide (knees up)",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "shot": "To camera. Step or turn so the background changes from the last line",
+    "location": "Front steps or sidewalk of a rowhouse",
+    "broll": null,
+    "punch": false,
+    "id": "b05"
+   },
+   {
+    "say": "Save this for your next showing.",
+    "screen": "SAVE THIS",
+    "framing": "Medium close (chest up)",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "shot": "To camera. Step or turn so the background changes from the last line",
+    "location": "Front steps or sidewalk of a rowhouse",
+    "broll": null,
+    "punch": true,
+    "id": "b06"
+   },
+   {
+    "say": "3 questions. Ask all of them.",
+    "screen": null,
+    "framing": "Medium (waist up)",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "shot": "To camera. Step or turn so the background changes from the last line",
+    "location": "Front steps or sidewalk of a rowhouse",
+    "broll": null,
+    "punch": false,
+    "id": "b07"
+   }
+  ],
+  "verify": [],
+  "ask": "Save this",
+  "source": "activerain.com, biggerpockets.com Baltimore red-flag threads",
+  "caption": "What questions should I ask at a showing?\n\nThe short answer is in the video.\n\nSave this.\n\n—\nNick Jungmarker | REALTOR® | Long & Foster Real Estate\n(301) 875-7182 | jungmarker.com\nEqual Housing Opportunity 🏠",
+  "seconds": 17
+ },
+ {
+  "id": "t18",
+  "kind": "talk",
+  "shape": "Nobody tells you",
+  "question": "Do I have to sign something before touring homes?",
+  "title": "The paper you sign before a showing",
+  "beats": [
+   {
+    "say": "Nobody tells you there's paperwork before your first showing.",
+    "screen": "BEFORE YOUR FIRST SHOWING",
+    "framing": "Medium (waist up)",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "shot": "Walk toward the phone and stop as you finish",
+    "location": "Front steps or sidewalk of a rowhouse",
+    "broll": null,
+    "punch": false,
+    "id": "b01"
+   },
+   {
+    "say": "You sign a buyer agreement with your agent first.",
+    "screen": "BUYER AGREEMENT",
+    "framing": "Medium close (chest up)",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "shot": "To camera. Step or turn so the background changes from the last line",
+    "location": "Front steps or sidewalk of a rowhouse",
+    "broll": null,
+    "punch": true,
+    "id": "b02"
+   },
+   {
+    "say": "It says what I do and how I get paid.",
+    "screen": "WHAT I DO. HOW I'M PAID.",
+    "framing": "Medium (waist up)",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "shot": "To camera. Step or turn so the background changes from the last line",
+    "location": "Front steps or sidewalk of a rowhouse",
+    "broll": null,
+    "punch": false,
+    "id": "b03"
+   },
+   {
+    "say": "It's negotiable. Read it. Ask me anything in it.",
+    "screen": "IT'S NEGOTIABLE",
+    "framing": "Close (shoulders up)",
+    "angle": "Eye level",
+    "move": "Handheld walking",
+    "shot": "Walking along the block, phone at arm's length",
+    "location": "Front steps or sidewalk of a rowhouse",
+    "broll": null,
+    "punch": true,
+    "id": "b04"
+   },
+   {
+    "say": "It can be for one house or for months.",
+    "screen": null,
+    "framing": "Medium wide (knees up)",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "shot": "To camera. Step or turn so the background changes from the last line",
+    "location": "Front steps or sidewalk of a rowhouse",
+    "broll": null,
+    "punch": false,
+    "id": "b05"
+   },
+   {
+    "say": "A good agent walks you through it line by line.",
+    "screen": null,
+    "framing": "Medium close (chest up)",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "shot": "To camera. Step or turn so the background changes from the last line",
+    "location": "Front steps or sidewalk of a rowhouse",
+    "broll": null,
+    "punch": true,
+    "id": "b06"
+   },
+   {
+    "say": "Paperwork first. Now you know.",
+    "screen": null,
+    "framing": "Medium (waist up)",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "shot": "To camera. Step or turn so the background changes from the last line",
+    "location": "Front steps or sidewalk of a rowhouse",
+    "broll": null,
+    "punch": false,
+    "id": "b07"
+   }
+  ],
+  "verify": [
+   {
+    "item": "Your brokerage's current buyer agreement terms and how you may describe them",
+    "from": "Get it from: Long & Foster compliance",
+    "done": false
+   }
+  ],
+  "ask": "Questions? DM me",
+  "source": "karashaffer.evrealestate.com: agreement before touring",
+  "caption": "Do I have to sign something before touring homes?\n\nThe short answer is in the video.\n\nQuestions? DM me.\n\n—\nNick Jungmarker | REALTOR® | Long & Foster Real Estate\n(301) 875-7182 | jungmarker.com\nEqual Housing Opportunity 🏠",
+  "seconds": 22
+ },
+ {
+  "id": "t19",
+  "kind": "talk",
+  "shape": "Question",
+  "question": "How much does it cost to sell a house in Maryland?",
+  "title": "What it costs to sell here",
+  "beats": [
+   {
+    "say": "What does it cost to sell a house in Baltimore?",
+    "screen": "COST TO SELL",
+    "framing": "Medium (waist up)",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "shot": "Walk toward the phone and stop as you finish",
+    "location": "Front steps or sidewalk of a rowhouse",
+    "broll": null,
+    "punch": false,
+    "id": "b01"
+   },
+   {
+    "say": "More than the commission.",
+    "screen": null,
+    "framing": "Medium close (chest up)",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "shot": "To camera. Step or turn so the background changes from the last line",
+    "location": "Front steps or sidewalk of a rowhouse",
+    "broll": null,
+    "punch": true,
+    "id": "b02"
+   },
+   {
+    "say": "Transfer and recordation taxes. Who pays is in the contract.",
+    "screen": "TRANSFER TAXES",
+    "framing": "Medium (waist up)",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "shot": "To camera. Step or turn so the background changes from the last line",
+    "location": "Front steps or sidewalk of a rowhouse",
+    "broll": null,
+    "punch": false,
+    "id": "b03"
+   },
+   {
+    "say": "Your mortgage payoff.",
+    "screen": "PAYOFF",
+    "framing": "Close (shoulders up)",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "shot": "To camera. Step or turn so the background changes from the last line",
+    "location": "Front steps or sidewalk of a rowhouse",
+    "broll": null,
+    "punch": true,
+    "id": "b04"
+   },
+   {
+    "say": "Repairs the buyer asks for after inspection.",
+    "screen": "REPAIRS",
+    "framing": "Medium wide (knees up)",
+    "angle": "Eye level",
+    "move": "Handheld walking",
+    "shot": "Walking along the block, phone at arm's length",
+    "location": "Front steps or sidewalk of a rowhouse",
+    "broll": null,
+    "punch": false,
+    "id": "b05"
+   },
+   {
+    "say": "All in, sellers here net about {{net percent}} of the price.",
+    "screen": "{{NET %}}",
+    "framing": "Medium close (chest up)",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "shot": "To camera. Step or turn so the background changes from the last line",
+    "location": "Front steps or sidewalk of a rowhouse",
+    "broll": null,
+    "punch": true,
+    "id": "b06"
+   },
+   {
+    "say": "Comment NET and I'll run your number before you list.",
+    "screen": "COMMENT \"NET\"",
+    "framing": "Medium (waist up)",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "shot": "To camera. Step or turn so the background changes from the last line",
+    "location": "Front steps or sidewalk of a rowhouse",
+    "broll": null,
+    "punch": false,
+    "id": "b07"
+   },
+   {
+    "say": "Know your net before the sign goes up.",
+    "screen": null,
+    "framing": "Medium close (chest up)",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "shot": "To camera. Step or turn so the background changes from the last line",
+    "location": "Front steps or sidewalk of a rowhouse",
+    "broll": null,
+    "punch": true,
+    "id": "b08"
+   }
+  ],
+  "verify": [
+   {
+    "item": "Typical seller net as a percent of price in your deals",
+    "from": "Get it from: Your own closing statements",
+    "done": false
+   },
+   {
+    "item": "How you may describe commission",
+    "from": "Get it from: Long & Foster compliance",
+    "done": false
+   }
+  ],
+  "ask": "Comment NET",
+  "source": "bankrate.com, homelight.com: cost to sell in Maryland",
+  "caption": "How much does it cost to sell a house in Maryland?\n\nThe short answer is in the video.\n\nComment NET.\n\n—\nNick Jungmarker | REALTOR® | Long & Foster Real Estate\n(301) 875-7182 | jungmarker.com\nEqual Housing Opportunity 🏠",
+  "seconds": 23
+ },
+ {
+  "id": "t20",
+  "kind": "talk",
+  "shape": "Contrarian",
+  "question": "Can I sell my house as-is in Maryland?",
+  "title": "As-is doesn't mean what you think",
+  "beats": [
+   {
+    "say": "Selling as-is in Maryland doesn't mean what you think.",
+    "screen": "AS-IS?",
+    "framing": "Medium (waist up)",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "shot": "Walk toward the phone and stop as you finish",
+    "location": "Front steps or sidewalk of a rowhouse",
+    "broll": null,
+    "punch": false,
+    "id": "b01"
+   },
+   {
+    "say": "It means you won't make repairs.",
+    "screen": "NO REPAIRS",
+    "framing": "Medium close (chest up)",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "shot": "To camera. Step or turn so the background changes from the last line",
+    "location": "Front steps or sidewalk of a rowhouse",
+    "broll": null,
+    "punch": true,
+    "id": "b02"
+   },
+   {
+    "say": "It doesn't mean you can hide what you know.",
+    "screen": "YOU STILL DISCLOSE",
+    "framing": "Medium (waist up)",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "shot": "To camera. Step or turn so the background changes from the last line",
+    "location": "Front steps or sidewalk of a rowhouse",
+    "broll": null,
+    "punch": false,
+    "id": "b03"
+   },
+   {
+    "say": "Maryland has you disclose or disclaim, in writing.",
+    "screen": "DISCLOSE OR DISCLAIM",
+    "framing": "Close (shoulders up)",
+    "angle": "Eye level",
+    "move": "Handheld walking",
+    "shot": "Walking along the block, phone at arm's length",
+    "location": "Front steps or sidewalk of a rowhouse",
+    "broll": null,
+    "punch": true,
+    "id": "b04"
+   },
+   {
+    "say": "Buyers can still inspect. They can still walk.",
+    "screen": null,
+    "framing": "Medium wide (knees up)",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "shot": "To camera. Step or turn so the background changes from the last line",
+    "location": "Front steps or sidewalk of a rowhouse",
+    "broll": null,
+    "punch": false,
+    "id": "b05"
+   },
+   {
+    "say": "Priced right, as-is sells. Priced wrong, it sits.",
+    "screen": null,
+    "framing": "Medium close (chest up)",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "shot": "To camera. Step or turn so the background changes from the last line",
+    "location": "Front steps or sidewalk of a rowhouse",
+    "broll": null,
+    "punch": true,
+    "id": "b06"
+   },
+   {
+    "say": "As-is. Not as-secret.",
+    "screen": null,
+    "framing": "Medium (waist up)",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "shot": "To camera. Step or turn so the background changes from the last line",
+    "location": "Front steps or sidewalk of a rowhouse",
+    "broll": null,
+    "punch": false,
+    "id": "b07"
+   }
+  ],
+  "verify": [
+   {
+    "item": "Wording on Maryland disclosure and disclaimer requirements",
+    "from": "Get it from: Your broker or a real estate attorney",
+    "done": false
+   }
+  ],
+  "ask": "Thinking of selling? DM me",
+  "source": "homelight.com: selling as-is in Maryland",
+  "caption": "Can I sell my house as-is in Maryland?\n\nThe short answer is in the video.\n\nThinking of selling? DM me.\n\n—\nNick Jungmarker | REALTOR® | Long & Foster Real Estate\n(301) 875-7182 | jungmarker.com\nEqual Housing Opportunity 🏠",
+  "seconds": 19
+ },
+ {
+  "id": "t21",
+  "kind": "talk",
+  "shape": "Nobody tells you",
+  "question": "What is ground rent in Baltimore?",
+  "title": "Nobody tells you about Baltimore ground rent",
+  "beats": [
+   {
+    "say": "Nobody tells you about Baltimore ground rent.",
+    "screen": "GROUND RENT",
+    "framing": "Medium (waist up)",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "shot": "Walk toward the phone and stop as you finish",
+    "location": "Front steps or sidewalk of a rowhouse",
+    "broll": null,
+    "punch": false,
+    "id": "b01"
+   },
+   {
+    "say": "You can own the rowhouse and not the land.",
+    "screen": "YOU OWN THE HOUSE. NOT THE LAND.",
+    "framing": "Medium close (chest up)",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "shot": "To camera. Step or turn so the background changes from the last line",
+    "location": "Front steps or sidewalk of a rowhouse",
+    "broll": null,
+    "punch": true,
+    "id": "b02"
+   },
+   {
+    "say": "Somebody else owns the dirt. You pay them rent.",
+    "screen": null,
+    "framing": "Medium (waist up)",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "shot": "To camera. Step or turn so the background changes from the last line",
+    "location": "Front steps or sidewalk of a rowhouse",
+    "broll": null,
+    "punch": false,
+    "id": "b03"
+   },
+   {
+    "say": "Usually it's small. Maybe {{$100}} a year.",
+    "screen": "{{$100}} / YEAR",
+    "framing": "Close (shoulders up)",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "shot": "To camera. Step or turn so the background changes from the last line",
+    "location": "Front steps or sidewalk of a rowhouse",
+    "broll": null,
+    "punch": true,
+    "id": "b04"
+   },
+   {
+    "say": "But nobody mails you a reminder.",
+    "screen": "NO BILL. NO REMINDER.",
+    "framing": "Medium wide (knees up)",
+    "angle": "Eye level",
+    "move": "Handheld walking",
+    "shot": "Walking along the block, phone at arm's length",
+    "location": "Front steps or sidewalk of a rowhouse",
+    "broll": null,
+    "punch": false,
+    "id": "b05"
+   },
+   {
+    "say": "So before any offer, I ask one thing.",
+    "screen": null,
+    "framing": "Medium close (chest up)",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "shot": "To camera. Step or turn so the background changes from the last line",
+    "location": "Front steps or sidewalk of a rowhouse",
+    "broll": null,
+    "punch": true,
+    "id": "b06"
+   },
+   {
+    "say": "Is there a ground rent on this house?",
+    "screen": "ASK THIS FIRST",
+    "framing": "Medium (waist up)",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "shot": "To camera. Step or turn so the background changes from the last line",
+    "location": "Front steps or sidewalk of a rowhouse",
+    "broll": null,
+    "punch": false,
+    "id": "b07"
+   },
+   {
+    "say": "Comment GROUND and I'll send you how to check.",
+    "screen": "COMMENT \"GROUND\"",
+    "framing": "Medium close (chest up)",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "shot": "To camera. Step or turn so the background changes from the last line",
+    "location": "Front steps or sidewalk of a rowhouse",
+    "broll": null,
+    "punch": true,
+    "id": "b08"
+   },
+   {
+    "say": "That's ground rent. Now somebody told you.",
+    "screen": null,
+    "framing": "Medium (waist up)",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "shot": "To camera. Step or turn so the background changes from the last line",
+    "location": "Front steps or sidewalk of a rowhouse",
+    "broll": null,
+    "punch": false,
+    "id": "b09"
+   }
+  ],
+  "verify": [
+   {
+    "item": "Typical annual amount",
+    "from": "Get it from: Your title company",
+    "done": false
+   }
+  ],
+  "ask": "Comment GROUND",
+  "source": "Already on your slate as the 2026-11-13 reel, with full shot directions",
+  "caption": "What is ground rent in Baltimore?\n\nThe short answer is in the video.\n\nComment GROUND.\n\n—\nNick Jungmarker | REALTOR® | Long & Foster Real Estate\n(301) 875-7182 | jungmarker.com\nEqual Housing Opportunity 🏠",
+  "seconds": 25
+ },
+ {
+  "id": "t22",
+  "kind": "talk",
+  "shape": "Nobody tells you, Spanish",
+  "question": "¿Cuánto necesito para comprar una casa de $400,000?",
+  "title": "Casa de $400K: cuánto necesitas",
+  "beats": [
+   {
+    "say": "¿Cuánto necesitas para una casa de $400,000?",
+    "screen": "CASA DE $400K",
+    "framing": "Medium (waist up)",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "shot": "Walk toward the phone and stop as you finish",
+    "location": "Front steps or sidewalk of a rowhouse",
+    "broll": null,
+    "punch": false,
+    "id": "b01"
+   },
+   {
+    "say": "No son $80,000. Eso es el 20%, y es opcional.",
+    "screen": "20% = $80,000",
+    "framing": "Medium close (chest up)",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "shot": "To camera. Step or turn so the background changes from the last line",
+    "location": "Front steps or sidewalk of a rowhouse",
+    "broll": null,
+    "punch": true,
+    "id": "b02"
+   },
+   {
+    "say": "Con el 3% son $12,000.",
+    "screen": "3% = $12,000",
+    "framing": "Medium (waist up)",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "shot": "To camera. Step or turn so the background changes from the last line",
+    "location": "Front steps or sidewalk of a rowhouse",
+    "broll": null,
+    "punch": false,
+    "id": "b03"
+   },
+   {
+    "say": "Con FHA, tres y medio. $14,000.",
+    "screen": "FHA 3.5% = $14,000",
+    "framing": "Close (shoulders up)",
+    "angle": "Eye level",
+    "move": "Handheld walking",
+    "shot": "Walking along the block, phone at arm's length",
+    "location": "Front steps or sidewalk of a rowhouse",
+    "broll": null,
+    "punch": true,
+    "id": "b04"
+   },
+   {
+    "say": "Y Baltimore tiene ayuda para el enganche.",
+    "screen": "HAY AYUDA",
+    "framing": "Medium wide (knees up)",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "shot": "To camera. Step or turn so the background changes from the last line",
+    "location": "Front steps or sidewalk of a rowhouse",
+    "broll": null,
+    "punch": false,
+    "id": "b05"
+   },
+   {
+    "say": "Comenta CASA y te mando los números.",
+    "screen": "COMENTA \"CASA\"",
+    "framing": "Medium close (chest up)",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "shot": "To camera. Step or turn so the background changes from the last line",
+    "location": "Front steps or sidewalk of a rowhouse",
+    "broll": null,
+    "punch": true,
+    "id": "b06"
+   },
+   {
+    "say": "$400,000. Mucho menos de lo que crees para entrar.",
+    "screen": null,
+    "framing": "Medium (waist up)",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "shot": "To camera. Step or turn so the background changes from the last line",
+    "location": "Front steps or sidewalk of a rowhouse",
+    "broll": null,
+    "punch": false,
+    "id": "b07"
+   }
+  ],
+  "verify": [
+   {
+    "item": "Read the Spanish out loud once; change any word you would not say",
+    "from": "Get it from: You",
+    "done": false
+   },
+   {
+    "item": "Current incentive amounts",
+    "from": "Get it from: Live Baltimore",
+    "done": false
+   }
+  ],
+  "ask": "Comenta CASA",
+  "source": "Same figures as t02",
+  "caption": "¿Cuánto necesito para comprar una casa de $400,000?\n\nThe short answer is in the video.\n\nComenta CASA.\n\n—\nNick Jungmarker | REALTOR® | Long & Foster Real Estate\n(301) 875-7182 | jungmarker.com\nEqual Housing Opportunity 🏠",
+  "seconds": 19
+ },
+ {
+  "id": "p01",
+  "kind": "point",
+  "shape": "This / not that",
+  "question": "What should I not do before buying a house?",
+  "title": "Before you buy: this, not that",
+  "beats": [
+   {
+    "say": "",
+    "screen": "BEFORE YOU BUY A HOUSE",
+    "shot": "Stand to the right of frame, arms crossed, look at the lens",
+    "framing": "Medium (waist up), standing to one side so the text has room",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "location": "In front of a rowhouse",
+    "broll": null,
+    "punch": false,
+    "seconds": 2.5,
+    "id": "b01"
+   },
+   {
+    "say": "",
+    "screen": "NEW CAR LOAN",
+    "shot": "Point up-left at the text, shake your head no",
+    "framing": "Medium (waist up), standing to one side so the text has room",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "location": "In front of a rowhouse",
+    "broll": null,
+    "punch": false,
+    "seconds": 2.5,
+    "id": "b02"
+   },
+   {
+    "say": "",
+    "screen": "NEW CREDIT CARD",
+    "shot": "Point at it, shake your head no",
+    "framing": "Medium (waist up), standing to one side so the text has room",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "location": "In front of a rowhouse",
+    "broll": null,
+    "punch": false,
+    "seconds": 2.5,
+    "id": "b03"
+   },
+   {
+    "say": "",
+    "screen": "CHANGING JOBS MID-LOAN",
+    "shot": "Point at it, wince",
+    "framing": "Medium (waist up), standing to one side so the text has room",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "location": "In front of a rowhouse",
+    "broll": null,
+    "punch": false,
+    "seconds": 2.5,
+    "id": "b04"
+   },
+   {
+    "say": "",
+    "screen": "GET PRE-APPROVED FIRST",
+    "shot": "Point with both hands, nod yes",
+    "framing": "Medium (waist up), standing to one side so the text has room",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "location": "In front of a rowhouse",
+    "broll": null,
+    "punch": false,
+    "seconds": 2.5,
+    "id": "b05"
+   },
+   {
+    "say": "",
+    "screen": "COMMENT \"LENDER\"",
+    "shot": "Point down toward the comments",
+    "framing": "Medium (waist up), standing to one side so the text has room",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "location": "In front of a rowhouse",
+    "broll": null,
+    "punch": false,
+    "seconds": 2.5,
+    "id": "b06"
+   }
+  ],
+  "verify": [],
+  "ask": "Comment LENDER",
+  "source": "credible.com first-time buyer mistakes",
+  "caption": "What should I not do before buying a house?\n\nNo talking needed.\n\nComment LENDER.\n\n—\nNick Jungmarker | REALTOR® | Long & Foster Real Estate\n(301) 875-7182 | jungmarker.com\nEqual Housing Opportunity 🏠",
+  "seconds": 15
+ },
+ {
+  "id": "p02",
+  "kind": "point",
+  "shape": "This / not that",
+  "question": "Do I need 20% down?",
+  "title": "Down payment: what you think vs what it is",
+  "beats": [
+   {
+    "say": "",
+    "screen": "DOWN PAYMENT ON $400,000",
+    "shot": "Stand left of frame, look at the lens",
+    "framing": "Medium (waist up), standing to one side so the text has room",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "location": "In front of a rowhouse",
+    "broll": null,
+    "punch": false,
+    "seconds": 2.5,
+    "id": "b01"
+   },
+   {
+    "say": "",
+    "screen": "WHAT YOU THINK: $80,000",
+    "shot": "Point up-right, shake your head no",
+    "framing": "Medium (waist up), standing to one side so the text has room",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "location": "In front of a rowhouse",
+    "broll": null,
+    "punch": false,
+    "seconds": 2.5,
+    "id": "b02"
+   },
+   {
+    "say": "",
+    "screen": "3% DOWN: $12,000",
+    "shot": "Point, nod yes",
+    "framing": "Medium (waist up), standing to one side so the text has room",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "location": "In front of a rowhouse",
+    "broll": null,
+    "punch": false,
+    "seconds": 2.5,
+    "id": "b03"
+   },
+   {
+    "say": "",
+    "screen": "FHA 3.5%: $14,000",
+    "shot": "Point, nod yes",
+    "framing": "Medium (waist up), standing to one side so the text has room",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "location": "In front of a rowhouse",
+    "broll": null,
+    "punch": false,
+    "seconds": 2.5,
+    "id": "b04"
+   },
+   {
+    "say": "",
+    "screen": "VA: $0",
+    "shot": "Point, nod yes, raise eyebrows",
+    "framing": "Medium (waist up), standing to one side so the text has room",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "location": "In front of a rowhouse",
+    "broll": null,
+    "punch": false,
+    "seconds": 2.5,
+    "id": "b05"
+   },
+   {
+    "say": "",
+    "screen": "WHICH ONE ARE YOU?",
+    "shot": "Shrug toward the lens",
+    "framing": "Medium (waist up), standing to one side so the text has room",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "location": "In front of a rowhouse",
+    "broll": null,
+    "punch": false,
+    "seconds": 2.5,
+    "id": "b06"
+   }
+  ],
+  "verify": [],
+  "ask": "Which one are you?",
+  "source": "sofi.com: down payment on a $400K house",
+  "caption": "Do I need 20% down?\n\nNo talking needed.\n\nWhich one are you?.\n\n—\nNick Jungmarker | REALTOR® | Long & Foster Real Estate\n(301) 875-7182 | jungmarker.com\nEqual Housing Opportunity 🏠",
+  "seconds": 15
+ },
+ {
+  "id": "p03",
+  "kind": "point",
+  "shape": "Walk up and point",
+  "question": "What are red flags on a Baltimore rowhouse?",
+  "title": "Rowhouse red flags, no talking",
+  "beats": [
+   {
+    "say": "",
+    "screen": "ROWHOUSE RED FLAGS",
+    "shot": "Walk into frame in front of the house, stop, look at the lens",
+    "framing": "Medium (waist up), standing to one side so the text has room",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "location": "In front of a rowhouse",
+    "broll": null,
+    "punch": false,
+    "seconds": 2.5,
+    "id": "b01"
+   },
+   {
+    "say": "",
+    "screen": "BULGING BRICK",
+    "shot": "Point at the brick front. Use a real example only on a house you may film",
+    "framing": "Medium (waist up), standing to one side so the text has room",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "location": "In front of a rowhouse",
+    "broll": null,
+    "punch": false,
+    "seconds": 2.5,
+    "id": "b02"
+   },
+   {
+    "say": "",
+    "screen": "RUSTED LINTEL OVER THE WINDOW",
+    "shot": "Point up at the window head",
+    "framing": "Medium (waist up), standing to one side so the text has room",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "location": "In front of a rowhouse",
+    "broll": null,
+    "punch": false,
+    "seconds": 2.5,
+    "id": "b03"
+   },
+   {
+    "say": "",
+    "screen": "DOWNSPOUT DUMPING AT THE WALL",
+    "shot": "Point down at the downspout",
+    "framing": "Medium (waist up), standing to one side so the text has room",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "location": "In front of a rowhouse",
+    "broll": null,
+    "punch": false,
+    "seconds": 2.5,
+    "id": "b04"
+   },
+   {
+    "say": "",
+    "screen": "STAINS ON THE TOP-FLOOR CEILING",
+    "shot": "Point straight up",
+    "framing": "Medium (waist up), standing to one side so the text has room",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "location": "In front of a rowhouse",
+    "broll": null,
+    "punch": false,
+    "seconds": 2.5,
+    "id": "b05"
+   },
+   {
+    "say": "",
+    "screen": "SAVE THIS FOR YOUR NEXT SHOWING",
+    "shot": "Point at the lens, nod",
+    "framing": "Medium (waist up), standing to one side so the text has room",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "location": "In front of a rowhouse",
+    "broll": null,
+    "punch": false,
+    "seconds": 2.5,
+    "id": "b06"
+   }
+  ],
+  "verify": [
+   {
+    "item": "You have permission to film this house, and you are not implying a defect in someone's home without it",
+    "from": "Get it from: The owner",
+    "done": false
+   }
+  ],
+  "ask": "Save this",
+  "source": "biggerpockets.com: Baltimore red flags (bulging brick, lintels, downspouts)",
+  "caption": "What are red flags on a Baltimore rowhouse?\n\nNo talking needed.\n\nSave this.\n\n—\nNick Jungmarker | REALTOR® | Long & Foster Real Estate\n(301) 875-7182 | jungmarker.com\nEqual Housing Opportunity 🏠",
+  "seconds": 15
+ },
+ {
+  "id": "p04",
+  "kind": "point",
+  "shape": "Numbered list",
+  "question": "What costs are there besides the down payment?",
+  "title": "It's not just the down payment",
+  "beats": [
+   {
+    "say": "",
+    "screen": "BUYING A HOUSE? BUDGET FOR 4 THINGS",
+    "shot": "Stand centre, hold up four fingers",
+    "framing": "Medium (waist up), standing to one side so the text has room",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "location": "In front of a rowhouse",
+    "broll": null,
+    "punch": false,
+    "seconds": 2.5,
+    "id": "b01"
+   },
+   {
+    "say": "",
+    "screen": "1. DOWN PAYMENT",
+    "shot": "Point up-left",
+    "framing": "Medium (waist up), standing to one side so the text has room",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "location": "In front of a rowhouse",
+    "broll": null,
+    "punch": false,
+    "seconds": 2.5,
+    "id": "b02"
+   },
+   {
+    "say": "",
+    "screen": "2. CLOSING COSTS",
+    "shot": "Point up-right",
+    "framing": "Medium (waist up), standing to one side so the text has room",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "location": "In front of a rowhouse",
+    "broll": null,
+    "punch": false,
+    "seconds": 2.5,
+    "id": "b03"
+   },
+   {
+    "say": "",
+    "screen": "3. INSPECTION",
+    "shot": "Point down-left",
+    "framing": "Medium (waist up), standing to one side so the text has room",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "location": "In front of a rowhouse",
+    "broll": null,
+    "punch": false,
+    "seconds": 2.5,
+    "id": "b04"
+   },
+   {
+    "say": "",
+    "screen": "4. MOVING AND THE FIRST REPAIR",
+    "shot": "Point down-right",
+    "framing": "Medium (waist up), standing to one side so the text has room",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "location": "In front of a rowhouse",
+    "broll": null,
+    "punch": false,
+    "seconds": 2.5,
+    "id": "b05"
+   },
+   {
+    "say": "",
+    "screen": "MOST PEOPLE ONLY SAVE FOR #1",
+    "shot": "Hold up one finger, shake your head",
+    "framing": "Medium (waist up), standing to one side so the text has room",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "location": "In front of a rowhouse",
+    "broll": null,
+    "punch": false,
+    "seconds": 2.5,
+    "id": "b06"
+   }
+  ],
+  "verify": [],
+  "ask": "Comment COSTS",
+  "source": "amerisave.com first-time buyer questions",
+  "caption": "What costs are there besides the down payment?\n\nNo talking needed.\n\nComment COSTS.\n\n—\nNick Jungmarker | REALTOR® | Long & Foster Real Estate\n(301) 875-7182 | jungmarker.com\nEqual Housing Opportunity 🏠",
+  "seconds": 15
+ },
+ {
+  "id": "p05",
+  "kind": "point",
+  "shape": "This / not that",
+  "question": "What do I look at during a showing?",
+  "title": "At a showing: look here, not there",
+  "beats": [
+   {
+    "say": "",
+    "screen": "AT A SHOWING",
+    "shot": "Standing inside a staged room",
+    "framing": "Medium (waist up), standing to one side so the text has room",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "location": "Inside a house you may film",
+    "broll": null,
+    "punch": false,
+    "seconds": 2.5,
+    "id": "b01"
+   },
+   {
+    "say": "",
+    "screen": "THE STAGING",
+    "shot": "Point at the furniture, shake your head no",
+    "framing": "Medium (waist up), standing to one side so the text has room",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "location": "Inside a house you may film",
+    "broll": null,
+    "punch": false,
+    "seconds": 2.5,
+    "id": "b02"
+   },
+   {
+    "say": "",
+    "screen": "THE PAINT COLOR",
+    "shot": "Point at the wall, shake your head no",
+    "framing": "Medium (waist up), standing to one side so the text has room",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "location": "Inside a house you may film",
+    "broll": null,
+    "punch": false,
+    "seconds": 2.5,
+    "id": "b03"
+   },
+   {
+    "say": "",
+    "screen": "THE CEILING",
+    "shot": "Point up, nod yes",
+    "framing": "Medium (waist up), standing to one side so the text has room",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "location": "Inside a house you may film",
+    "broll": null,
+    "punch": false,
+    "seconds": 2.5,
+    "id": "b04"
+   },
+   {
+    "say": "",
+    "screen": "THE BASEMENT WALLS",
+    "shot": "Point down, nod yes",
+    "framing": "Medium (waist up), standing to one side so the text has room",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "location": "Inside a house you may film",
+    "broll": null,
+    "punch": false,
+    "seconds": 2.5,
+    "id": "b05"
+   },
+   {
+    "say": "",
+    "screen": "THE ELECTRICAL PANEL",
+    "shot": "Point off to the side, nod yes",
+    "framing": "Medium (waist up), standing to one side so the text has room",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "location": "Inside a house you may film",
+    "broll": null,
+    "punch": false,
+    "seconds": 2.5,
+    "id": "b06"
+   },
+   {
+    "say": "",
+    "screen": "PAINT IS CHEAP. ROOFS ARE NOT.",
+    "shot": "Shrug at the lens",
+    "framing": "Medium (waist up), standing to one side so the text has room",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "location": "Inside a house you may film",
+    "broll": null,
+    "punch": false,
+    "seconds": 2.5,
+    "id": "b07"
+   }
+  ],
+  "verify": [
+   {
+    "item": "Permission to film inside",
+    "from": "Get it from: The owner",
+    "done": false
+   }
+  ],
+  "ask": "Save this",
+  "source": "activerain.com rowhome checklist",
+  "caption": "What do I look at during a showing?\n\nNo talking needed.\n\nSave this.\n\n—\nNick Jungmarker | REALTOR® | Long & Foster Real Estate\n(301) 875-7182 | jungmarker.com\nEqual Housing Opportunity 🏠",
+  "seconds": 18
+ },
+ {
+  "id": "p06",
+  "kind": "point",
+  "shape": "Numbered list",
+  "question": "What documents do I need for a mortgage?",
+  "title": "3 things your lender asks for",
+  "beats": [
+   {
+    "say": "",
+    "screen": "YOUR LENDER WILL ASK FOR 3 THINGS",
+    "shot": "Stand right of frame, hold up three fingers",
+    "framing": "Medium (waist up), standing to one side so the text has room",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "location": "In front of a rowhouse",
+    "broll": null,
+    "punch": false,
+    "seconds": 2.5,
+    "id": "b01"
+   },
+   {
+    "say": "",
+    "screen": "PAY STUBS",
+    "shot": "Point at the text",
+    "framing": "Medium (waist up), standing to one side so the text has room",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "location": "In front of a rowhouse",
+    "broll": null,
+    "punch": false,
+    "seconds": 2.5,
+    "id": "b02"
+   },
+   {
+    "say": "",
+    "screen": "TWO YEARS OF TAX RETURNS",
+    "shot": "Point at the text",
+    "framing": "Medium (waist up), standing to one side so the text has room",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "location": "In front of a rowhouse",
+    "broll": null,
+    "punch": false,
+    "seconds": 2.5,
+    "id": "b03"
+   },
+   {
+    "say": "",
+    "screen": "BANK STATEMENTS",
+    "shot": "Point at the text",
+    "framing": "Medium (waist up), standing to one side so the text has room",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "location": "In front of a rowhouse",
+    "broll": null,
+    "punch": false,
+    "seconds": 2.5,
+    "id": "b04"
+   },
+   {
+    "say": "",
+    "screen": "HAVE THEM READY = FASTER PRE-APPROVAL",
+    "shot": "Thumbs up",
+    "framing": "Medium (waist up), standing to one side so the text has room",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "location": "In front of a rowhouse",
+    "broll": null,
+    "punch": false,
+    "seconds": 2.5,
+    "id": "b05"
+   },
+   {
+    "say": "",
+    "screen": "COMMENT \"LIST\" FOR THE FULL CHECKLIST",
+    "shot": "Point down",
+    "framing": "Medium (waist up), standing to one side so the text has room",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "location": "In front of a rowhouse",
+    "broll": null,
+    "punch": false,
+    "seconds": 2.5,
+    "id": "b06"
+   }
+  ],
+  "verify": [
+   {
+    "item": "Your lender's actual document list",
+    "from": "Get it from: Your lender",
+    "done": false
+   },
+   {
+    "item": "You have a checklist to send",
+    "from": "Get it from: You",
+    "done": false
+   }
+  ],
+  "ask": "Comment LIST",
+  "source": "rocketmortgage.com Maryland guide",
+  "caption": "What documents do I need for a mortgage?\n\nNo talking needed.\n\nComment LIST.\n\n—\nNick Jungmarker | REALTOR® | Long & Foster Real Estate\n(301) 875-7182 | jungmarker.com\nEqual Housing Opportunity 🏠",
+  "seconds": 15
+ },
+ {
+  "id": "p07",
+  "kind": "point",
+  "shape": "This / not that",
+  "question": "What is ground rent?",
+  "title": "Yours / maybe not yours",
+  "beats": [
+   {
+    "say": "",
+    "screen": "WHAT YOU OWN IN BALTIMORE",
+    "shot": "Standing on the sidewalk in front of a rowhouse",
+    "framing": "Medium (waist up), standing to one side so the text has room",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "location": "In front of a rowhouse",
+    "broll": null,
+    "punch": false,
+    "seconds": 2.5,
+    "id": "b01"
+   },
+   {
+    "say": "",
+    "screen": "THE HOUSE: YOURS",
+    "shot": "Point at the house, nod",
+    "framing": "Medium (waist up), standing to one side so the text has room",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "location": "In front of a rowhouse",
+    "broll": null,
+    "punch": false,
+    "seconds": 2.5,
+    "id": "b02"
+   },
+   {
+    "say": "",
+    "screen": "THE STEPS: YOURS",
+    "shot": "Point at the steps, nod",
+    "framing": "Medium (waist up), standing to one side so the text has room",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "location": "In front of a rowhouse",
+    "broll": null,
+    "punch": false,
+    "seconds": 2.5,
+    "id": "b03"
+   },
+   {
+    "say": "",
+    "screen": "THE LAND UNDER IT: MAYBE NOT",
+    "shot": "Point at the ground, tilt your head",
+    "framing": "Medium (waist up), standing to one side so the text has room",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "location": "In front of a rowhouse",
+    "broll": null,
+    "punch": false,
+    "seconds": 2.5,
+    "id": "b04"
+   },
+   {
+    "say": "",
+    "screen": "IT'S CALLED GROUND RENT",
+    "shot": "Look at the lens",
+    "framing": "Medium (waist up), standing to one side so the text has room",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "location": "In front of a rowhouse",
+    "broll": null,
+    "punch": false,
+    "seconds": 2.5,
+    "id": "b05"
+   },
+   {
+    "say": "",
+    "screen": "ASK BEFORE YOU OFFER",
+    "shot": "Point at the lens",
+    "framing": "Medium (waist up), standing to one side so the text has room",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "location": "In front of a rowhouse",
+    "broll": null,
+    "punch": false,
+    "seconds": 2.5,
+    "id": "b06"
+   }
+  ],
+  "verify": [],
+  "ask": "Comment GROUND",
+  "source": "activerain.com: ground rent in Baltimore",
+  "caption": "What is ground rent?\n\nNo talking needed.\n\nComment GROUND.\n\n—\nNick Jungmarker | REALTOR® | Long & Foster Real Estate\n(301) 875-7182 | jungmarker.com\nEqual Housing Opportunity 🏠",
+  "seconds": 15
+ },
+ {
+  "id": "p08",
+  "kind": "point",
+  "shape": "This / not that",
+  "question": "Should I get pre-approved before looking?",
+  "title": "The order that works",
+  "beats": [
+   {
+    "say": "",
+    "screen": "THE ORDER MOST PEOPLE DO IT",
+    "shot": "Stand left of frame",
+    "framing": "Medium (waist up), standing to one side so the text has room",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "location": "In front of a rowhouse",
+    "broll": null,
+    "punch": false,
+    "seconds": 2.5,
+    "id": "b01"
+   },
+   {
+    "say": "",
+    "screen": "1. FALL IN LOVE WITH A HOUSE",
+    "shot": "Point, shake your head",
+    "framing": "Medium (waist up), standing to one side so the text has room",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "location": "In front of a rowhouse",
+    "broll": null,
+    "punch": false,
+    "seconds": 2.5,
+    "id": "b02"
+   },
+   {
+    "say": "",
+    "screen": "2. THEN CALL A LENDER",
+    "shot": "Point, shake your head",
+    "framing": "Medium (waist up), standing to one side so the text has room",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "location": "In front of a rowhouse",
+    "broll": null,
+    "punch": false,
+    "seconds": 2.5,
+    "id": "b03"
+   },
+   {
+    "say": "",
+    "screen": "THE ORDER THAT WORKS",
+    "shot": "Step to the other side of frame",
+    "framing": "Medium (waist up), standing to one side so the text has room",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "location": "In front of a rowhouse",
+    "broll": null,
+    "punch": false,
+    "seconds": 2.5,
+    "id": "b04"
+   },
+   {
+    "say": "",
+    "screen": "1. PRE-APPROVAL",
+    "shot": "Point, nod",
+    "framing": "Medium (waist up), standing to one side so the text has room",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "location": "In front of a rowhouse",
+    "broll": null,
+    "punch": false,
+    "seconds": 2.5,
+    "id": "b05"
+   },
+   {
+    "say": "",
+    "screen": "2. THEN THE HOUSE",
+    "shot": "Point, nod",
+    "framing": "Medium (waist up), standing to one side so the text has room",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "location": "In front of a rowhouse",
+    "broll": null,
+    "punch": false,
+    "seconds": 2.5,
+    "id": "b06"
+   },
+   {
+    "say": "",
+    "screen": "YOU OFFER THE SAME DAY",
+    "shot": "Snap, point at the lens",
+    "framing": "Medium (waist up), standing to one side so the text has room",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "location": "In front of a rowhouse",
+    "broll": null,
+    "punch": false,
+    "seconds": 2.5,
+    "id": "b07"
+   }
+  ],
+  "verify": [],
+  "ask": "Comment LENDER",
+  "source": "rocketmortgage.com",
+  "caption": "Should I get pre-approved before looking?\n\nNo talking needed.\n\nComment LENDER.\n\n—\nNick Jungmarker | REALTOR® | Long & Foster Real Estate\n(301) 875-7182 | jungmarker.com\nEqual Housing Opportunity 🏠",
+  "seconds": 18
+ },
+ {
+  "id": "p09",
+  "kind": "point",
+  "shape": "This / not that",
+  "question": "What credit score do I need?",
+  "title": "Credit score: myth vs minimum",
+  "beats": [
+   {
+    "say": "",
+    "screen": "CREDIT SCORE TO BUY A HOUSE",
+    "shot": "Stand right of frame",
+    "framing": "Medium (waist up), standing to one side so the text has room",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "location": "In front of a rowhouse",
+    "broll": null,
+    "punch": false,
+    "seconds": 2.5,
+    "id": "b01"
+   },
+   {
+    "say": "",
+    "screen": "\"YOU NEED 750\"",
+    "shot": "Point, shake your head no",
+    "framing": "Medium (waist up), standing to one side so the text has room",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "location": "In front of a rowhouse",
+    "broll": null,
+    "punch": false,
+    "seconds": 2.5,
+    "id": "b02"
+   },
+   {
+    "say": "",
+    "screen": "FHA: 580",
+    "shot": "Point, nod yes",
+    "framing": "Medium (waist up), standing to one side so the text has room",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "location": "In front of a rowhouse",
+    "broll": null,
+    "punch": false,
+    "seconds": 2.5,
+    "id": "b03"
+   },
+   {
+    "say": "",
+    "screen": "CONVENTIONAL: 620",
+    "shot": "Point, nod yes",
+    "framing": "Medium (waist up), standing to one side so the text has room",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "location": "In front of a rowhouse",
+    "broll": null,
+    "punch": false,
+    "seconds": 2.5,
+    "id": "b04"
+   },
+   {
+    "say": "",
+    "screen": "HIGHER SCORE = LOWER RATE",
+    "shot": "Raise your hand like a lever",
+    "framing": "Medium (waist up), standing to one side so the text has room",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "location": "In front of a rowhouse",
+    "broll": null,
+    "punch": false,
+    "seconds": 2.5,
+    "id": "b05"
+   },
+   {
+    "say": "",
+    "screen": "WHAT'S YOURS?",
+    "shot": "Shrug at the lens",
+    "framing": "Medium (waist up), standing to one side so the text has room",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "location": "In front of a rowhouse",
+    "broll": null,
+    "punch": false,
+    "seconds": 2.5,
+    "id": "b06"
+   }
+  ],
+  "verify": [
+   {
+    "item": "Minimums at your lender",
+    "from": "Get it from: Your lender",
+    "done": false
+   }
+  ],
+  "ask": "What's yours?",
+  "source": "credible.com",
+  "caption": "What credit score do I need?\n\nNo talking needed.\n\nWhat's yours?.\n\n—\nNick Jungmarker | REALTOR® | Long & Foster Real Estate\n(301) 875-7182 | jungmarker.com\nEqual Housing Opportunity 🏠",
+  "seconds": 15
+ },
+ {
+  "id": "p10",
+  "kind": "point",
+  "shape": "Numbered list",
+  "question": "First-time buyer programs Baltimore",
+  "title": "Money most Baltimore buyers skip",
+  "beats": [
+   {
+    "say": "",
+    "screen": "FREE-ISH MONEY BALTIMORE BUYERS SKIP",
+    "shot": "Stand centre, palms up",
+    "framing": "Medium (waist up), standing to one side so the text has room",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "location": "In front of a rowhouse",
+    "broll": null,
+    "punch": false,
+    "seconds": 2.5,
+    "id": "b01"
+   },
+   {
+    "say": "",
+    "screen": "CITY FIRST-TIME BUYER INCENTIVE",
+    "shot": "Point up-left",
+    "framing": "Medium (waist up), standing to one side so the text has room",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "location": "In front of a rowhouse",
+    "broll": null,
+    "punch": false,
+    "seconds": 2.5,
+    "id": "b02"
+   },
+   {
+    "say": "",
+    "screen": "MARYLAND MORTGAGE PROGRAM",
+    "shot": "Point up-right",
+    "framing": "Medium (waist up), standing to one side so the text has room",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "location": "In front of a rowhouse",
+    "broll": null,
+    "punch": false,
+    "seconds": 2.5,
+    "id": "b03"
+   },
+   {
+    "say": "",
+    "screen": "REINVEST BALTIMORE",
+    "shot": "Point down-left",
+    "framing": "Medium (waist up), standing to one side so the text has room",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "location": "In front of a rowhouse",
+    "broll": null,
+    "punch": false,
+    "seconds": 2.5,
+    "id": "b04"
+   },
+   {
+    "say": "",
+    "screen": "HOMESTEAD TAX CREDIT",
+    "shot": "Point down-right",
+    "framing": "Medium (waist up), standing to one side so the text has room",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "location": "In front of a rowhouse",
+    "broll": null,
+    "punch": false,
+    "seconds": 2.5,
+    "id": "b05"
+   },
+   {
+    "say": "",
+    "screen": "COMMENT \"MONEY\" AND I'LL SEND THE LIST",
+    "shot": "Point down",
+    "framing": "Medium (waist up), standing to one side so the text has room",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "location": "In front of a rowhouse",
+    "broll": null,
+    "punch": false,
+    "seconds": 2.5,
+    "id": "b06"
+   }
+  ],
+  "verify": [
+   {
+    "item": "All four programs are open and funded this month",
+    "from": "Get it from: Live Baltimore, Maryland DHCD",
+    "done": false
+   }
+  ],
+  "ask": "Comment MONEY",
+  "source": "livebaltimore.com, dhcd.maryland.gov",
+  "caption": "First-time buyer programs Baltimore\n\nNo talking needed.\n\nComment MONEY.\n\n—\nNick Jungmarker | REALTOR® | Long & Foster Real Estate\n(301) 875-7182 | jungmarker.com\nEqual Housing Opportunity 🏠",
+  "seconds": 15
+ },
+ {
+  "id": "p11",
+  "kind": "point",
+  "shape": "This / not that, Spanish",
+  "question": "Antes de comprar casa",
+  "title": "Antes de comprar: sí / no",
+  "beats": [
+   {
+    "say": "",
+    "screen": "ANTES DE COMPRAR CASA",
+    "shot": "De pie a la derecha, mira a la cámara",
+    "framing": "Medium (waist up), standing to one side so the text has room",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "location": "In front of a rowhouse",
+    "broll": null,
+    "punch": false,
+    "seconds": 2.5,
+    "id": "b01"
+   },
+   {
+    "say": "",
+    "screen": "CARRO NUEVO",
+    "shot": "Señala, di que no con la cabeza",
+    "framing": "Medium (waist up), standing to one side so the text has room",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "location": "In front of a rowhouse",
+    "broll": null,
+    "punch": false,
+    "seconds": 2.5,
+    "id": "b02"
+   },
+   {
+    "say": "",
+    "screen": "TARJETA NUEVA",
+    "shot": "Señala, di que no",
+    "framing": "Medium (waist up), standing to one side so the text has room",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "location": "In front of a rowhouse",
+    "broll": null,
+    "punch": false,
+    "seconds": 2.5,
+    "id": "b03"
+   },
+   {
+    "say": "",
+    "screen": "PRE-APROBACIÓN PRIMERO",
+    "shot": "Señala, di que sí",
+    "framing": "Medium (waist up), standing to one side so the text has room",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "location": "In front of a rowhouse",
+    "broll": null,
+    "punch": false,
+    "seconds": 2.5,
+    "id": "b04"
+   },
+   {
+    "say": "",
+    "screen": "PREGUNTA POR LA AYUDA DE LA CIUDAD",
+    "shot": "Señala, di que sí",
+    "framing": "Medium (waist up), standing to one side so the text has room",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "location": "In front of a rowhouse",
+    "broll": null,
+    "punch": false,
+    "seconds": 2.5,
+    "id": "b05"
+   },
+   {
+    "say": "",
+    "screen": "COMENTA \"CASA\"",
+    "shot": "Señala hacia abajo",
+    "framing": "Medium (waist up), standing to one side so the text has room",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "location": "In front of a rowhouse",
+    "broll": null,
+    "punch": false,
+    "seconds": 2.5,
+    "id": "b06"
+   }
+  ],
+  "verify": [
+   {
+    "item": "Read the Spanish once and change anything you would not say",
+    "from": "Get it from: You",
+    "done": false
+   }
+  ],
+  "ask": "Comenta CASA",
+  "source": "Same as p01",
+  "caption": "Antes de comprar casa\n\nNo talking needed.\n\nComenta CASA.\n\n—\nNick Jungmarker | REALTOR® | Long & Foster Real Estate\n(301) 875-7182 | jungmarker.com\nEqual Housing Opportunity 🏠",
+  "seconds": 15
+ },
+ {
+  "id": "p12",
+  "kind": "point",
+  "shape": "This / not that",
+  "question": "Selling a house: what should I fix?",
+  "title": "Before you list: fix this, skip that",
+  "beats": [
+   {
+    "say": "",
+    "screen": "SELLING? BEFORE YOU LIST",
+    "shot": "Stand in front of the house",
+    "framing": "Medium (waist up), standing to one side so the text has room",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "location": "In front of a rowhouse",
+    "broll": null,
+    "punch": false,
+    "seconds": 2.5,
+    "id": "b01"
+   },
+   {
+    "say": "",
+    "screen": "NEW KITCHEN",
+    "shot": "Point, shake your head no",
+    "framing": "Medium (waist up), standing to one side so the text has room",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "location": "In front of a rowhouse",
+    "broll": null,
+    "punch": false,
+    "seconds": 2.5,
+    "id": "b02"
+   },
+   {
+    "say": "",
+    "screen": "THE LEAK YOU KNOW ABOUT",
+    "shot": "Point, nod yes",
+    "framing": "Medium (waist up), standing to one side so the text has room",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "location": "In front of a rowhouse",
+    "broll": null,
+    "punch": false,
+    "seconds": 2.5,
+    "id": "b03"
+   },
+   {
+    "say": "",
+    "screen": "PAINT AND A DEEP CLEAN",
+    "shot": "Point, nod yes",
+    "framing": "Medium (waist up), standing to one side so the text has room",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "location": "In front of a rowhouse",
+    "broll": null,
+    "punch": false,
+    "seconds": 2.5,
+    "id": "b04"
+   },
+   {
+    "say": "",
+    "screen": "HIDING ANYTHING",
+    "shot": "Point, big no",
+    "framing": "Medium (waist up), standing to one side so the text has room",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "location": "In front of a rowhouse",
+    "broll": null,
+    "punch": false,
+    "seconds": 2.5,
+    "id": "b05"
+   },
+   {
+    "say": "",
+    "screen": "ASK ME WHAT'S WORTH IT ON YOUR HOUSE",
+    "shot": "Point at the lens",
+    "framing": "Medium (waist up), standing to one side so the text has room",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "location": "In front of a rowhouse",
+    "broll": null,
+    "punch": false,
+    "seconds": 2.5,
+    "id": "b06"
+   }
+  ],
+  "verify": [
+   {
+    "item": "This matches the advice you actually give sellers",
+    "from": "Get it from: You",
+    "done": false
+   }
+  ],
+  "ask": "DM me your address",
+  "source": "homelight.com seller guides",
+  "caption": "Selling a house: what should I fix?\n\nNo talking needed.\n\nDM me your address.\n\n—\nNick Jungmarker | REALTOR® | Long & Foster Real Estate\n(301) 875-7182 | jungmarker.com\nEqual Housing Opportunity 🏠",
+  "seconds": 15
+ },
+ {
+  "id": "x01",
+  "kind": "text",
+  "shape": "Question",
+  "question": "How much house on $180K?",
+  "title": "$180K, one clip",
+  "beats": [
+   {
+    "say": "",
+    "screen": "YOU MAKE $180,000\nTHAT'S $15,000 A MONTH\n28% RULE: $4,200 FOR HOUSING\nWHAT THAT BUYS IS IN THE CAPTION",
+    "shot": "You walking up to a rowhouse and unlocking the door. 8 seconds, do not look at the camera",
+    "framing": "Wide",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "location": "Wherever the clip is",
+    "broll": null,
+    "punch": false,
+    "seconds": 8,
+    "id": "b01"
+   }
+  ],
+  "verify": [
+   {
+    "item": "Price for the caption",
+    "from": "Get it from: Your lender, for the day you post",
+    "done": false
+   }
+  ],
+  "ask": "See caption",
+  "source": "bankrate.com",
+  "caption": "How much house on $180K?\n\nThe rest of the answer:\n{{write two sentences here}}\n\nSee caption.\n\n—\nNick Jungmarker | REALTOR® | Long & Foster Real Estate\n(301) 875-7182 | jungmarker.com\nEqual Housing Opportunity 🏠",
+  "seconds": 8
+ },
+ {
+  "id": "x02",
+  "kind": "text",
+  "shape": "Question",
+  "question": "Cash for a $400K house",
+  "title": "$400K, one clip",
+  "beats": [
+   {
+    "say": "",
+    "screen": "$400,000 HOUSE\n20% DOWN: $80,000\n3% DOWN: $12,000\nGUESS WHICH ONE MOST PEOPLE THINK THEY NEED",
+    "shot": "Slow push-in on a rowhouse front from across the street. 8 seconds",
+    "framing": "Wide",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "location": "Wherever the clip is",
+    "broll": null,
+    "punch": false,
+    "seconds": 8,
+    "id": "b01"
+   }
+  ],
+  "verify": [],
+  "ask": "Comment 400",
+  "source": "sofi.com",
+  "caption": "Cash for a $400K house\n\nThe rest of the answer:\n{{write two sentences here}}\n\nComment 400.\n\n—\nNick Jungmarker | REALTOR® | Long & Foster Real Estate\n(301) 875-7182 | jungmarker.com\nEqual Housing Opportunity 🏠",
+  "seconds": 8
+ },
+ {
+  "id": "x03",
+  "kind": "text",
+  "shape": "Nobody tells you",
+  "question": "Ground rent",
+  "title": "Ground rent, one clip",
+  "beats": [
+   {
+    "say": "",
+    "screen": "I OWN A HOUSE IN BALTIMORE\nI DON'T OWN THE LAND UNDER IT\nIT'S CALLED GROUND RENT\n(SEE CAPTION)",
+    "shot": "You sitting on marble steps drinking coffee, looking down the block. 7 seconds",
+    "framing": "Wide",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "location": "Wherever the clip is",
+    "broll": null,
+    "punch": false,
+    "seconds": 8,
+    "id": "b01"
+   }
+  ],
+  "verify": [
+   {
+    "item": "Only use the first-person line if it is true for you; otherwise change to MY BUYER",
+    "from": "Get it from: You",
+    "done": false
+   }
+  ],
+  "ask": "See caption",
+  "source": "BAM write-up: caption-payoff clips loop",
+  "caption": "Ground rent\n\nThe rest of the answer:\n{{write two sentences here}}\n\nSee caption.\n\n—\nNick Jungmarker | REALTOR® | Long & Foster Real Estate\n(301) 875-7182 | jungmarker.com\nEqual Housing Opportunity 🏠",
+  "seconds": 8
+ },
+ {
+  "id": "x04",
+  "kind": "text",
+  "shape": "Numbered list",
+  "question": "Showing questions",
+  "title": "3 questions, one clip",
+  "beats": [
+   {
+    "say": "",
+    "screen": "3 QUESTIONS BEFORE ANY OFFER IN BALTIMORE\n1. IS THERE A GROUND RENT?\n2. HOW OLD IS THE ROOF?\n3. WAS THE DECK PERMITTED?",
+    "shot": "Walking through an empty rowhouse, phone forward, steady. 9 seconds",
+    "framing": "Wide",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "location": "Wherever the clip is",
+    "broll": null,
+    "punch": false,
+    "seconds": 8,
+    "id": "b01"
+   }
+  ],
+  "verify": [
+   {
+    "item": "Permission to film inside",
+    "from": "Get it from: The owner",
+    "done": false
+   }
+  ],
+  "ask": "Save this",
+  "source": "activerain.com",
+  "caption": "Showing questions\n\nThe rest of the answer:\n{{write two sentences here}}\n\nSave this.\n\n—\nNick Jungmarker | REALTOR® | Long & Foster Real Estate\n(301) 875-7182 | jungmarker.com\nEqual Housing Opportunity 🏠",
+  "seconds": 8
+ },
+ {
+  "id": "x05",
+  "kind": "text",
+  "shape": "Question",
+  "question": "Credit score",
+  "title": "Credit score, one clip",
+  "beats": [
+   {
+    "say": "",
+    "screen": "MINIMUM CREDIT SCORE TO BUY A HOUSE\nFHA: 580\nCONVENTIONAL: 620\nNOT 750",
+    "shot": "You at a laptop, close it, pick up keys, walk out. 7 seconds",
+    "framing": "Wide",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "location": "Wherever the clip is",
+    "broll": null,
+    "punch": false,
+    "seconds": 8,
+    "id": "b01"
+   }
+  ],
+  "verify": [
+   {
+    "item": "Minimums at your lender",
+    "from": "Get it from: Your lender",
+    "done": false
+   }
+  ],
+  "ask": "Comment SCORE",
+  "source": "credible.com",
+  "caption": "Credit score\n\nThe rest of the answer:\n{{write two sentences here}}\n\nComment SCORE.\n\n—\nNick Jungmarker | REALTOR® | Long & Foster Real Estate\n(301) 875-7182 | jungmarker.com\nEqual Housing Opportunity 🏠",
+  "seconds": 8
+ },
+ {
+  "id": "x06",
+  "kind": "text",
+  "shape": "Question",
+  "question": "Property tax",
+  "title": "Tax bill, one clip",
+  "beats": [
+   {
+    "say": "",
+    "screen": "$250,000 ROWHOUSE IN BALTIMORE CITY\nCITY TAX RATE: $2.248 PER $100\n$5,620 A YEAR\n$468 A MONTH. BUDGET FOR IT.",
+    "shot": "Slow pan down a block of rowhouses. 8 seconds",
+    "framing": "Wide",
+    "angle": "Eye level",
+    "move": "Locked on tripod",
+    "location": "Wherever the clip is",
+    "broll": null,
+    "punch": false,
+    "seconds": 8,
+    "id": "b01"
+   }
+  ],
+  "verify": [
+   {
+    "item": "Rate is current",
+    "from": "Get it from: baltimorecity.gov/finance",
+    "done": false
+   }
+  ],
+  "ask": "Follow",
+  "source": "baltimorecity.gov",
+  "caption": "Property tax\n\nThe rest of the answer:\n{{write two sentences here}}\n\nFollow.\n\n—\nNick Jungmarker | REALTOR® | Long & Foster Real Estate\n(301) 875-7182 | jungmarker.com\nEqual Housing Opportunity 🏠",
+  "seconds": 8
+ }
+]

@@ -77,7 +77,7 @@
         if (a.in < 0.15) out.push({ level: "warn", label: "No pause before you speak", detail: "Leave a beat of silence first so the cut is clean." });
       }
     } else if (v.dur) {
-      out.push(v.dur >= 2.5 ? { level: "ok", label: "Length " + RR.sec(v.dur), detail: "" } : { level: "warn", label: "Short cutaway", detail: RR.sec(v.dur) + ". Hold cutaways for 4 seconds or more." });
+      out.push(v.dur >= 2.5 ? { level: "ok", label: "Length " + RR.sec(v.dur), detail: "" } : { level: "warn", label: "Short clip", detail: RR.sec(v.dur) + ". Hold a silent shot for 3 seconds or more." });
     }
     out.push({ level: "ok", label: RR.mb(size), detail: "" });
     return out;
@@ -102,7 +102,7 @@
     if (file.size > LIMIT) { RR.toast("That clip is " + RR.mb(file.size) + ". The limit is 20 MB: set the camera to 1080p at 30 and keep each clip under about 10 seconds.", "bad"); return Promise.resolve(null); }
     RR.job(key, "Checking the take");
     var reelId = S.viewId, v, a;
-    return Promise.all([readVideo(file), kind === "aroll" ? readAudio(file) : Promise.resolve(null)]).then(function (r) {
+    return Promise.all([readVideo(file), kind === "aroll" && beat.say ? readAudio(file) : Promise.resolve(null)]).then(function (r) {
       v = r[0]; a = r[1];
       RR.job(key, "Uploading " + RR.mb(file.size));
       var isWebm = /webm/.test(file.type);
