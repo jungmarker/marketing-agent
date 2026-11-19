@@ -412,81 +412,107 @@ Source of the question: Same figures as t02
 
 ## No talking: point at text
 
-### p01 · Before you buy: this, not that
+### p01 · Before you buy: don't / do
 *Question:* What should I not do before buying a house?  
-*Shape:* This / not that · about 15s · ask: Comment LENDER
+*Shape:* This / not that · about 16s · ask: Comment LENDER
 
-| # | Text on screen | What you do |
-|---|---|---|
-| 1 | BEFORE YOU BUY A HOUSE | Stand to the right of frame, arms crossed, look at the lens |
-| 2 | NEW CAR LOAN | Point up-left at the text, shake your head no |
-| 3 | NEW CREDIT CARD | Point at it, shake your head no |
-| 4 | CHANGING JOBS MID-LOAN | Point at it, wince |
-| 5 | GET PRE-APPROVED FIRST | Point with both hands, nod yes |
-| 6 | COMMENT "LENDER" | Point down toward the comments |
+**Where:** Sidewalk in front of a rowhouse  
+**Phone:** Tripod at chest height, phone vertical, about 7 feet away so you're framed from the knees up.  
+**You stand:** center of the frame  
+
+
+| Time | Text on screen | Where the text is | What you do |
+|---|---|---|---|
+| 0.0s | BEFORE YOU BUY A HOUSE IN BALTIMORE | top | Stand in the middle, arms crossed, serious look straight at the lens. |
+| 3.0s | DON'T: BUY A NEW CAR | top-right | Point up at it with your left hand and shake your head. It's on the right of the screen, so point to your left. |
+| 5.5s | DON'T: OPEN A NEW CREDIT CARD | top-right | Same spot. Wag your finger at it. |
+| 8.0s | DON'T: SWITCH JOBS | top-right | Point at it, then grimace at the lens. It's on the right of the screen, so point to your left. |
+| 10.5s | DO: GET PRE-APPROVED FIRST | top-left | Swing both hands across to point at it. Big nod, thumbs up. It's on the left of the screen, so point to your right. |
+| 13.5s | COMMENT "LENDER" FOR MINE | mid | Point down at the bottom of the screen, where the comments are. |
 
 Source of the question: credible.com first-time buyer mistakes
 
 ### p02 · Down payment: what you think vs what it is
 *Question:* Do I need 20% down?  
-*Shape:* This / not that · about 15s · ask: Which one are you?
+*Shape:* This / not that · about 16s · ask: Which one are you?
 
-| # | Text on screen | What you do |
-|---|---|---|
-| 1 | DOWN PAYMENT ON $400,000 | Stand left of frame, look at the lens |
-| 2 | WHAT YOU THINK: $80,000 | Point up-right, shake your head no |
-| 3 | 3% DOWN: $12,000 | Point, nod yes |
-| 4 | FHA 3.5%: $14,000 | Point, nod yes |
-| 5 | VA: $0 | Point, nod yes, raise eyebrows |
-| 6 | WHICH ONE ARE YOU? | Shrug toward the lens |
+**Where:** Sidewalk in front of a rowhouse  
+**Phone:** Tripod at chest height, phone vertical, about 7 feet away so you're framed from the knees up.  
+**You stand:** center of the frame  
+
+
+| Time | Text on screen | Where the text is | What you do |
+|---|---|---|---|
+| 0.0s | DOWN PAYMENT ON A $400,000 HOUSE? | top | Hand on your chin, thinking face, looking at the lens. |
+| 3.0s | WHAT YOU THINK: $80,000 | top-left | Point at it with your right hand, eyes wide, shake your head. It's on the left of the screen, so point to your right. |
+| 5.5s | 3% DOWN: $12,000 | top-right | Point at it with your left hand and nod. It's on the right of the screen, so point to your left. |
+| 8.0s | FHA 3.5%: $14,000 | mid-right | Point a little lower on the same side and nod. It's on the right of the screen, so point to your left. |
+| 10.5s | VA: $0 | low-right | Point lower again. Eyebrows up, both hands. It's on the right of the screen, so point to your left. |
+| 13.0s | WHICH ONE ARE YOU? | top | Shrug at the lens with both palms up. |
+
+Verify: 3%, 3.5% FHA and 0% VA minimums at your lender (Your lender)
 
 Source of the question: sofi.com: down payment on a $400K house
 
-### p03 · Rowhouse red flags, no talking
+### p03 · Rowhouse red flags: where to look
 *Question:* What are red flags on a Baltimore rowhouse?  
-*Shape:* Walk up and point · about 15s · ask: Save this
+*Shape:* Walk up and point · about 18s · ask: Save this
 
-| # | Text on screen | What you do |
-|---|---|---|
-| 1 | ROWHOUSE RED FLAGS | Walk into frame in front of the house, stop, look at the lens |
-| 2 | BULGING BRICK | Point at the brick front. Use a real example only on a house you may film |
-| 3 | RUSTED LINTEL OVER THE WINDOW | Point up at the window head |
-| 4 | DOWNSPOUT DUMPING AT THE WALL | Point down at the downspout |
-| 5 | STAINS ON THE TOP-FLOOR CEILING | Point straight up |
-| 6 | SAVE THIS FOR YOUR NEXT SHOWING | Point at the lens, nod |
+**Where:** Public sidewalk facing a rowhouse front with a chimney visible. Your own listing is safest.  
+**Phone:** Tripod across the sidewalk, about 10 feet back, so the whole front of the house is in frame behind you.  
+**You stand:** left of the frame  
 
-Verify: You have permission to film this house, and you are not implying a defect in someone's home without it (The owner)
 
-Source of the question: biggerpockets.com: Baltimore red flags (bulging brick, lintels, downspouts)
+| Time | Text on screen | Where the text is | What you do |
+|---|---|---|---|
+| 0.0s | ROWHOUSE RED FLAGS: WHERE TO LOOK | top | Walk in from the left edge of the frame, stop, look at the lens. |
+| 3.0s | BRICK BULGING OUT? | mid-right | Turn and point at the middle of the brick front. It's on the right of the screen, so point to your left. |
+| 6.0s | RUST ON THE STEEL ABOVE WINDOWS? | top-right | Point up at the top edge of a window. It's on the right of the screen, so point to your left. |
+| 9.0s | DOWNSPOUT DUMPING AT THE WALL? | low-right | Point down at where the downspout meets the ground. It's on the right of the screen, so point to your left. |
+| 12.0s | CHIMNEY CRUMBLING? | top-right | Point straight up at the chimney. It's on the right of the screen, so point to your left. |
+| 15.0s | SAVE THIS FOR YOUR NEXT SHOWING | top | Turn back, point at the lens, nod. |
+
+Verify: The text asks questions so you are not saying this house has the defect. Film a house you have permission to film. (The owner, or use your listing)
+
+Source of the question: biggerpockets.com: Baltimore red flags (bulging brick, lintels, downspouts, chimneys)
 
 ### p04 · It's not just the down payment
 *Question:* What costs are there besides the down payment?  
-*Shape:* Numbered list · about 15s · ask: Comment COSTS
+*Shape:* Numbered list · about 16s · ask: Comment COSTS
 
-| # | Text on screen | What you do |
-|---|---|---|
-| 1 | BUYING A HOUSE? BUDGET FOR 4 THINGS | Stand centre, hold up four fingers |
-| 2 | 1. DOWN PAYMENT | Point up-left |
-| 3 | 2. CLOSING COSTS | Point up-right |
-| 4 | 3. INSPECTION | Point down-left |
-| 5 | 4. MOVING AND THE FIRST REPAIR | Point down-right |
-| 6 | MOST PEOPLE ONLY SAVE FOR #1 | Hold up one finger, shake your head |
+**Where:** Sidewalk or a front porch  
+**Phone:** Tripod at chest height, phone vertical, about 7 feet away so you're framed from the knees up.  
+**You stand:** center of the frame  
+
+
+| Time | Text on screen | Where the text is | What you do |
+|---|---|---|---|
+| 0.0s | BUYING A HOUSE? SAVE FOR 4 THINGS | top | Hold up four fingers at the lens. |
+| 3.0s | 1. DOWN PAYMENT | top-left | Point up at it with your right hand. It's on the left of the screen, so point to your right. |
+| 5.5s | 2. CLOSING COSTS | top-right | Point up at it with your left hand. It's on the right of the screen, so point to your left. |
+| 8.0s | 3. HOME INSPECTION | mid-left | Point out at it, chest height, right hand. It's on the left of the screen, so point to your right. |
+| 10.5s | 4. MOVING + FIRST REPAIR | mid-right | Point out at it, chest height, left hand. It's on the right of the screen, so point to your left. |
+| 13.0s | MOST PEOPLE ONLY SAVE FOR #1 | top | Hold up one finger and shake your head. |
 
 Source of the question: amerisave.com first-time buyer questions
 
 ### p05 · At a showing: look here, not there
 *Question:* What do I look at during a showing?  
-*Shape:* This / not that · about 18s · ask: Save this
+*Shape:* This / not that · about 16s · ask: Save this
 
-| # | Text on screen | What you do |
-|---|---|---|
-| 1 | AT A SHOWING | Standing inside a staged room |
-| 2 | THE STAGING | Point at the furniture, shake your head no |
-| 3 | THE PAINT COLOR | Point at the wall, shake your head no |
-| 4 | THE CEILING | Point up, nod yes |
-| 5 | THE BASEMENT WALLS | Point down, nod yes |
-| 6 | THE ELECTRICAL PANEL | Point off to the side, nod yes |
-| 7 | PAINT IS CHEAP. ROOFS ARE NOT. | Shrug at the lens |
+**Where:** Inside a furnished living room you have permission to film  
+**Phone:** Tripod in a corner of the room, chest height, so the couch, a wall and the ceiling are in frame.  
+**You stand:** center of the frame  
+
+
+| Time | Text on screen | Where the text is | What you do |
+|---|---|---|---|
+| 0.0s | AT A SHOWING, LOOK HERE | top | Stand in the middle of the room, arms open. |
+| 3.0s | NOT THE COUCH | mid-left | Point at the furniture and shake your head. It's on the left of the screen, so point to your right. |
+| 5.5s | NOT THE PAINT | mid-right | Point at a painted wall and shake your head. It's on the right of the screen, so point to your left. |
+| 8.0s | YES: THE CEILING | top | Point straight up and nod. |
+| 10.5s | YES: WHERE FLOOR MEETS WALL | low-left | Crouch and point at the bottom of a wall. Nod. It's on the left of the screen, so point to your right. |
+| 13.0s | PAINT IS CHEAP. ROOFS AREN'T. | top | Stand back up and shrug at the lens. |
 
 Verify: Permission to film inside (The owner)
 
@@ -494,33 +520,43 @@ Source of the question: activerain.com rowhome checklist
 
 ### p06 · 3 things your lender asks for
 *Question:* What documents do I need for a mortgage?  
-*Shape:* Numbered list · about 15s · ask: Comment LIST
+*Shape:* Numbered list · about 16s · ask: Comment LIST
 
-| # | Text on screen | What you do |
-|---|---|---|
-| 1 | YOUR LENDER WILL ASK FOR 3 THINGS | Stand right of frame, hold up three fingers |
-| 2 | PAY STUBS | Point at the text |
-| 3 | TWO YEARS OF TAX RETURNS | Point at the text |
-| 4 | BANK STATEMENTS | Point at the text |
-| 5 | HAVE THEM READY = FASTER PRE-APPROVAL | Thumbs up |
-| 6 | COMMENT "LIST" FOR THE FULL CHECKLIST | Point down |
+**Where:** Kitchen table or desk, papers in front of you  
+**Phone:** Tripod at chest height, phone vertical, about 7 feet away so you're framed from the knees up. Stand on the right so the list builds on the left.  
+**You stand:** right of the frame  
 
-Verify: Your lender's actual document list (Your lender); You have a checklist to send (You)
+
+| Time | Text on screen | Where the text is | What you do |
+|---|---|---|---|
+| 0.0s | YOUR LENDER WILL ASK FOR 3 THINGS | top | Hold up three fingers. |
+| 3.0s | PAY STUBS | top-left | Point at it with your right hand. Nod. It's on the left of the screen, so point to your right. |
+| 5.5s | W-2s OR TAX RETURNS | mid-left | Point a little lower. Nod. It's on the left of the screen, so point to your right. |
+| 8.0s | BANK STATEMENTS | low-left | Point lower again. Nod. It's on the left of the screen, so point to your right. |
+| 10.5s | HAVE THEM READY = FASTER PRE-APPROVAL | top | Thumbs up at the lens. |
+| 13.0s | COMMENT "LIST" FOR THE FULL CHECKLIST | mid | Point down at the comments. |
+
+Verify: Your lender's actual document list and how many months of statements (Your lender); You have a checklist ready to send (You)
 
 Source of the question: rocketmortgage.com Maryland guide
 
-### p07 · Yours / maybe not yours
+### p07 · What you own in Baltimore
 *Question:* What is ground rent?  
-*Shape:* This / not that · about 15s · ask: Comment GROUND
+*Shape:* This / not that · about 16s · ask: Comment GROUND
 
-| # | Text on screen | What you do |
-|---|---|---|
-| 1 | WHAT YOU OWN IN BALTIMORE | Standing on the sidewalk in front of a rowhouse |
-| 2 | THE HOUSE: YOURS | Point at the house, nod |
-| 3 | THE STEPS: YOURS | Point at the steps, nod |
-| 4 | THE LAND UNDER IT: MAYBE NOT | Point at the ground, tilt your head |
-| 5 | IT'S CALLED GROUND RENT | Look at the lens |
-| 6 | ASK BEFORE YOU OFFER | Point at the lens |
+**Where:** Sidewalk next to rowhouse marble steps  
+**Phone:** Tripod at chest height, phone vertical, about 7 feet away so you're framed from the knees up. The steps and the front door should be on the right side of the frame.  
+**You stand:** left of the frame  
+
+
+| Time | Text on screen | Where the text is | What you do |
+|---|---|---|---|
+| 0.0s | WHAT YOU OWN WHEN YOU BUY IN BALTIMORE | top | Stand beside the steps and look at the lens. |
+| 3.0s | THE HOUSE: YOURS | top-right | Point at the front of the house behind you. Nod. It's on the right of the screen, so point to your left. |
+| 5.5s | THE STEPS: YOURS | mid-right | Point at the marble steps. Nod. It's on the right of the screen, so point to your left. |
+| 8.0s | THE GROUND UNDER IT: MAYBE NOT | mid | Point straight down at the sidewalk. Tilt your head, confused face. |
+| 11.0s | IT'S CALLED GROUND RENT | top | Look at the lens, eyebrows up. |
+| 13.5s | ASK BEFORE YOU OFFER | top | Point at the lens. |
 
 Source of the question: activerain.com: ground rent in Baltimore
 
@@ -528,47 +564,62 @@ Source of the question: activerain.com: ground rent in Baltimore
 *Question:* Should I get pre-approved before looking?  
 *Shape:* This / not that · about 18s · ask: Comment LENDER
 
-| # | Text on screen | What you do |
-|---|---|---|
-| 1 | THE ORDER MOST PEOPLE DO IT | Stand left of frame |
-| 2 | 1. FALL IN LOVE WITH A HOUSE | Point, shake your head |
-| 3 | 2. THEN CALL A LENDER | Point, shake your head |
-| 4 | THE ORDER THAT WORKS | Step to the other side of frame |
-| 5 | 1. PRE-APPROVAL | Point, nod |
-| 6 | 2. THEN THE HOUSE | Point, nod |
-| 7 | YOU OFFER THE SAME DAY | Snap, point at the lens |
+**Where:** Sidewalk or porch  
+**Phone:** Tripod at chest height, phone vertical, about 7 feet away so you're framed from the knees up.  
+**You stand:** center of the frame  
+
+
+| Time | Text on screen | Where the text is | What you do |
+|---|---|---|---|
+| 0.0s | HOW MOST PEOPLE DO IT | top-left | Point at it with your right hand, unimpressed face. It's on the left of the screen, so point to your right. |
+| 2.5s | 1. FALL IN LOVE WITH A HOUSE | mid-left | Hands on your heart, dreamy look. |
+| 5.0s | 2. THEN CALL A LENDER | low-left | Shrug and grimace. |
+| 7.5s | HOW IT SHOULD GO | top-right | Take a step to your left and point at it with your left hand. It's on the right of the screen, so point to your left. |
+| 10.0s | 1. GET PRE-APPROVED | mid-right | Point at it and nod. It's on the right of the screen, so point to your left. |
+| 12.5s | 2. THEN FIND THE HOUSE | low-right | Point at it, thumbs up. It's on the right of the screen, so point to your left. |
+| 15.0s | SO YOU CAN OFFER THE SAME DAY | top | Snap your fingers and point at the lens. |
 
 Source of the question: rocketmortgage.com
 
 ### p09 · Credit score: myth vs minimum
 *Question:* What credit score do I need?  
-*Shape:* This / not that · about 15s · ask: What's yours?
+*Shape:* This / not that · about 16s · ask: What's yours?
 
-| # | Text on screen | What you do |
-|---|---|---|
-| 1 | CREDIT SCORE TO BUY A HOUSE | Stand right of frame |
-| 2 | "YOU NEED 750" | Point, shake your head no |
-| 3 | FHA: 580 | Point, nod yes |
-| 4 | CONVENTIONAL: 620 | Point, nod yes |
-| 5 | HIGHER SCORE = LOWER RATE | Raise your hand like a lever |
-| 6 | WHAT'S YOURS? | Shrug at the lens |
+**Where:** Sidewalk or porch  
+**Phone:** Tripod at chest height, phone vertical, about 7 feet away so you're framed from the knees up.  
+**You stand:** center of the frame  
 
-Verify: Minimums at your lender (Your lender)
+
+| Time | Text on screen | Where the text is | What you do |
+|---|---|---|---|
+| 0.0s | CREDIT SCORE YOU NEED TO BUY A HOUSE | top | Hand on your chin. |
+| 3.0s | "YOU NEED 750" | top-left | Point at it with your right hand, cross your arms in an X. It's on the left of the screen, so point to your right. |
+| 5.5s | FHA: 580 | top-right | Point at it with your left hand and nod. It's on the right of the screen, so point to your left. |
+| 8.0s | CONVENTIONAL: 620 | mid-right | Point a little lower and nod. It's on the right of the screen, so point to your left. |
+| 10.5s | HIGHER SCORE = LOWER RATE | top | Raise one hand slowly like a lever. |
+| 13.0s | WHAT'S YOURS? | top | Shrug and point at the lens. |
+
+Verify: 580 FHA and 620 conventional minimums at your lender (Your lender)
 
 Source of the question: credible.com
 
-### p10 · Money most Baltimore buyers skip
+### p10 · Money Baltimore buyers never ask for
 *Question:* First-time buyer programs Baltimore  
-*Shape:* Numbered list · about 15s · ask: Comment MONEY
+*Shape:* Numbered list · about 16s · ask: Comment MONEY
 
-| # | Text on screen | What you do |
-|---|---|---|
-| 1 | FREE-ISH MONEY BALTIMORE BUYERS SKIP | Stand centre, palms up |
-| 2 | CITY FIRST-TIME BUYER INCENTIVE | Point up-left |
-| 3 | MARYLAND MORTGAGE PROGRAM | Point up-right |
-| 4 | REINVEST BALTIMORE | Point down-left |
-| 5 | HOMESTEAD TAX CREDIT | Point down-right |
-| 6 | COMMENT "MONEY" AND I'LL SEND THE LIST | Point down |
+**Where:** Sidewalk in front of a rowhouse  
+**Phone:** Tripod at chest height, phone vertical, about 7 feet away so you're framed from the knees up.  
+**You stand:** center of the frame  
+
+
+| Time | Text on screen | Where the text is | What you do |
+|---|---|---|---|
+| 0.0s | MONEY MOST BALTIMORE BUYERS NEVER ASK FOR | top | Palms up, raised eyebrows. |
+| 3.0s | CITY FIRST-TIME BUYER INCENTIVE | top-left | Point at it with your right hand. It's on the left of the screen, so point to your right. |
+| 5.5s | MARYLAND MORTGAGE PROGRAM | top-right | Point at it with your left hand. It's on the right of the screen, so point to your left. |
+| 8.0s | REINVEST BALTIMORE | mid-left | Point at it, chest height. It's on the left of the screen, so point to your right. |
+| 10.5s | HOMESTEAD TAX CREDIT | mid-right | Point at it, chest height. It's on the right of the screen, so point to your left. |
+| 13.0s | COMMENT "MONEY" FOR THE LIST | low-left | Point down at the comments. It's on the left of the screen, so point to your right. |
 
 Verify: All four programs are open and funded this month (Live Baltimore, Maryland DHCD)
 
@@ -576,35 +627,44 @@ Source of the question: livebaltimore.com, dhcd.maryland.gov
 
 ### p11 · Antes de comprar: sí / no
 *Question:* Antes de comprar casa  
-*Shape:* This / not that, Spanish · about 15s · ask: Comenta CASA
+*Shape:* This / not that, Spanish · about 14s · ask: Comenta CASA
 
-| # | Text on screen | What you do |
-|---|---|---|
-| 1 | ANTES DE COMPRAR CASA | De pie a la derecha, mira a la cámara |
-| 2 | CARRO NUEVO | Señala, di que no con la cabeza |
-| 3 | TARJETA NUEVA | Señala, di que no |
-| 4 | PRE-APROBACIÓN PRIMERO | Señala, di que sí |
-| 5 | PREGUNTA POR LA AYUDA DE LA CIUDAD | Señala, di que sí |
-| 6 | COMENTA "CASA" | Señala hacia abajo |
+**Where:** Sidewalk in front of a rowhouse  
+**Phone:** Tripod at chest height, phone vertical, about 7 feet away so you're framed from the knees up.  
+**You stand:** center of the frame  
+
+
+| Time | Text on screen | Where the text is | What you do |
+|---|---|---|---|
+| 0.0s | ANTES DE COMPRAR CASA EN BALTIMORE | top | Brazos cruzados, mirada seria a la cámara. |
+| 3.0s | NO: CARRO NUEVO | top-right | Señálalo con la mano izquierda y di que no con la cabeza. |
+| 5.5s | NO: TARJETA NUEVA | top-right | Mismo lugar. Mueve el dedo: no. |
+| 8.0s | SÍ: PRE-APROBACIÓN PRIMERO | top-left | Señala con las dos manos al otro lado. Asiente, pulgar arriba. |
+| 11.0s | COMENTA "CASA" | mid | Señala hacia abajo, a los comentarios. |
 
 Verify: Read the Spanish once and change anything you would not say (You)
 
-Source of the question: Same as p01
+Source of the question: Same as Before you buy
 
-### p12 · Before you list: fix this, skip that
+### p12 · Before you list: fix / skip
 *Question:* Selling a house: what should I fix?  
-*Shape:* This / not that · about 15s · ask: DM me your address
+*Shape:* This / not that · about 16s · ask: DM me your address
 
-| # | Text on screen | What you do |
-|---|---|---|
-| 1 | SELLING? BEFORE YOU LIST | Stand in front of the house |
-| 2 | NEW KITCHEN | Point, shake your head no |
-| 3 | THE LEAK YOU KNOW ABOUT | Point, nod yes |
-| 4 | PAINT AND A DEEP CLEAN | Point, nod yes |
-| 5 | HIDING ANYTHING | Point, big no |
-| 6 | ASK ME WHAT'S WORTH IT ON YOUR HOUSE | Point at the lens |
+**Where:** In front of a house  
+**Phone:** Tripod at chest height, phone vertical, about 7 feet away so you're framed from the knees up.  
+**You stand:** center of the frame  
 
-Verify: This matches the advice you actually give sellers (You)
+
+| Time | Text on screen | Where the text is | What you do |
+|---|---|---|---|
+| 0.0s | SELLING? BEFORE YOU LIST | top | Stand in front of the house, hands on hips. |
+| 3.0s | SKIP: A NEW KITCHEN | top-left | Point at it with your right hand, shake your head. It's on the left of the screen, so point to your right. |
+| 5.5s | FIX: THE LEAK YOU KNOW ABOUT | top-right | Point at it with your left hand, nod. It's on the right of the screen, so point to your left. |
+| 8.0s | DO: PAINT + A DEEP CLEAN | mid-right | Point a little lower, nod. It's on the right of the screen, so point to your left. |
+| 10.5s | NEVER: HIDE A PROBLEM | mid-left | Point at it, cross your arms in an X. It's on the left of the screen, so point to your right. |
+| 13.0s | ASK ME WHAT'S WORTH IT ON YOURS | top | Point at the lens. |
+
+Verify: Matches the advice you actually give sellers (You)
 
 Source of the question: homelight.com seller guides
 
@@ -612,14 +672,19 @@ Source of the question: homelight.com seller guides
 
 ### x01 · $180K, one clip
 *Question:* How much house on $180K?  
-*Shape:* Question · about 8s · ask: See caption
+*Shape:* Question · about 10s · ask: See caption
 
-| # | Text on screen | What you do |
-|---|---|---|
-| 1 | YOU MAKE $180,000
-THAT'S $15,000 A MONTH
-28% RULE: $4,200 FOR HOUSING
-WHAT THAT BUYS IS IN THE CAPTION | You walking up to a rowhouse and unlocking the door. 8 seconds, do not look at the camera |
+**Where:** Wherever the clip is  
+**Phone:** Tripod or a steady hand. Vertical.  
+**You stand:** center of the frame  
+**The clip:** You walking up to a rowhouse and unlocking the door. Don't look at the camera. Keep moving the whole time.
+
+| Time | Text on screen | Where the text is | What you do |
+|---|---|---|---|
+| 0.0s | YOU MAKE $180,000 | r1 | Keep doing the same thing. The line adds under the last one. |
+| 2.2s | THAT'S $15,000 A MONTH | r2 | Keep doing the same thing. The line adds under the last one. |
+| 4.4s | 28% RULE: $4,200 FOR HOUSING | r3 | Keep doing the same thing. The line adds under the last one. |
+| 6.6s | WHAT THAT BUYS IS IN THE CAPTION | r4 | Keep doing the same thing. The line adds under the last one. |
 
 Verify: Price for the caption (Your lender, for the day you post)
 
@@ -627,42 +692,57 @@ Source of the question: bankrate.com
 
 ### x02 · $400K, one clip
 *Question:* Cash for a $400K house  
-*Shape:* Question · about 8s · ask: Comment 400
+*Shape:* Question · about 10s · ask: Comment 400
 
-| # | Text on screen | What you do |
-|---|---|---|
-| 1 | $400,000 HOUSE
-20% DOWN: $80,000
-3% DOWN: $12,000
-GUESS WHICH ONE MOST PEOPLE THINK THEY NEED | Slow push-in on a rowhouse front from across the street. 8 seconds |
+**Where:** Wherever the clip is  
+**Phone:** Tripod or a steady hand. Vertical.  
+**You stand:** center of the frame  
+**The clip:** Slow walk toward a rowhouse front from across the street, phone in your hand, steady.
+
+| Time | Text on screen | Where the text is | What you do |
+|---|---|---|---|
+| 0.0s | $400,000 HOUSE | r1 | Keep doing the same thing. The line adds under the last one. |
+| 2.2s | 20% DOWN: $80,000 | r2 | Keep doing the same thing. The line adds under the last one. |
+| 4.4s | 3% DOWN: $12,000 | r3 | Keep doing the same thing. The line adds under the last one. |
+| 6.6s | GUESS WHICH ONE MOST PEOPLE THINK THEY NEED | r4 | Keep doing the same thing. The line adds under the last one. |
 
 Source of the question: sofi.com
 
 ### x03 · Ground rent, one clip
 *Question:* Ground rent  
-*Shape:* Nobody tells you · about 8s · ask: See caption
+*Shape:* Nobody tells you · about 10s · ask: See caption
 
-| # | Text on screen | What you do |
-|---|---|---|
-| 1 | I OWN A HOUSE IN BALTIMORE
-I DON'T OWN THE LAND UNDER IT
-IT'S CALLED GROUND RENT
-(SEE CAPTION) | You sitting on marble steps drinking coffee, looking down the block. 7 seconds |
+**Where:** Wherever the clip is  
+**Phone:** Tripod or a steady hand. Vertical.  
+**You stand:** center of the frame  
+**The clip:** You sitting on marble steps with a coffee, looking down the block. Tripod across the sidewalk.
 
-Verify: Only use the first-person line if it is true for you; otherwise change to MY BUYER (You)
+| Time | Text on screen | Where the text is | What you do |
+|---|---|---|---|
+| 0.0s | I OWN A HOUSE IN BALTIMORE | r1 | Keep doing the same thing. The line adds under the last one. |
+| 2.2s | I DON'T OWN THE LAND UNDER IT | r2 | Keep doing the same thing. The line adds under the last one. |
+| 4.4s | IT'S CALLED GROUND RENT | r3 | Keep doing the same thing. The line adds under the last one. |
+| 6.6s | (READ THE CAPTION) | r4 | Keep doing the same thing. The line adds under the last one. |
+
+Verify: Use the first-person lines only if true for you; otherwise MY BUYER OWNS A HOUSE (You)
 
 Source of the question: BAM write-up: caption-payoff clips loop
 
 ### x04 · 3 questions, one clip
 *Question:* Showing questions  
-*Shape:* Numbered list · about 8s · ask: Save this
+*Shape:* Numbered list · about 10s · ask: Save this
 
-| # | Text on screen | What you do |
-|---|---|---|
-| 1 | 3 QUESTIONS BEFORE ANY OFFER IN BALTIMORE
-1. IS THERE A GROUND RENT?
-2. HOW OLD IS THE ROOF?
-3. WAS THE DECK PERMITTED? | Walking through an empty rowhouse, phone forward, steady. 9 seconds |
+**Where:** Wherever the clip is  
+**Phone:** Tripod or a steady hand. Vertical.  
+**You stand:** center of the frame  
+**The clip:** Walking slowly through an empty rowhouse, phone held forward at chest height.
+
+| Time | Text on screen | Where the text is | What you do |
+|---|---|---|---|
+| 0.0s | 3 QUESTIONS BEFORE ANY OFFER IN BALTIMORE | r1 | Keep doing the same thing. The line adds under the last one. |
+| 2.2s | 1. IS THERE A GROUND RENT? | r2 | Keep doing the same thing. The line adds under the last one. |
+| 4.4s | 2. HOW OLD IS THE ROOF? | r3 | Keep doing the same thing. The line adds under the last one. |
+| 6.6s | 3. WAS THE DECK PERMITTED? | r4 | Keep doing the same thing. The line adds under the last one. |
 
 Verify: Permission to film inside (The owner)
 
@@ -670,14 +750,19 @@ Source of the question: activerain.com
 
 ### x05 · Credit score, one clip
 *Question:* Credit score  
-*Shape:* Question · about 8s · ask: Comment SCORE
+*Shape:* Question · about 10s · ask: Comment SCORE
 
-| # | Text on screen | What you do |
-|---|---|---|
-| 1 | MINIMUM CREDIT SCORE TO BUY A HOUSE
-FHA: 580
-CONVENTIONAL: 620
-NOT 750 | You at a laptop, close it, pick up keys, walk out. 7 seconds |
+**Where:** Wherever the clip is  
+**Phone:** Tripod or a steady hand. Vertical.  
+**You stand:** center of the frame  
+**The clip:** You at a laptop: close it, pick up keys, walk out of frame. Tripod beside the table.
+
+| Time | Text on screen | Where the text is | What you do |
+|---|---|---|---|
+| 0.0s | MINIMUM CREDIT SCORE TO BUY A HOUSE | r1 | Keep doing the same thing. The line adds under the last one. |
+| 2.2s | FHA: 580 | r2 | Keep doing the same thing. The line adds under the last one. |
+| 4.4s | CONVENTIONAL: 620 | r3 | Keep doing the same thing. The line adds under the last one. |
+| 6.6s | NOT 750 | r4 | Keep doing the same thing. The line adds under the last one. |
 
 Verify: Minimums at your lender (Your lender)
 
@@ -685,14 +770,19 @@ Source of the question: credible.com
 
 ### x06 · Tax bill, one clip
 *Question:* Property tax  
-*Shape:* Question · about 8s · ask: Follow
+*Shape:* Question · about 10s · ask: Follow
 
-| # | Text on screen | What you do |
-|---|---|---|
-| 1 | $250,000 ROWHOUSE IN BALTIMORE CITY
-CITY TAX RATE: $2.248 PER $100
-$5,620 A YEAR
-$468 A MONTH. BUDGET FOR IT. | Slow pan down a block of rowhouses. 8 seconds |
+**Where:** Wherever the clip is  
+**Phone:** Tripod or a steady hand. Vertical.  
+**You stand:** center of the frame  
+**The clip:** Slow walk down a block of rowhouses, phone pointed at the fronts.
+
+| Time | Text on screen | Where the text is | What you do |
+|---|---|---|---|
+| 0.0s | $250,000 ROWHOUSE IN BALTIMORE CITY | r1 | Keep doing the same thing. The line adds under the last one. |
+| 2.2s | CITY TAX RATE: $2.248 PER $100 | r2 | Keep doing the same thing. The line adds under the last one. |
+| 4.4s | $5,620 A YEAR | r3 | Keep doing the same thing. The line adds under the last one. |
+| 6.6s | $468 A MONTH. BUDGET FOR IT. | r4 | Keep doing the same thing. The line adds under the last one. |
 
 Verify: Rate is current (baltimorecity.gov/finance)
 

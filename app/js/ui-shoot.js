@@ -54,7 +54,8 @@
     [/medium wide|knees/i, { r: 5.2, cy: 50, w: 18, yb: 170 }], [/wide/i, { r: 3.8, cy: 62, w: 12, yb: 122 }], [/./, { r: 7.6, cy: 56, w: 27, yb: 170 }] ];
   ui.FrameGuide = function (p) {
     var b = p.beat, cut = p.kind === "broll", f = FRAMES.filter(function (x) { return x[0].test(b.framing || ""); })[0][1];
-    var cx = /left third/i.test(b.framing || "") ? 33 : /right third/i.test(b.framing || "") ? 57 : 45;
+    var cx = b.stand === "left" || /left third/i.test(b.framing || "") ? 26 : b.stand === "right" || /right third/i.test(b.framing || "") ? 58 : 40;
+    var boxes = []; (b.cues || []).forEach(function (c) { if (boxes.indexOf(c.pos) < 0) boxes.push(c.pos); });
     var moves = /walk|climb|you move|out of frame/i.test((b.move || "") + (b.shot || ""));
     var low = /low/i.test(b.angle || ""), top = f.cy + f.r + 2;
     return html`<svg class="guide" viewBox="0 0 90 160" role="img" aria-label=${cut ? "Cutaway framing" : "Framing guide: " + (b.framing || "medium")}>
@@ -68,7 +69,8 @@
         ${moves && !cut && html`<path class="g-move" d=${"M " + (cx - 24) + " 138 L " + (cx + 16) + " 138 m -5 -4 l 5 4 l -5 4"} />`}
       </g>
       <rect class="g-safe" x="4" y="19" width="67" height="101" rx="2" />
-      ${b.screen && html`<g><rect class=${"g-card" + (p.first ? " g-hook" : "")} x="9" y="23" width="56" height="11" rx="1" /><text class="g-label" x="37" y="30.6" text-anchor="middle">TEXT</text></g>`}
+      ${b.cues ? boxes.map(function (pos) { var g = RR.GPOS[pos] || RR.GPOS.top; return html`<rect class="g-card" x=${g[0]} y=${g[1]} width=${g[2]} height="8" rx="1" />`; })
+        : b.screen && html`<g><rect class=${"g-card" + (p.first ? " g-hook" : "")} x="9" y="23" width="56" height="11" rx="1" /><text class="g-label" x="37" y="30.6" text-anchor="middle">TEXT</text></g>`}
       ${b.say && html`<rect class="g-cap" x="16" y="106" width="42" height="6" rx="1" />`}
       <circle class="g-ui" cx="80" cy="96" r="3" /><circle class="g-ui" cx="80" cy="108" r="3" /><circle class="g-ui" cx="80" cy="120" r="3" />
       <rect class="g-ui" x="6" y="134" width="40" height="4" rx="2" /><rect class="g-ui" x="6" y="142" width="58" height="3" rx="1.5" />
@@ -131,6 +133,7 @@
           </dl>
         </div>
         ${cut ? html`<div class="prompter"><small>Cutaway, no talking</small><p class="cut-desc">${b.broll}</p><small>Plays over: “${b.say}”</small></div>`
+          : b.cues ? html`<${ui.CueSheet} beat=${b} setup=${RR.reel() && RR.reel().setup_detail} />`
           : !b.say ? html`<div class="prompter"><small>No talking. Text goes on screen</small>
               <span class=${RR.cls("card card-lg", firstBeat && "card-hook")}>${b.screen}</span>
               <p class="cut-desc">${b.shot}</p><small>Hold it for ${RR.sec(b.seconds || 3)}. Leave room in the frame for the text.</small></div>`
@@ -140,7 +143,7 @@
               <p class="do">${b.shot}</p>
               <div class="row"><${ui.Rehearse} id=${b._id} target=${RR.sayTime(b.say)} /><button class="btn ghost" onClick=${function () { RR.set({ sheet: { type: "rewrite", beat: b._id } }); }}>Change line</button></div>
             </div>`}
-        <${ui.Record} beat=${b} kind=${shot.kind} label=${takes.length ? "Record another take" : cut ? "Record cutaway" : b.say ? "Record this line" : "Record this shot"} />
+        <${ui.Record} beat=${b} kind=${shot.kind} label=${takes.length ? "Record another take" : cut ? "Record cutaway" : b.say ? "Record this line" : b.cues ? "Record the whole take" : "Record this shot"} />
         ${takes.map(function (c) { return html`<${ui.Take} key=${c._id} clip=${c} picked=${chosen && chosen._id === c._id} onPick=${function () { var pch = {}; pch[cut ? "take_broll" : "take"] = c._id; RR.act.beat(b._id, pch); }} />`; })}
       </div>
       <div class="shoot-nav">
@@ -148,6 +151,49 @@
         ${nt < 0 ? html`<button class="btn primary grow" onClick=${function () { RR.set({ shoot: null }); RR.go("cut"); }}>Everything is shot. Open the cut</button>`
           : html`<button class=${RR.cls("btn grow", takes.length && "primary")} onClick=${function () { go(takes.length ? nt : i + 1 < list.length ? i + 1 : nt); }}>${takes.length ? "Next to shoot: " + list[nt].beat._id + (list[nt].kind === "broll" ? " cutaway" : "") : "Skip for now"}</button>`}
       </div>
+    </div>`;
+  };
+
+  /* ---------- no-talking videos: the cue sheet and a practice run ---------- */
+  RR.GPOS = { top: [12, 22, 50, 0], "top-left": [5, 22, 32], "top-right": [38, 22, 32], mid: [12, 50, 50], "mid-left": [5, 50, 32], "mid-right": [38, 50, 32],
+    "low-left": [5, 72, 32], "low-right": [38, 72, 32], low: [12, 72, 50], r1: [10, 24, 54], r2: [10, 36, 54], r3: [10, 48, 54], r4: [10, 60, 54] };
+  RR.POSNAME = { top: "top middle", "top-left": "top left", "top-right": "top right", mid: "middle", "mid-left": "middle left", "mid-right": "middle right",
+    "low-left": "lower left", "low-right": "lower right", low: "lower middle", r1: "line 1", r2: "line 2", r3: "line 3", r4: "line 4" };
+  ui.CueSheet = function (p) {
+    var b = p.beat, r = RR.reel() || {}, st = r.setup_detail || {};
+    return html`<div class="prompter">
+      <small>No talking. One continuous take, about ${Math.round(b.seconds)} seconds</small>
+      <div class="setup-box">
+        ${st.where && html`<p><b>Where:</b> ${st.where}</p>`}
+        ${st.phone && html`<p><b>Phone:</b> ${st.phone}</p>`}
+        ${st.clip && html`<p><b>The clip:</b> ${st.clip}</p>`}
+        <p><b>You stand:</b> ${b.stand === "left" ? "on the LEFT of the frame, so the text has the right side" : b.stand === "right" ? "on the RIGHT of the frame, so the text has the left side" : "in the middle of the frame"}</p>
+        ${st.wear && html`<p><b>Wear:</b> ${st.wear}</p>`}
+        <p class="dim">Facing the phone, the right side of the screen is on your left. Hold each move for its count. Start recording, wait one second, then begin.</p>
+      </div>
+      <ol class="cues">${b.cues.map(function (c, i) { return html`<li>
+        <span class="mono cue-t">${c.at.toFixed(1)}s</span>
+        <div class="cue-body"><span class=${RR.cls("card", i === 0 && "card-hook")}>${c.text}</span>
+          <small>Text appears ${RR.POSNAME[c.pos] || c.pos}${c.keep ? " and stays" : ""}</small>
+          <p>${c.do}</p></div></li>`; })}</ol>
+      <button class="btn xl" onClick=${function () { RR.set({ practice: b._id }); }}>Practice run with a timer</button>
+    </div>`;
+  };
+  ui.Practice = function () {
+    var b = S.beats.filter(function (x) { return x._id === S.practice; })[0];
+    var st = RR.useState(-3), t = st[0], setT = st[1];
+    RR.useEffect(function () { var t0 = performance.now() + 3000, id = setInterval(function () { setT((performance.now() - t0) / 1000); }, 100); var rel = RR.wake(); return function () { clearInterval(id); rel(); }; }, []);
+    if (!b || !b.cues) return null;
+    var close = function () { RR.set({ practice: null }); };
+    var total = b.seconds, live = b.cues.filter(function (c) { return t >= c.at && t < c.end; }), now = b.cues.filter(function (c) { return t >= c.at && t < c.at + c.secs; })[0];
+    var next = b.cues.filter(function (c) { return c.at > t; })[0];
+    return html`<div class="practice" onClick=${close}>
+      <div class="practice-top"><span class="mono">${t < 0 ? "Get in position" : t >= total ? "Done" : t.toFixed(1) + "s / " + total.toFixed(0) + "s"}</span><button class="icon-btn" aria-label="Close">\u2715</button></div>
+      <div class="stage practice-stage">${live.map(function (c, i) { return html`<div class=${RR.cls("ov-cue", "pos-" + c.pos, c === b.cues[0] && "card-hook")}>${c.text}</div>`; })}
+        ${t < 0 && html`<div class="count">${Math.ceil(-t)}</div>`}</div>
+      <p class="practice-do">${t < 0 ? b.cues[0].do : t >= total ? "That's the take. Tap to close, then record it for real." : now ? now.do : ""}</p>
+      ${next && t >= 0 && html`<p class="dim practice-next">Next: ${next.do}</p>`}
+      <div class="meter"><div class="meter-bar"><i style=${"width:" + Math.max(0, Math.min(100, 100 * t / total)) + "%"}></i></div></div>
     </div>`;
   };
 
@@ -161,13 +207,15 @@
     var r = RR.reel();
     if (!S.booted) return html`<div class="empty"><span class="spin"></span>Loading your reel…</div>`;
     if (S.failed && !r) return html`<div class="empty">${S.failed === "signed_out" ? "Sign in to Claude to open your reels." : "This did not load. Reopen the page to try again."}</div>`;
-    if (!r) return html`<div class="empty"><b>No reel on the slate yet.</b><p>Pick an idea and have the script written, or wait for the morning shot list.</p><button class="btn primary" onClick=${function () { RR.go("ideas"); }}>Go to ideas</button></div>`;
+    if (!r) return html`<div class="stack"><${ui.Bank} top=${true} /></div>`;
     var list = RR.shotList(), prog = RR.progress(), open = (r.verify || []).filter(function (v) { return !v.done; }).length;
     var firstTodo = -1; list.some(function (s, k) { if (!RR.takes(s.beat._id, s.kind).length) { firstTodo = k; return true; } });
     var retakes = list.filter(function (s) { return s.kind === "aroll" && RR.beatState(s.beat) === "retake"; });
     var stops = []; list.forEach(function (s, k) { var last = stops[stops.length - 1]; if (!last || last.name !== s.stop) stops.push(last = { name: s.stop, tip: s.tip, shots: [] }); last.shots.push({ s: s, k: k }); });
     var start = function (k) { if (r.status === "scripted") RR.act.status("shooting"); RR.set({ shoot: { i: k } }); };
     return html`<div class="stack">
+      <${ui.Bank} top=${true} />
+      <h2 class="sec slate-head">On the slate now</h2>
       ${S.viewId !== S.currentId && html`<div class="banner">You are looking at a reel that is not on today's slate.<button class="btn sm" onClick=${function () { RR.act.makeCurrent(S.viewId); }}>Make it today's reel</button></div>`}
       <section class="hero">
         <${ui.Stepper} status=${r.status} />
@@ -187,7 +235,7 @@
         ${st.shots.map(function (x) { var b = x.s.beat, cut = x.s.kind === "broll", state = RR.takes(b._id, x.s.kind).length ? (cut ? "good" : RR.beatState(b)) : "todo";
           return html`<button class="shot-row" onClick=${function () { start(x.k); }}>
             <span class="mono id">${b._id}</span>
-            <span class="shot-text">${cut ? html`<i>Cutaway:</i> ${b.broll}` : b.say || html`<i>Text:</i> ${b.screen}`}</span>
+            <span class="shot-text">${cut ? html`<i>Cutaway:</i> ${b.broll}` : b.say || (b.cues ? html`<i>One take:</i> ${b.cues.length} moves` : html`<i>Text:</i> ${b.screen}`)}</span>
             <span class="mono dim">${cut ? "4s+" : RR.sec(b.say ? RR.sayTime(b.say) : b.seconds || 3)}</span><${ui.Dot} s=${state} /></button>`; })}
       </section>`; })}
 

@@ -162,7 +162,8 @@
       var where = (v.beats[0] && v.beats[0].location) || "One spot";
       var reel = { _id: id, date: day, title: v.title, formula: v.shape, why: "Answers a question people search: \u201C" + v.question + "\u201D", status: "scripted", status_at: Date.now(),
         target_seconds: v.seconds, caption: v.caption, verify: v.verify || [], kind: v.kind, bank_id: v.id, written_by: "bank",
-        stops: [{ name: where, tip: v.kind === "talk" ? "One clip per line. Move a step or turn between lines so the background changes." : v.kind === "point" ? "No talking. Tripod locked, stand to one side, hold each pose for three seconds. Add the sound in Instagram." : "One clip, no talking. Hold it for the full count. Add the sound in Instagram.", beats: v.beats.map(function (b) { return b.id; }) }],
+        setup_detail: v.setup || null,
+        stops: [{ name: where, tip: v.kind === "talk" ? "One clip per line. Move a step or turn between lines so the background changes." : v.kind === "point" ? "No talking. One continuous take: follow the moves on the next screen in order. Add the music in Instagram." : "One clip, no talking. The text is added on top. Add the music in Instagram.", beats: v.beats.map(function (b) { return b.id; }) }],
         setup: ["Rear camera, 1x lens, vertical, 1080p at 30. Each clip under 20 MB, so not 4K.", "HDR video off. Lock focus and exposure.", v.kind === "talk" ? "A second of silence before and after you speak." : "No audio needed. Leave empty space in the frame where the text goes.", "Keep the top fifth of the frame clear for the text card."] };
       var beats = v.beats.map(function (b) { var o = Object.assign({}, b); o._id = b.id; delete o.id; return o; });
       return RR.act.createReel(reel, beats).then(function () { return RR.act.makeCurrent(id); });

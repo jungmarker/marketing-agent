@@ -76,6 +76,9 @@
         else out.push({ level: "ok", label: "Length " + RR.sec(spoken), detail: "target about " + RR.sec(target) });
         if (a.in < 0.15) out.push({ level: "warn", label: "No pause before you speak", detail: "Leave a beat of silence first so the cut is clean." });
       }
+    } else if (beat.cues && v.dur) {
+      out.push(v.dur >= beat.seconds * 0.9 ? { level: "ok", label: "Length " + RR.sec(v.dur), detail: "" }
+        : { level: "bad", label: "Too short", detail: RR.sec(v.dur) + " recorded. The cue sheet runs " + RR.sec(beat.seconds) + ". Do all the moves in one take." });
     } else if (v.dur) {
       out.push(v.dur >= 2.5 ? { level: "ok", label: "Length " + RR.sec(v.dur), detail: "" } : { level: "warn", label: "Short clip", detail: RR.sec(v.dur) + ". Hold a silent shot for 3 seconds or more." });
     }

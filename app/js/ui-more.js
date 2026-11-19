@@ -15,21 +15,33 @@
     }, function (e) { RR.job("script", null); RR.toast(RR.aiError(e), "bad"); });
   }
   var KIND = { talk: "Talk", point: "No talking · point", text: "No talking · one clip" };
-  ui.Bank = function () {
-    var st = RR.useState(RR.ls.get("bankFilter", "all")), f = st[0], setF = st[1], mr = RR.useState(8), more = mr[0], setMore = mr[1];
-    if (!S.bank.length) return null;
+  ui.BankDetail = function (p) {
+    var v = p.v, b = v.beats;
+    if (v.kind === "talk") return html`<ol class="plain bank-lines">${b.map(function (x) { return html`<li>${x.say}${x.screen ? html` <span class="card sm-card">${x.screen}</span>` : null}</li>`; })}</ol>`;
+    var c = b[0].cues || [], st = v.setup || {};
+    return html`<div class="bank-lines">${st.where && html`<p><b>Where:</b> ${st.where}</p>`}${st.clip && html`<p><b>The clip:</b> ${st.clip}</p>`}
+      <ol class="cues compact">${c.map(function (q) { return html`<li><span class="mono cue-t">${q.at.toFixed(1)}s</span><div class="cue-body"><span class="card sm-card">${q.text}</span><p>${q.do}</p></div></li>`; })}</ol></div>`;
+  };
+  ui.Bank = function (p) {
+    var st = RR.useState(RR.ls.get("bankFilter", "point")), f = st[0], setF = st[1], mr = RR.useState(p.top ? 4 : 8), more = mr[0], setMore = mr[1];
+    var op = RR.useState(null), open = op[0], setOpen = op[1], hd = RR.useState(RR.ls.get("bankHidden", false)), hidden = hd[0], setHidden = hd[1];
+    if (!S.bank.length) return p.top ? html`<div class="empty sm">Loading the video list\u2026</div>` : null;
     var done = {}; S.reels.forEach(function (r) { if (r.bank_id) done[r.bank_id] = r; });
     var list = S.bank.filter(function (v) { return f === "all" || v.kind === f; });
     var chip = function (k, label) { return html`<button class=${RR.cls("take-pill", f === k && "on")} onClick=${function () { setF(k); setMore(8); RR.ls.set("bankFilter", k); }}>${label} · ${k === "all" ? S.bank.length : S.bank.filter(function (v) { return v.kind === k; }).length}</button>`; };
-    return html`<section class="stack tight"><h2 class="sec">Ready to shoot · ${S.bank.length} scripts</h2>
-      <p class="dim">Built from the questions people search about buying and selling in Baltimore. Tap one and it goes on today's slate with its shots.</p>
-      <div class="take-strip">${chip("all", "All")}${chip("talk", "Talk")}${chip("point", "Point at text")}${chip("text", "One clip")}</div>
+    if (p.top && hidden) return html`<button class="btn" onClick=${function () { setHidden(false); RR.ls.set("bankHidden", false); }}>Show the ${S.bank.length} videos ready to shoot</button>`;
+    return html`<section class="stack tight bank"><div class="row"><h2 class="sec grow">${S.bank.length} videos ready to shoot</h2>
+        ${p.top && html`<button class="btn sm ghost" onClick=${function () { setHidden(true); RR.ls.set("bankHidden", true); }}>Hide</button>`}</div>
+      <p class="dim">Each one answers a question people search about buying or selling in Baltimore. Open one to see every shot, then tap Shoot this.</p>
+      <div class="take-strip">${chip("point", "No talking: point at text")}${chip("text", "No talking: one clip")}${chip("talk", "Talk to camera")}${chip("all", "All")}</div>
       ${list.slice(0, more).map(function (v) { var r = done[v.id], hook = (v.beats[0] && (v.beats[0].say || v.beats[0].screen.split("\n")[0])) || "";
         return html`<article class="idea">
-          <div class="idea-top"><span class="slate-chip">${KIND[v.kind]}</span><span class="mono dim">${v.beats.length} ${v.kind === "talk" ? "lines" : v.kind === "text" ? "clip" : "shots"} · ${v.seconds}s</span></div>
-          <h3>${v.title}</h3><p class="idea-hook">“${hook}”</p><p class="dim">${v.question}${v.verify && v.verify.length ? " · " + v.verify.length + " to confirm first" : ""}</p>
-          <div class="row wrap">${r ? html`<button class="btn sm" onClick=${function () { RR.view(r._id); RR.go("today"); }}>Open · ${RR.STAGE_LABEL[r.status] || r.status}</button>`
-            : html`<button class="btn primary sm" onClick=${function () { RR.act.fromBank(v).then(function () { RR.go("today"); }); }}>Shoot this</button>`}</div></article>`; })}
+          <div class="idea-top"><span class="slate-chip">${KIND[v.kind]}</span><span class="mono dim">${v.kind === "talk" ? v.beats.length + " lines" : "one take"} · ${v.seconds}s</span></div>
+          <h3>${v.title}</h3><p class="idea-hook">“${hook}”</p><p class="dim">Answers: ${v.question}${v.verify && v.verify.length ? " · " + v.verify.length + " to confirm first" : ""}</p>
+          ${open === v.id && html`<${ui.BankDetail} v=${v} />`}
+          <div class="row wrap">${r ? html`<button class="btn sm" onClick=${function () { RR.view(r._id); RR.go("today"); window.scrollTo(0, 0); }}>Open · ${RR.STAGE_LABEL[r.status] || r.status}</button>`
+            : html`<button class="btn primary sm" onClick=${function () { RR.act.fromBank(v).then(function () { RR.go("today"); RR.toast("On the slate. Tap Start shooting.", "good"); var el = document.querySelector(".slate-head"); if (el) el.scrollIntoView({ behavior: "smooth" }); }); }}>Shoot this</button>`}
+            <button class="btn sm ghost" onClick=${function () { setOpen(open === v.id ? null : v.id); }}>${open === v.id ? "Hide the shots" : "See every shot"}</button></div></article>`; })}
       ${list.length > more && html`<button class="btn" onClick=${function () { setMore(more + 12); }}>Show more (${list.length - more} left)</button>`}
     </section>`;
   };
@@ -166,6 +178,7 @@
       <main class="wrap"><${View} /></main>
       <nav class="tabbar" aria-label="Sections">${TABS.map(function (t) { return html`<a href=${"#" + t[0]} aria-current=${S.tab === t[0] ? "page" : null}>${t[1]}</a>`; })}</nav>
       ${S.shoot && html`<${ui.ShootMode} />`}
+      ${S.practice && html`<${ui.Practice} />`}
       ${rb && html`<${ui.Rewrite} beat=${rb} onClose=${close} />`}
       ${sheet && sheet.type === "ask" && html`<${ui.Ask} onClose=${close} />`}
       <div class="toasts" aria-live="polite">${S.toasts.map(function (t) { return html`<div class=${"toast toast-" + t.kind}>${t.text}</div>`; })}</div>

@@ -190,9 +190,27 @@ def caption_chunks(line, start, dur, words_per=3):
     return out
 
 
+# where a timed card sits on 1080x1920: (alignment, x, y). Left cards anchor top-left, right cards top-right.
+CUE_POS = {"top": (8, 430, 270), "mid": (8, 430, 620), "low": (8, 430, 880),
+           "top-left": (7, 60, 290), "mid-left": (7, 60, 620), "low-left": (7, 60, 880),
+           "top-right": (9, 830, 290), "mid-right": (9, 830, 620), "low-right": (9, 830, 880),
+           "r1": (8, 430, 270), "r2": (8, 430, 440), "r3": (8, 430, 610), "r4": (8, 430, 780)}
+
+
 def build_ass(timeline, font, captions):
     rows = []
     for i, (beat, start, dur) in enumerate(timeline):
+        if beat.get("cues"):                                  # no-talking video: timed cards in set places
+            for k, c in enumerate(beat["cues"]):
+                if c["at"] >= dur:
+                    continue
+                al, x, y = CUE_POS.get(c.get("pos"), CUE_POS["top"])
+                side = al in (7, 9)
+                style = "Hook" if i == 0 and k == 0 else "Card"
+                tag = "{\\an%d\\pos(%d,%d)%s}" % (al, x, y, "\\fs66" if side else "")
+                rows.append(f"Dialogue: 1,{ts(start + c['at'])},{ts(start + min(c['end'], dur))},{style},,0,0,0,,"
+                            + tag + wrap(c["text"], 13 if side else 18))
+            continue
         if beat.get("screen"):
             style = "Hook" if i == 0 else "Card"
             rows.append(f"Dialogue: 1,{ts(start)},{ts(start + dur)},{style},,0,0,0,,"
@@ -240,7 +258,7 @@ def main():
         timeline.append((beat, t, dur))
         report.append({"beat": beat["id"], "start": round(t, 2), "seconds": round(dur, 2),
                        "source": source, "flag": "over 4.5s, tighten or add a cutaway"
-                       if dur > 4.5 else None})
+                       if dur > 4.5 and not beat.get("cues") else None})
         t += dur
 
     lst = os.path.join(work, "list.txt")

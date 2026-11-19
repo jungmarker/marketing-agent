@@ -72,7 +72,8 @@
         <video ref=${b} playsinline preload="auto" class="layer"></video>
         <video ref=${br} playsinline muted preload="auto" class="layer"></video>
         ${!it.clip && html`<div class="slide"><span class="mono">${beat._id}</span><p>${beat.say || beat.shot || beat.broll}</p><small>Not shot yet. Timed from the script.</small></div>`}
-        ${beat.screen && html`<div class=${RR.cls("ov-card", pos.i === 0 && "card-hook")}>${beat.screen}</div>`}
+        ${beat.cues ? beat.cues.filter(function (c) { return pos.t >= c.at && pos.t < c.end; }).map(function (c) { return html`<div class=${RR.cls("ov-cue", "pos-" + c.pos, c === beat.cues[0] && "card-hook")}>${c.text}</div>`; })
+          : beat.screen && html`<div class=${RR.cls("ov-card", pos.i === 0 && "card-hook")}>${beat.screen}</div>`}
         ${beat.say && html`<div class="ov-cap">${captionAt(beat.say, frac)}</div>`}
         ${showUi && html`<div class="ov-ui" aria-hidden="true"><i></i><i></i><i></i><i></i><b></b><b></b></div>`}
         <button class=${RR.cls("play", pos.playing && "is-playing")} aria-label=${pos.playing ? "Pause" : "Play"} onClick=${function () { pos.playing ? stop(false) : play(); }}>${pos.playing ? "" : "▶"}</button>

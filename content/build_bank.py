@@ -274,125 +274,177 @@ talk("t22", "Nobody tells you, Spanish", "¿Cuánto necesito para comprar una ca
   verify=[("Read the Spanish out loud once; change any word you would not say", "You"), ("Current incentive amounts", "Live Baltimore")], ask="Comenta CASA", src="Same figures as t02")
 
 # ---------------- no-talk pointing videos ----------------
-point("p01", "This / not that", "What should I not do before buying a house?", "Before you buy: this, not that", [
-  ("BEFORE YOU BUY A HOUSE", "Stand to the right of frame, arms crossed, look at the lens"),
-  ("NEW CAR LOAN", "Point up-left at the text, shake your head no"),
-  ("NEW CREDIT CARD", "Point at it, shake your head no"),
-  ("CHANGING JOBS MID-LOAN", "Point at it, wince"),
-  ("GET PRE-APPROVED FIRST", "Point with both hands, nod yes"),
-  ("COMMENT \"LENDER\"", "Point down toward the comments")], ask="Comment LENDER", src="credible.com first-time buyer mistakes")
+# One continuous take. You hold each move for its seconds; the text is added on top in the edit.
+# Screen positions are as the viewer sees them. Facing the phone, the RIGHT side of the screen is on your LEFT.
+SIDE = {"right": " It's on the right of the screen, so point to your left.", "left": " It's on the left of the screen, so point to your right."}
+def cue_list(cues):
+    out, t = [], 0.0
+    last = len(cues) - 1
+    for i, c in enumerate(cues):
+        secs, txt, pos, do = c[:4]; keep = len(c) > 4 and c[4]
+        hint = next((v for k, v in SIDE.items() if pos.endswith(k)), "") if "Point" in do or "point" in do else ""
+        out.append({"at": round(t, 1), "secs": secs, "text": txt, "pos": pos, "do": do + hint, "keep": bool(keep)})
+        t += secs
+    end_last = out[last]["at"] if out else 0
+    for i, c in enumerate(out):
+        c["end"] = round(end_last if c["keep"] and i < last else c["at"] + c["secs"], 1)
+    out[last]["end"] = round(t, 1)
+    return out, round(t, 1)
 
-point("p02", "This / not that", "Do I need 20% down?", "Down payment: what you think vs what it is", [
-  ("DOWN PAYMENT ON $400,000", "Stand left of frame, look at the lens"),
-  ("WHAT YOU THINK: $80,000", "Point up-right, shake your head no"),
-  ("3% DOWN: $12,000", "Point, nod yes"),
-  ("FHA 3.5%: $14,000", "Point, nod yes"),
-  ("VA: $0", "Point, nod yes, raise eyebrows"),
-  ("WHICH ONE ARE YOU?", "Shrug toward the lens")], ask="Which one are you?", src="sofi.com: down payment on a $400K house")
+def point(id, shape, q, title, setup, cues, verify=(), ask="", src=""):
+    cl, total = cue_list(cues)
+    beat = {"say": "", "screen": cl[0]["text"], "cues": cl, "seconds": total, "stand": setup["stand"],
+            "shot": "One continuous take, about %d seconds. Do the moves below in order and hold each one for its count." % round(total),
+            "framing": setup.get("framing", "Medium wide (knees up), with empty space on the side where the text goes"),
+            "angle": "Eye level", "move": "Locked on tripod", "location": setup["where"], "broll": None, "punch": False}
+    bank.append(dict(id=id, kind="point", shape=shape, question=q, title=title, beats=[beat], setup=setup, verify=list(verify), ask=ask, source=src))
 
-point("p03", "Walk up and point", "What are red flags on a Baltimore rowhouse?", "Rowhouse red flags, no talking", [
-  ("ROWHOUSE RED FLAGS", "Walk into frame in front of the house, stop, look at the lens"),
-  ("BULGING BRICK", "Point at the brick front. Use a real example only on a house you may film"),
-  ("RUSTED LINTEL OVER THE WINDOW", "Point up at the window head"),
-  ("DOWNSPOUT DUMPING AT THE WALL", "Point down at the downspout"),
-  ("STAINS ON THE TOP-FLOOR CEILING", "Point straight up"),
-  ("SAVE THIS FOR YOUR NEXT SHOWING", "Point at the lens, nod")],
-  verify=[("You have permission to film this house, and you are not implying a defect in someone's home without it", "The owner")], ask="Save this",
-  src="biggerpockets.com: Baltimore red flags (bulging brick, lintels, downspouts)")
+def text(id, shape, q, title, stack, clip, verify=(), ask="", src="", secs=2.2):
+    cues = [(secs if i < len(stack) - 1 else secs + 1.5, line, "r%d" % (i + 1), "Keep doing the same thing. The line adds under the last one.", i < len(stack) - 1) for i, line in enumerate(stack)]
+    cl, total = cue_list(cues)
+    setup = {"where": "Wherever the clip is", "stand": "center", "phone": "Tripod or a steady hand. Vertical.", "clip": clip}
+    beat = {"say": "", "screen": stack[0], "cues": cl, "seconds": total, "stand": "center", "shot": clip, "framing": "Wide", "angle": "Eye level",
+            "move": "Locked on tripod", "location": "Wherever the clip is", "broll": None, "punch": False}
+    bank.append(dict(id=id, kind="text", shape=shape, question=q, title=title, beats=[beat], setup=setup, verify=list(verify), ask=ask, source=src))
 
-point("p04", "Numbered list", "What costs are there besides the down payment?", "It's not just the down payment", [
-  ("BUYING A HOUSE? BUDGET FOR 4 THINGS", "Stand centre, hold up four fingers"),
-  ("1. DOWN PAYMENT", "Point up-left"),
-  ("2. CLOSING COSTS", "Point up-right"),
-  ("3. INSPECTION", "Point down-left"),
-  ("4. MOVING AND THE FIRST REPAIR", "Point down-right"),
-  ("MOST PEOPLE ONLY SAVE FOR #1", "Hold up one finger, shake your head")], ask="Comment COSTS", src="amerisave.com first-time buyer questions")
+TRIPOD = "Tripod at chest height, phone vertical, about 7 feet away so you're framed from the knees up."
+point("p01", "This / not that", "What should I not do before buying a house?", "Before you buy: don't / do",
+  {"where": "Sidewalk in front of a rowhouse", "stand": "center", "phone": TRIPOD, "wear": "Solid color top"},
+  [(3.0, "BEFORE YOU BUY A HOUSE IN BALTIMORE", "top", "Stand in the middle, arms crossed, serious look straight at the lens."),
+   (2.5, "DON'T: BUY A NEW CAR", "top-right", "Point up at it with your left hand and shake your head."),
+   (2.5, "DON'T: OPEN A NEW CREDIT CARD", "top-right", "Same spot. Wag your finger at it."),
+   (2.5, "DON'T: SWITCH JOBS", "top-right", "Point at it, then grimace at the lens."),
+   (3.0, "DO: GET PRE-APPROVED FIRST", "top-left", "Swing both hands across to point at it. Big nod, thumbs up."),
+   (3.0, 'COMMENT "LENDER" FOR MINE', "mid", "Point down at the bottom of the screen, where the comments are.")],
+  ask="Comment LENDER", src="credible.com first-time buyer mistakes")
 
-point("p05", "This / not that", "What do I look at during a showing?", "At a showing: look here, not there", [
-  ("AT A SHOWING", "Standing inside a staged room"),
-  ("THE STAGING", "Point at the furniture, shake your head no"),
-  ("THE PAINT COLOR", "Point at the wall, shake your head no"),
-  ("THE CEILING", "Point up, nod yes"),
-  ("THE BASEMENT WALLS", "Point down, nod yes"),
-  ("THE ELECTRICAL PANEL", "Point off to the side, nod yes"),
-  ("PAINT IS CHEAP. ROOFS ARE NOT.", "Shrug at the lens")],
-  place="Inside a house you may film", verify=[("Permission to film inside", "The owner")], ask="Save this", src="activerain.com rowhome checklist")
+point("p02", "This / not that", "Do I need 20% down?", "Down payment: what you think vs what it is",
+  {"where": "Sidewalk in front of a rowhouse", "stand": "center", "phone": TRIPOD, "wear": "Solid color top"},
+  [(3.0, "DOWN PAYMENT ON A $400,000 HOUSE?", "top", "Hand on your chin, thinking face, looking at the lens."),
+   (2.5, "WHAT YOU THINK: $80,000", "top-left", "Point at it with your right hand, eyes wide, shake your head.", True),
+   (2.5, "3% DOWN: $12,000", "top-right", "Point at it with your left hand and nod.", True),
+   (2.5, "FHA 3.5%: $14,000", "mid-right", "Point a little lower on the same side and nod.", True),
+   (2.5, "VA: $0", "low-right", "Point lower again. Eyebrows up, both hands.", True),
+   (3.0, "WHICH ONE ARE YOU?", "top", "Shrug at the lens with both palms up.")],
+  verify=[("3%, 3.5% FHA and 0% VA minimums at your lender", "Your lender")], ask="Which one are you?", src="sofi.com: down payment on a $400K house")
 
-point("p06", "Numbered list", "What documents do I need for a mortgage?", "3 things your lender asks for", [
-  ("YOUR LENDER WILL ASK FOR 3 THINGS", "Stand right of frame, hold up three fingers"),
-  ("PAY STUBS", "Point at the text"),
-  ("TWO YEARS OF TAX RETURNS", "Point at the text"),
-  ("BANK STATEMENTS", "Point at the text"),
-  ("HAVE THEM READY = FASTER PRE-APPROVAL", "Thumbs up"),
-  ("COMMENT \"LIST\" FOR THE FULL CHECKLIST", "Point down")],
-  verify=[("Your lender's actual document list", "Your lender"), ("You have a checklist to send", "You")], ask="Comment LIST", src="rocketmortgage.com Maryland guide")
+point("p03", "Walk up and point", "What are red flags on a Baltimore rowhouse?", "Rowhouse red flags: where to look",
+  {"where": "Public sidewalk facing a rowhouse front with a chimney visible. Your own listing is safest.", "stand": "left",
+   "phone": "Tripod across the sidewalk, about 10 feet back, so the whole front of the house is in frame behind you.",
+   "framing": "Wide: you on the left of the frame, the house front filling the right"},
+  [(3.0, "ROWHOUSE RED FLAGS: WHERE TO LOOK", "top", "Walk in from the left edge of the frame, stop, look at the lens."),
+   (3.0, "BRICK BULGING OUT?", "mid-right", "Turn and point at the middle of the brick front."),
+   (3.0, "RUST ON THE STEEL ABOVE WINDOWS?", "top-right", "Point up at the top edge of a window."),
+   (3.0, "DOWNSPOUT DUMPING AT THE WALL?", "low-right", "Point down at where the downspout meets the ground."),
+   (3.0, "CHIMNEY CRUMBLING?", "top-right", "Point straight up at the chimney."),
+   (3.0, "SAVE THIS FOR YOUR NEXT SHOWING", "top", "Turn back, point at the lens, nod.")],
+  verify=[("The text asks questions so you are not saying this house has the defect. Film a house you have permission to film.", "The owner, or use your listing")],
+  ask="Save this", src="biggerpockets.com: Baltimore red flags (bulging brick, lintels, downspouts, chimneys)")
 
-point("p07", "This / not that", "What is ground rent?", "Yours / maybe not yours", [
-  ("WHAT YOU OWN IN BALTIMORE", "Standing on the sidewalk in front of a rowhouse"),
-  ("THE HOUSE: YOURS", "Point at the house, nod"),
-  ("THE STEPS: YOURS", "Point at the steps, nod"),
-  ("THE LAND UNDER IT: MAYBE NOT", "Point at the ground, tilt your head"),
-  ("IT'S CALLED GROUND RENT", "Look at the lens"),
-  ("ASK BEFORE YOU OFFER", "Point at the lens")], ask="Comment GROUND", src="activerain.com: ground rent in Baltimore")
+point("p04", "Numbered list", "What costs are there besides the down payment?", "It's not just the down payment",
+  {"where": "Sidewalk or a front porch", "stand": "center", "phone": TRIPOD},
+  [(3.0, "BUYING A HOUSE? SAVE FOR 4 THINGS", "top", "Hold up four fingers at the lens."),
+   (2.5, "1. DOWN PAYMENT", "top-left", "Point up at it with your right hand.", True),
+   (2.5, "2. CLOSING COSTS", "top-right", "Point up at it with your left hand.", True),
+   (2.5, "3. HOME INSPECTION", "mid-left", "Point out at it, chest height, right hand.", True),
+   (2.5, "4. MOVING + FIRST REPAIR", "mid-right", "Point out at it, chest height, left hand.", True),
+   (3.0, "MOST PEOPLE ONLY SAVE FOR #1", "top", "Hold up one finger and shake your head.")],
+  ask="Comment COSTS", src="amerisave.com first-time buyer questions")
 
-point("p08", "This / not that", "Should I get pre-approved before looking?", "The order that works", [
-  ("THE ORDER MOST PEOPLE DO IT", "Stand left of frame"),
-  ("1. FALL IN LOVE WITH A HOUSE", "Point, shake your head"),
-  ("2. THEN CALL A LENDER", "Point, shake your head"),
-  ("THE ORDER THAT WORKS", "Step to the other side of frame"),
-  ("1. PRE-APPROVAL", "Point, nod"),
-  ("2. THEN THE HOUSE", "Point, nod"),
-  ("YOU OFFER THE SAME DAY", "Snap, point at the lens")], ask="Comment LENDER", src="rocketmortgage.com")
+point("p05", "This / not that", "What do I look at during a showing?", "At a showing: look here, not there",
+  {"where": "Inside a furnished living room you have permission to film", "stand": "center",
+   "phone": "Tripod in a corner of the room, chest height, so the couch, a wall and the ceiling are in frame."},
+  [(3.0, "AT A SHOWING, LOOK HERE", "top", "Stand in the middle of the room, arms open."),
+   (2.5, "NOT THE COUCH", "mid-left", "Point at the furniture and shake your head."),
+   (2.5, "NOT THE PAINT", "mid-right", "Point at a painted wall and shake your head."),
+   (2.5, "YES: THE CEILING", "top", "Point straight up and nod."),
+   (2.5, "YES: WHERE FLOOR MEETS WALL", "low-left", "Crouch and point at the bottom of a wall. Nod."),
+   (3.0, "PAINT IS CHEAP. ROOFS AREN'T.", "top", "Stand back up and shrug at the lens.")],
+  verify=[("Permission to film inside", "The owner")], ask="Save this", src="activerain.com rowhome checklist")
 
-point("p09", "This / not that", "What credit score do I need?", "Credit score: myth vs minimum", [
-  ("CREDIT SCORE TO BUY A HOUSE", "Stand right of frame"),
-  ("\"YOU NEED 750\"", "Point, shake your head no"),
-  ("FHA: 580", "Point, nod yes"),
-  ("CONVENTIONAL: 620", "Point, nod yes"),
-  ("HIGHER SCORE = LOWER RATE", "Raise your hand like a lever"),
-  ("WHAT'S YOURS?", "Shrug at the lens")],
-  verify=[("Minimums at your lender", "Your lender")], ask="What's yours?", src="credible.com")
+point("p06", "Numbered list", "What documents do I need for a mortgage?", "3 things your lender asks for",
+  {"where": "Kitchen table or desk, papers in front of you", "stand": "right", "phone": TRIPOD + " Stand on the right so the list builds on the left."},
+  [(3.0, "YOUR LENDER WILL ASK FOR 3 THINGS", "top", "Hold up three fingers."),
+   (2.5, "PAY STUBS", "top-left", "Point at it with your right hand. Nod.", True),
+   (2.5, "W-2s OR TAX RETURNS", "mid-left", "Point a little lower. Nod.", True),
+   (2.5, "BANK STATEMENTS", "low-left", "Point lower again. Nod.", True),
+   (2.5, "HAVE THEM READY = FASTER PRE-APPROVAL", "top", "Thumbs up at the lens."),
+   (3.0, 'COMMENT "LIST" FOR THE FULL CHECKLIST', "mid", "Point down at the comments.")],
+  verify=[("Your lender's actual document list and how many months of statements", "Your lender"), ("You have a checklist ready to send", "You")], ask="Comment LIST", src="rocketmortgage.com Maryland guide")
 
-point("p10", "Numbered list", "First-time buyer programs Baltimore", "Money most Baltimore buyers skip", [
-  ("FREE-ISH MONEY BALTIMORE BUYERS SKIP", "Stand centre, palms up"),
-  ("CITY FIRST-TIME BUYER INCENTIVE", "Point up-left"),
-  ("MARYLAND MORTGAGE PROGRAM", "Point up-right"),
-  ("REINVEST BALTIMORE", "Point down-left"),
-  ("HOMESTEAD TAX CREDIT", "Point down-right"),
-  ("COMMENT \"MONEY\" AND I'LL SEND THE LIST", "Point down")],
+point("p07", "This / not that", "What is ground rent?", "What you own in Baltimore",
+  {"where": "Sidewalk next to rowhouse marble steps", "stand": "left", "phone": TRIPOD + " The steps and the front door should be on the right side of the frame."},
+  [(3.0, "WHAT YOU OWN WHEN YOU BUY IN BALTIMORE", "top", "Stand beside the steps and look at the lens."),
+   (2.5, "THE HOUSE: YOURS", "top-right", "Point at the front of the house behind you. Nod."),
+   (2.5, "THE STEPS: YOURS", "mid-right", "Point at the marble steps. Nod."),
+   (3.0, "THE GROUND UNDER IT: MAYBE NOT", "mid", "Point straight down at the sidewalk. Tilt your head, confused face."),
+   (2.5, "IT'S CALLED GROUND RENT", "top", "Look at the lens, eyebrows up."),
+   (3.0, "ASK BEFORE YOU OFFER", "top", "Point at the lens.")],
+  ask="Comment GROUND", src="activerain.com: ground rent in Baltimore")
+
+point("p08", "This / not that", "Should I get pre-approved before looking?", "The order that works",
+  {"where": "Sidewalk or porch", "stand": "center", "phone": TRIPOD},
+  [(2.5, "HOW MOST PEOPLE DO IT", "top-left", "Point at it with your right hand, unimpressed face.", True),
+   (2.5, "1. FALL IN LOVE WITH A HOUSE", "mid-left", "Hands on your heart, dreamy look.", True),
+   (2.5, "2. THEN CALL A LENDER", "low-left", "Shrug and grimace.", True),
+   (2.5, "HOW IT SHOULD GO", "top-right", "Take a step to your left and point at it with your left hand.", True),
+   (2.5, "1. GET PRE-APPROVED", "mid-right", "Point at it and nod.", True),
+   (2.5, "2. THEN FIND THE HOUSE", "low-right", "Point at it, thumbs up.", True),
+   (3.0, "SO YOU CAN OFFER THE SAME DAY", "top", "Snap your fingers and point at the lens.")],
+  ask="Comment LENDER", src="rocketmortgage.com")
+
+point("p09", "This / not that", "What credit score do I need?", "Credit score: myth vs minimum",
+  {"where": "Sidewalk or porch", "stand": "center", "phone": TRIPOD},
+  [(3.0, "CREDIT SCORE YOU NEED TO BUY A HOUSE", "top", "Hand on your chin."),
+   (2.5, '"YOU NEED 750"', "top-left", "Point at it with your right hand, cross your arms in an X.", True),
+   (2.5, "FHA: 580", "top-right", "Point at it with your left hand and nod.", True),
+   (2.5, "CONVENTIONAL: 620", "mid-right", "Point a little lower and nod.", True),
+   (2.5, "HIGHER SCORE = LOWER RATE", "top", "Raise one hand slowly like a lever."),
+   (3.0, "WHAT'S YOURS?", "top", "Shrug and point at the lens.")],
+  verify=[("580 FHA and 620 conventional minimums at your lender", "Your lender")], ask="What's yours?", src="credible.com")
+
+point("p10", "Numbered list", "First-time buyer programs Baltimore", "Money Baltimore buyers never ask for",
+  {"where": "Sidewalk in front of a rowhouse", "stand": "center", "phone": TRIPOD},
+  [(3.0, "MONEY MOST BALTIMORE BUYERS NEVER ASK FOR", "top", "Palms up, raised eyebrows."),
+   (2.5, "CITY FIRST-TIME BUYER INCENTIVE", "top-left", "Point at it with your right hand.", True),
+   (2.5, "MARYLAND MORTGAGE PROGRAM", "top-right", "Point at it with your left hand.", True),
+   (2.5, "REINVEST BALTIMORE", "mid-left", "Point at it, chest height.", True),
+   (2.5, "HOMESTEAD TAX CREDIT", "mid-right", "Point at it, chest height.", True),
+   (3.0, 'COMMENT "MONEY" FOR THE LIST', "low-left", "Point down at the comments.")],
   verify=[("All four programs are open and funded this month", "Live Baltimore, Maryland DHCD")], ask="Comment MONEY", src="livebaltimore.com, dhcd.maryland.gov")
 
-point("p11", "This / not that, Spanish", "Antes de comprar casa", "Antes de comprar: sí / no", [
-  ("ANTES DE COMPRAR CASA", "De pie a la derecha, mira a la cámara"),
-  ("CARRO NUEVO", "Señala, di que no con la cabeza"),
-  ("TARJETA NUEVA", "Señala, di que no"),
-  ("PRE-APROBACIÓN PRIMERO", "Señala, di que sí"),
-  ("PREGUNTA POR LA AYUDA DE LA CIUDAD", "Señala, di que sí"),
-  ("COMENTA \"CASA\"", "Señala hacia abajo")],
-  verify=[("Read the Spanish once and change anything you would not say", "You")], ask="Comenta CASA", src="Same as p01")
+point("p11", "This / not that, Spanish", "Antes de comprar casa", "Antes de comprar: sí / no",
+  {"where": "Sidewalk in front of a rowhouse", "stand": "center", "phone": TRIPOD},
+  [(3.0, "ANTES DE COMPRAR CASA EN BALTIMORE", "top", "Brazos cruzados, mirada seria a la cámara."),
+   (2.5, "NO: CARRO NUEVO", "top-right", "Señálalo con la mano izquierda y di que no con la cabeza."),
+   (2.5, "NO: TARJETA NUEVA", "top-right", "Mismo lugar. Mueve el dedo: no."),
+   (3.0, "SÍ: PRE-APROBACIÓN PRIMERO", "top-left", "Señala con las dos manos al otro lado. Asiente, pulgar arriba."),
+   (3.0, 'COMENTA "CASA"', "mid", "Señala hacia abajo, a los comentarios.")],
+  verify=[("Read the Spanish once and change anything you would not say", "You")], ask="Comenta CASA", src="Same as Before you buy")
 
-point("p12", "This / not that", "Selling a house: what should I fix?", "Before you list: fix this, skip that", [
-  ("SELLING? BEFORE YOU LIST", "Stand in front of the house"),
-  ("NEW KITCHEN", "Point, shake your head no"),
-  ("THE LEAK YOU KNOW ABOUT", "Point, nod yes"),
-  ("PAINT AND A DEEP CLEAN", "Point, nod yes"),
-  ("HIDING ANYTHING", "Point, big no"),
-  ("ASK ME WHAT'S WORTH IT ON YOUR HOUSE", "Point at the lens")],
-  verify=[("This matches the advice you actually give sellers", "You")], ask="DM me your address", src="homelight.com seller guides")
+point("p12", "This / not that", "Selling a house: what should I fix?", "Before you list: fix / skip",
+  {"where": "In front of a house", "stand": "center", "phone": TRIPOD},
+  [(3.0, "SELLING? BEFORE YOU LIST", "top", "Stand in front of the house, hands on hips."),
+   (2.5, "SKIP: A NEW KITCHEN", "top-left", "Point at it with your right hand, shake your head."),
+   (2.5, "FIX: THE LEAK YOU KNOW ABOUT", "top-right", "Point at it with your left hand, nod."),
+   (2.5, "DO: PAINT + A DEEP CLEAN", "mid-right", "Point a little lower, nod."),
+   (2.5, "NEVER: HIDE A PROBLEM", "mid-left", "Point at it, cross your arms in an X."),
+   (3.0, "ASK ME WHAT'S WORTH IT ON YOURS", "top", "Point at the lens.")],
+  verify=[("Matches the advice you actually give sellers", "You")], ask="DM me your address", src="homelight.com seller guides")
 
 # ---------------- text over one clip ----------------
 text("x01", "Question", "How much house on $180K?", "$180K, one clip", ["YOU MAKE $180,000", "THAT'S $15,000 A MONTH", "28% RULE: $4,200 FOR HOUSING", "WHAT THAT BUYS IS IN THE CAPTION"],
-  "You walking up to a rowhouse and unlocking the door. 8 seconds, do not look at the camera", verify=[("Price for the caption", LENDER)], ask="See caption", src="bankrate.com")
+  "You walking up to a rowhouse and unlocking the door. Don't look at the camera. Keep moving the whole time.", verify=[("Price for the caption", LENDER)], ask="See caption", src="bankrate.com")
 text("x02", "Question", "Cash for a $400K house", "$400K, one clip", ["$400,000 HOUSE", "20% DOWN: $80,000", "3% DOWN: $12,000", "GUESS WHICH ONE MOST PEOPLE THINK THEY NEED"],
-  "Slow push-in on a rowhouse front from across the street. 8 seconds", ask="Comment 400", src="sofi.com")
-text("x03", "Nobody tells you", "Ground rent", "Ground rent, one clip", ["I OWN A HOUSE IN BALTIMORE", "I DON'T OWN THE LAND UNDER IT", "IT'S CALLED GROUND RENT", "(SEE CAPTION)"],
-  "You sitting on marble steps drinking coffee, looking down the block. 7 seconds", verify=[("Only use the first-person line if it is true for you; otherwise change to MY BUYER", "You")], ask="See caption", src="BAM write-up: caption-payoff clips loop")
+  "Slow walk toward a rowhouse front from across the street, phone in your hand, steady.", ask="Comment 400", src="sofi.com")
+text("x03", "Nobody tells you", "Ground rent", "Ground rent, one clip", ["I OWN A HOUSE IN BALTIMORE", "I DON'T OWN THE LAND UNDER IT", "IT'S CALLED GROUND RENT", "(READ THE CAPTION)"],
+  "You sitting on marble steps with a coffee, looking down the block. Tripod across the sidewalk.", verify=[("Use the first-person lines only if true for you; otherwise MY BUYER OWNS A HOUSE", "You")], ask="See caption", src="BAM write-up: caption-payoff clips loop")
 text("x04", "Numbered list", "Showing questions", "3 questions, one clip", ["3 QUESTIONS BEFORE ANY OFFER IN BALTIMORE", "1. IS THERE A GROUND RENT?", "2. HOW OLD IS THE ROOF?", "3. WAS THE DECK PERMITTED?"],
-  "Walking through an empty rowhouse, phone forward, steady. 9 seconds", verify=[("Permission to film inside", "The owner")], ask="Save this", src="activerain.com")
+  "Walking slowly through an empty rowhouse, phone held forward at chest height.", verify=[("Permission to film inside", "The owner")], ask="Save this", src="activerain.com")
 text("x05", "Question", "Credit score", "Credit score, one clip", ["MINIMUM CREDIT SCORE TO BUY A HOUSE", "FHA: 580", "CONVENTIONAL: 620", "NOT 750"],
-  "You at a laptop, close it, pick up keys, walk out. 7 seconds", verify=[("Minimums at your lender", "Your lender")], ask="Comment SCORE", src="credible.com")
+  "You at a laptop: close it, pick up keys, walk out of frame. Tripod beside the table.", verify=[("Minimums at your lender", "Your lender")], ask="Comment SCORE", src="credible.com")
 text("x06", "Question", "Property tax", "Tax bill, one clip", ["$250,000 ROWHOUSE IN BALTIMORE CITY", "CITY TAX RATE: $2.248 PER $100", "$5,620 A YEAR", "$468 A MONTH. BUDGET FOR IT."],
-  "Slow pan down a block of rowhouses. 8 seconds", verify=[("Rate is current", "baltimorecity.gov/finance")], ask="Follow", src="baltimorecity.gov")
+  "Slow walk down a block of rowhouses, phone pointed at the fronts.", verify=[("Rate is current", "baltimorecity.gov/finance")], ask="Follow", src="baltimorecity.gov")
 
 FOOT = "—\nNick Jungmarker | REALTOR® | Long & Foster Real Estate\n(301) 875-7182 | jungmarker.com\nEqual Housing Opportunity \U0001F3E0"
 for v in bank:
@@ -414,7 +466,11 @@ for kind in ("talk", "point", "text"):
         if kind == "talk":
             md += ["| # | Say | On screen |", "|---|---|---|"] + [f"| {i+1} | {b['say']} | {b['screen'] or ''} |" for i, b in enumerate(v["beats"])]
         else:
-            md += ["| # | Text on screen | What you do |", "|---|---|---|"] + [f"| {i+1} | {b['screen']} | {b['shot']} |" for i, b in enumerate(v["beats"])]
+            st = v.get("setup", {})
+            md += [f"**Where:** {st.get('where','')}  ", f"**Phone:** {st.get('phone','')}  ", f"**You stand:** {st.get('stand','center')} of the frame" + ("  " if kind == "point" else "  "),
+                   (f"**The clip:** {st.get('clip')}" if st.get("clip") else ""), "",
+                   "| Time | Text on screen | Where the text is | What you do |", "|---|---|---|---|"]
+            md += [f"| {c['at']:.1f}s | {c['text']} | {c['pos']} | {c['do']} |" for c in v["beats"][0]["cues"]]
         if v["verify"]: md += ["", "Verify: " + "; ".join(f"{x['item']} ({x['from'][13:]})" for x in v["verify"])]
         md += [f"", f"Source of the question: {v['source']}", ""]
 open(os.path.join(here, "video-bank.md"), "w").write("\n".join(md) + "\n")
