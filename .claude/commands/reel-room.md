@@ -45,8 +45,10 @@ the Cut tab. Respect those choices:
   `.claude/instagram/research.json` when the swipe file is re-ranked and write
   it there.
 
-Publishing the page: `app/reel-room.html` plus every file in `app/js/` passed
-as `files` (`js/core.js` and so on). Omit `capabilities` to keep them.
+Publishing the page: edit `app/shell.html` and `app/js/*.js`, run
+`python3 app/build.py`, then publish `app/reel-room.html` alone. It is one
+self-contained file with the libraries and the video bank inlined. Omit
+`capabilities` to keep them.
 
 ## Each time this runs
 

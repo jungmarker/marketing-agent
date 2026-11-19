@@ -205,8 +205,8 @@
   };
   ui.Today = function () {
     var r = RR.reel();
-    if (!S.booted) return html`<div class="empty"><span class="spin"></span>Loading your reel…</div>`;
-    if (S.failed && !r) return html`<div class="empty">${S.failed === "signed_out" ? "Sign in to Claude to open your reels." : "This did not load. Reopen the page to try again."}</div>`;
+    if (!S.booted) return html`<div class="stack"><${ui.Bank} top=${true} /><div class="empty sm"><span class="spin"></span>Connecting to your saved reels…</div></div>`;
+    if (S.failed && !r) return html`<div class="stack"><${ui.Bank} top=${true} /><div class="empty sm">${S.failed === "signed_out" ? "Your saved reels and recording need you signed in to Claude. The list above still works for reading." : "Your saved reels did not load (" + S.failed + "). The list above still works for reading. Reopen the page to try again."}</div></div>`;
     if (!r) return html`<div class="stack"><${ui.Bank} top=${true} /></div>`;
     var list = RR.shotList(), prog = RR.progress(), open = (r.verify || []).filter(function (v) { return !v.done; }).length;
     var firstTodo = -1; list.some(function (s, k) { if (!RR.takes(s.beat._id, s.kind).length) { firstTodo = k; return true; } });

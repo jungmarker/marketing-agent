@@ -172,7 +172,7 @@
     var rb = sheet && sheet.type === "rewrite" ? S.beats.filter(function (b) { return b._id === sheet.beat; })[0] : null;
     return html`<div class="app">
       <header class="top"><div class="stripe" aria-hidden="true"></div>
-        <div class="top-row"><div class="brand"><b>REEL ROOM</b><span class="mono dim">${r ? r._id : ""}</span></div>
+        <div class="top-row"><div class="brand"><b>REEL ROOM</b><span class="mono dim">v6 \u00B7 ${S.bank.length} videos</span></div>
           ${S.cap.sample && html`<button class="btn sm ask-btn" onClick=${function () { RR.set({ sheet: { type: "ask" } }); }}>Ask Claude</button>`}</div>
       </header>
       <main class="wrap"><${View} /></main>

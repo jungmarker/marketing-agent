@@ -14,7 +14,7 @@
   var S = (RR.S = {
     cap: { db: null, assets: null, sample: null }, booted: false, failed: null,
     currentId: null, viewId: null, reels: [], beats: [], clips: [], notes: [], ideas: [],
-    research: null, voice: null, bank: [], jobs: {}, toasts: [], tab: "today", shoot: null, sheet: null,
+    research: null, voice: null, bank: (window.RR_BANK || []), jobs: {}, toasts: [], tab: "today", shoot: null, sheet: null,
     loadedView: false, usage: null,
   });
   var subs = [];
@@ -112,7 +112,7 @@
     }, fail);
     db.collection("reels").onSnapshot(function (q) { RR.set({ reels: rows(q).sort(function (a, b) { return a._id < b._id ? 1 : -1; }) }); }, function () {});
     db.collection("ideas").onSnapshot(function (q) { RR.set({ ideas: rows(q) }); }, function () {});
-    db.collection("bank").onSnapshot(function (q) { var all = []; rows(q).forEach(function (d) { (d.videos || []).forEach(function (v) { all.push(v); }); }); RR.set({ bank: all }); }, function () {});
+    db.collection("bank").onSnapshot(function (q) { var all = []; rows(q).forEach(function (d) { (d.videos || []).forEach(function (v) { all.push(v); }); }); if (all.length) RR.set({ bank: all }); }, function () {});
     db.doc("research/current").onSnapshot(function (d) { RR.set({ research: d.exists ? d.data() : null }); }, function () {});
     db.doc("profile/voice").onSnapshot(function (d) { RR.set({ voice: d.exists ? d.data() : null }); }, function () {});
     RR.refreshUsage();
@@ -157,6 +157,7 @@
     results: function (id, res) { return quiet(S.cap.db.doc("reels/" + id).update({ results: res, status: "posted", status_at: Date.now() })); },
     /* put a ready-made script from the bank on the slate */
     fromBank: function (v) {
+      if (!S.cap.db) { RR.toast("Can't save it to your slate: this view isn't connected to your account. Open the page signed in to Claude.", "bad"); return Promise.resolve(); }
       var d = new Date(), day = d.getFullYear() + "-" + ("0" + (d.getMonth() + 1)).slice(-2) + "-" + ("0" + d.getDate()).slice(-2), id = day + "-" + v.id;
       if (S.reels.some(function (r) { return r._id === id; })) return RR.act.makeCurrent(id);
       var where = (v.beats[0] && v.beats[0].location) || "One spot";
